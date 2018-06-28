@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>On Generating Ansible Playbooks Part 1 &middot; software and systems</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Vijay Edwin">
+    <meta name="description" content="software and systems">
+    <meta name="generator" content="Hugo 0.42.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://vxe.github.io/blog/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+  
+
+	<aside>
+        
+	</aside>
+
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="https://vxe.github.io/blog/img/avatar.jpg" title="Vijay Edwin">
+    </figure>
+    <div class="bio">
+        
+        <h1>Hi, I&#39;m Vijay Edwin</h1>
+        
+        
+        <p>Just another guy</p>
+        
+    </div>
+    <nav>
+
+        
+
+        
+        <h6>Subscribe</h6>
+        
+
+        <ul>
+            <li><a target="_blank" href="https://vxe.github.io/blog/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+        <h6>Follow me on</h6>
+        
+
+        <ul>
+        
+            <li><a target="_blank" href="//github.com/vxe">Github</a></li>
+        
+            <li><a target="_blank" href="//twitter.com/vedwinnnnnn">Twitter</a></li>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="https://vxe.github.io/blog/">software and systems</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    27. June 2018
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">On Generating Ansible Playbooks Part 1</h1>
+                <div itemprop="articleBody">
+                    <p>I'm pretty impressed with ansible.  It honestly is the right tool for
+the job.  It has a problem though.  Its reliance on YAML.  I feel this
+is where clojure can save the day.  If only you had the following</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fb660a">run-playbook</span> <span style="color:#fb660a">inventory</span> <span style="color:#fb660a">plays</span>)</code></pre></div>
+<p>A playbook in this regime is a sequence of 'plays' which are clojure
+representation of the tasks which get composed out sequentially when
+writing a <code>playbook.yml</code> or the like.  Living in this world gives the
+following benefit for free: <strong>no need of a  templating language</strong>. I'm not into
+bashing technologies as its not really productive and at the end of
+the day won't change anyone's opinion anyway.</p>
+
+<p>So I'll be brief.</p>
+
+<p>Inserting conditionals and looping constructs into a declarative
+speculation is the definition of a kludge.  Not only is it exceedingly
+ugly, it truly brings the worst of both imperative worlds.  A loss of
+expressively on the declarative side, and weak control structure from
+the imperative perspective.  No thanks.</p>
+
+<p>Abstracting the yaml formatting into lisp function is no different
+than abstracting html in <a href="https://github.com/weavejester/hiccup" title="hiccup">hiccup</a> , in fact its a natural thing to want
+to do given the expressively of lisp.  I would like to generate this
+yaml</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#888">    </span>-<span style="color:#888"> </span>name:<span style="color:#888"> </span><span style="color:#0086d2">&#34;create directory for cache files&#34;</span><span style="color:#888">
+</span><span style="color:#888">      </span>file:<span style="color:#888"> </span>path=<span style="color:#0086d2">&#34;/tmp/cache-files&#34;</span><span style="color:#888"> </span>owner=<span style="color:#0086d2">&#34;vedwin&#34;</span><span style="color:#888"> </span>group=<span style="color:#0086d2">&#34;staff&#34;</span><span style="color:#888"> </span>state=<span style="color:#0086d2">&#34;directory&#34;</span></code></pre></div>
+<p>like this</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span> <span style="color:#0086d2">&#34;create directory for cache files&#34;</span> <span style="color:#0086d2">:path</span> <span style="color:#0086d2">&#34;/tmp/cache-files&#34;</span> <span style="color:#0086d2">:owner</span> <span style="color:#0086d2">&#34;vedwin&#34;</span> <span style="color:#0086d2">:group</span> <span style="color:#0086d2">&#34;staff&#34;</span> <span style="color:#0086d2">:state</span> <span style="color:#0086d2">&#34;directory&#34;</span>)</code></pre></div>
+<p>which I, I suspect would implemented something like this</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#fb660a;font-weight:bold">defn </span><span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span>  [name &amp; {<span style="color:#0086d2">:keys</span> [path <span style="color:#fb660a">owner</span> <span style="color:#fb660a">group</span> <span style="color:#fb660a">state</span>]}
+                    (<span style="color:#fb660a">gen-playbook-fragment</span> <span style="color:#fb660a">file</span> name path <span style="color:#fb660a">owner</span> <span style="color:#fb660a">group</span> <span style="color:#fb660a">state</span>))</code></pre></div>
+<p>With hopes that <code>gen-playbook-fragment</code> diligently checks for missing
+and default parameters.  Now we're in business. Generating a new task
+in a playbook is simply a function call and any conditional logic,
+looping or sequence processing can be done in a proper language not an
+impoverished template language which renders our declarative
+specification to be essentially machine readable.  Snuck in a mini
+rant there</p>
+
+<p>So <code>gen-playbook-fragment</code> is our task, fine</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#fb660a;font-weight:bold">defn </span><span style="color:#fb660a">gen-playbook-fragment</span> [<span style="color:#fb660a">plugin-name</span> &amp; <span style="color:#fb660a">values</span> ]
+    (cond (and (= <span style="color:#fb660a">plugin-name</span> <span style="color:#0086d2">&#34;file&#34;</span>)
+               (string? (nth <span style="color:#fb660a">values</span> <span style="color:#0086f7;font-weight:bold">1</span>))
+               (<span style="color:#fb660a">is-file-path?</span> (nth <span style="color:#fb660a">values</span> <span style="color:#0086f7;font-weight:bold">1</span>)))
+          (<span style="color:#fb660a">yaml.core/from-string</span> ([[<span style="color:#0086d2">:name</span> <span style="color:#fb660a">name</span>]
+                                   [<span style="color:#0086d2">:file</span> [(str <span style="color:#0086d2">&#34;path=&#34;</span> <span style="color:#fb660a">path</span>)
+                                           (str <span style="color:#0086d2">&#34;owener=&#34;</span> <span style="color:#fb660a">owner</span>)
+                                           (str <span style="color:#0086d2">&#34;group=&#34;</span> <span style="color:#fb660a">group</span>)
+                                           (str <span style="color:#0086d2">&#34;state=&#34;</span> <span style="color:#fb660a">state</span>)]]]))))</code></pre></div>
+<p>Or something like that, every new plugin being a new element in this
+case analysis with appropriate parameter checking in the predicate of
+the <code>cond</code>.</p>
+
+<p>In practice, why not some batch directory creation?</p>
+<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (map #(<span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span> (str <span style="color:#0086d2">&#34;creating &#34;</span> <span style="color:#fb660a">%</span>)
+                   <span style="color:#0086d2">:path</span> <span style="color:#fb660a">%</span>
+                   <span style="color:#0086d2">:owner</span> <span style="color:#0086d2">&#34;vedwin&#34;</span>
+                   <span style="color:#0086d2">:group</span> <span style="color:#0086d2">&#34;group&#34;</span>
+                   <span style="color:#0086d2">:state</span> <span style="color:#0086d2">&#34;directory&#34;</span>
+                   ) [<span style="color:#0086d2">&#34;~/tmp&#34;</span> <span style="color:#0086d2">&#34;~/var&#34;</span> <span style="color:#0086d2">&#34;~/src&#34;</span> <span style="color:#0086d2">&#34;~/opt&#34;</span>])</code></pre></div>
+<p>Pure bliss when compared to a templating language.  I think you'd even
+get nice parameter descriptions in your IDE meaning you wouldn't even
+need to look at the ansible docs for simple cases.</p>
+
+<h2 id="summary">summary</h2>
+
+<p>Generating yaml or json or any data format is trivial on clojure, why
+not take advantage of it to avoid manually editing data in its native
+format and having to use <strong>terrible hacks</strong> like templating languages?
+Something worth exploring for sure.</p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "vxe" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                
+                
+            </article>
+        </section>
+
+        <footer>
+	
+	<small>POWERED BY <a href="//gohugo.io">HUGO</a> - THEME: <a href="//github.com/digitalcraftsman/hugo-hikari-theme">HIKARI</a> - © Vijay Edwin</small>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://vxe.github.io/blog/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
