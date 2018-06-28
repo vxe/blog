@@ -1,0 +1,96 @@
+---
+title: "On Generating Ansible Playbooks Part 1" 
+date: 2018-06-27T20:06:44-07:00
+draft: true
+tags: ansible
+---
+I'm pretty impressed with ansible.  It honestly is the right tool for
+the job.  It has a problem though.  Its reliance on YAML.  I feel this
+is where clojure can save the day.  If only you had the following
+
+#+BEGIN_SRC clojure
+(run-playbook inventory plays)
+#+END_SRC
+
+A playbook in this regime is a sequence of 'plays' which are clojure
+representation of the tasks which get composed out sequentially when
+writing a ~playbook.yml~ or the like.  Living in this world gives the
+following benefit for free: *no need of a  templating language*. I'm not into
+bashing technologies as its not really productive and at the end of
+the day won't change anyone's opinion anyway.
+
+So I'll be brief.
+
+Inserting conditionals and looping constructs into a declarative
+speculation is the definition of a kludge.  Not only is it exceedingly
+ugly, it truly brings the worst of both imperative worlds.  A loss of
+expressively on the declarative side, and weak control structure from
+the imperative perspective.  No thanks.  
+
+Abstracting the yaml formatting into lisp function is no different
+than abstracting html in [[https://github.com/weavejester/hiccup][hiccup]] , in fact its a natural thing to want
+to do given the expressively of lisp.  I would like to generate this
+yaml
+
+#+BEGIN_SRC yaml
+    - name: "create directory for cache files"
+      file: path="/tmp/cache-files" owner="vedwin" group="staff" state="directory"
+#+END_SRC
+
+like this
+#+BEGIN_SRC clojure
+(task:file "create directory for cache files" :path "/tmp/cache-files" :owner "vedwin" :group "staff" :state "directory")
+#+END_SRC
+
+which I, I suspect would implemented something like this
+
+#+BEGIN_SRC clojure
+  (defn task:file  [name & {:keys [path owner group state]}
+                    (gen-playbook-fragment file name path owner group state))
+#+END_SRC
+
+With hopes that ~gen-playbook-fragment~ diligently checks for missing
+and default parameters.  Now we're in business. Generating a new task
+in a playbook is simply a function call and any conditional logic,
+looping or sequence processing can be done in a proper language not an
+impoverished template language which renders our declarative
+specification to be essentially machine readable.  Snuck in a mini
+rant there
+
+So ~gen-playbook-fragment~ is our task, fine
+#+BEGIN_SRC clojure
+  (defn gen-playbook-fragment [plugin-name & values ]
+    (cond (and (= plugin-name "file")
+               (string? (nth values 1))
+               (is-file-path? (nth values 1)))
+          (yaml.core/from-string ([[:name name]
+                                   [:file [(str "path=" path)
+                                           (str "owener=" owner)
+                                           (str "group=" group)
+                                           (str "state=" state)]]]))))
+#+END_SRC
+
+Or something like that, every new plugin being a new element in this
+case analysis with appropriate parameter checking in the predicate of
+the ~cond~.  
+
+In practice, why not some batch directory creation?
+
+#+BEGIN_SRC clojure
+  (map #(task:file (str "creating " %)
+                   :path %
+                   :owner "vedwin"
+                   :group "group"
+                   :state "directory"
+                   ) ["~/tmp" "~/var" "~/src" "~/opt"])
+#+END_SRC
+
+Pure bliss when compared to a templating language.  I think you'd even
+get nice parameter descriptions in your IDE meaning you wouldn't even
+need to look at the ansible docs for simple cases.
+
+** summary
+Generating yaml or json or any data format is trivial on clojure, why
+not take advantage of it to avoid manually editing data in its native
+format and having to use *terrible hacks* like templating languages?
+Something worth exploring for sure.
