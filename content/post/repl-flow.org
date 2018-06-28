@@ -1,0 +1,46 @@
+---
+title: "Shell Workflows in the Repl"
+date: 2018-06-27T21:29:57-07:00
+draft: false
+---
+My goal in the repl is definitely to emulate the unix terminal, that
+is to say short easy to remember commands that can be combined easily
+into a large whole.  The combining part is what is tricky because we
+don't have "|" in the repl.  But how can we simulate it?  My first
+thought was to make the past param a function a function on which to
+process the output defined by the previous arguments, so something
+like:
+
+#+BEGIN_SRC clojure
+  (defn pipe-emulator [value & f]
+    (let [output (compute value)]
+      (if f (map f output)
+          output)))
+#+END_SRC
+
+So our call of map on the output requires that our output be a
+sequence of some sort.  This seems like a restriction but really its
+identical to processing STDOUT which in reality is a sequence of
+strings which are processed line by line.  The function is optional
+because you might not need to process the output or instead will use
+an already defined function.  
+
+I also like make functions variadic to simulate a drill-down type of
+data flow, and also to provide some built in documentation when the
+function is called with it's 0-arity.
+
+#+BEGIN_SRC clojure
+  (defn get-data
+    ([] (println "1 args gets all the data\n 2 args data sort order"))
+    ([attribute] (fetch-data-by attribute))
+    ([attribute sort] (sort (fetch-data-by attribute))))
+#+END_SRC
+
+
+It may seem redundant since in this case the arguments are essentially
+self documenting, but this is still valuable in the same way a "-h"
+flag is easier than looking up a man page.  I don't know what the
+current best practice is for multi-arity functions but personally I
+like them and it forces me to think about my future self who will be
+trying to call this function whilst having no recollection whatsoever
+what it does.

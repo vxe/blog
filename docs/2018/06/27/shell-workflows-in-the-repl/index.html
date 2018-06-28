@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Shell Workflows in the Repl &middot; Stream of Consciousness Software</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Vijay Edwin">
+    <meta name="description" content="Stream of Consciousness Software">
+    <meta name="generator" content="Hugo 0.42.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://vxe.github.io/blog/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+    
+
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+  
+
+	<aside>
+        
+	</aside>
+
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="https://vxe.github.io/blog/img/avatar.jpg" title="Vijay Edwin">
+    </figure>
+    <div class="bio">
+        
+        <h1>Hi, I&#39;m Vijay Edwin</h1>
+        
+        
+        <p>Just another guy</p>
+        
+    </div>
+    <nav>
+
+        
+
+        
+        <h6>Subscribe</h6>
+        
+
+        <ul>
+            <li><a target="_blank" href="https://vxe.github.io/blog/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+        <h6>Follow me on</h6>
+        
+
+        <ul>
+        
+            <li><a target="_blank" href="//github.com/vxe">Github</a></li>
+        
+            <li><a target="_blank" href="//twitter.com/vedwinnnnnn">Twitter</a></li>
+        
+        </ul>        
+    </nav>
+</div>
+
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="https://vxe.github.io/blog/">Stream of Consciousness Software</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    27. June 2018
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Shell Workflows in the Repl</h1>
+                <div itemprop="articleBody">
+                    <p>My goal in the repl is definitely to emulate the unix terminal, that
+is to say short easy to remember commands that can be combined easily
+into a large whole.  The combining part is what is tricky because we
+don't have "|" in the repl.  But how can we simulate it?  My first
+thought was to make the past param a function a function on which to
+process the output defined by the previous arguments, so something
+like:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">pipe-emulator</span> [<span style="color:#b8860b">value</span> <span style="color:#666">&amp;</span> <span style="color:#b8860b">f</span>]
+    (<span style="color:#a2f;font-weight:bold">let </span>[<span style="color:#b8860b">output</span> (<span style="color:#b8860b">compute</span> <span style="color:#b8860b">value</span>)]
+      (<span style="color:#a2f;font-weight:bold">if </span><span style="color:#b8860b">f</span> (<span style="color:#a2f">map </span><span style="color:#b8860b">f</span> <span style="color:#b8860b">output</span>)
+          <span style="color:#b8860b">output</span>)))</code></pre></div>
+<p>So our call of map on the output requires that our output be a
+sequence of some sort.  This seems like a restriction but really its
+identical to processing STDOUT which in reality is a sequence of
+strings which are processed line by line.  The function is optional
+because you might not need to process the output or instead will use
+an already defined function.</p>
+
+<p>I also like make functions variadic to simulate a drill-down type of
+data flow, and also to provide some built in documentation when the
+function is called with it's 0-arity.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">get-data</span>
+    ([] (<span style="color:#a2f">println </span><span style="color:#b44">&#34;1 args gets all the data\n 2 args data sort order&#34;</span>))
+    ([<span style="color:#b8860b">attribute</span>] (<span style="color:#b8860b">fetch-data-by</span> <span style="color:#b8860b">attribute</span>))
+    ([<span style="color:#b8860b">attribute</span> <span style="color:#b8860b">sort</span>] (<span style="color:#a2f">sort </span>(<span style="color:#b8860b">fetch-data-by</span> <span style="color:#b8860b">attribute</span>))))</code></pre></div>
+<p>It may seem redundant since in this case the arguments are essentially
+self documenting, but this is still valuable in the same way a "-h"
+flag is easier than looking up a man page.  I don't know what the
+current best practice is for multi-arity functions but personally I
+like them and it forces me to think about my future self who will be
+trying to call this function whilst having no recollection whatsoever
+what it does.</p>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-vxe-github-io-blog-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                
+                
+                    <a rel="prev" href="https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev">Older</span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+	<small>POWERED BY <a href="//gohugo.io">HUGO</a> - THEME: <a href="//github.com/digitalcraftsman/hugo-hikari-theme">HIKARI</a> - © Vijay Edwin</small>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://vxe.github.io/blog/js/main.js"></script>
+
+
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>

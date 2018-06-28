@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jun 2018 20:06:44 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 21:29:57 -0700</lastBuildDate>
     
 	<atom:link href="https://vxe.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shell Workflows in the Repl</title>
+      <link>https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/</link>
+      <pubDate>Wed, 27 Jun 2018 21:29:57 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/</guid>
+      <description>My goal in the repl is definitely to emulate the unix terminal, that is to say short easy to remember commands that can be combined easily into a large whole. The combining part is what is tricky because we don&#39;t have &#34;|&#34; in the repl. But how can we simulate it? My first thought was to make the past param a function a function on which to process the output defined by the previous arguments, so something like:</description>
+    </item>
     
     <item>
       <title>On Generating Ansible Playbooks Part 1</title>
