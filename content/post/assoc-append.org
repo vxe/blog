@@ -4,8 +4,8 @@ date: 2018-06-27T21:52:33-07:00
 draft: false
 ---
 
-Threw a solution together for this one but now realize this may not
-be a general solution. Still its a concise piece of code I hope to
+Threw this together for this one but now realize this may not
+be the general solution. Still its a concise piece of code I hope to
 expand upon once I realize how to solve it for an arbitrarily nested
 map.  
 
