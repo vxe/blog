@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on software and systems</title>
+    <title>Posts on Stream of Consciousness Software</title>
     <link>https://vxe.github.io/blog/post/</link>
-    <description>Recent content in Posts on software and systems</description>
+    <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Jun 2018 20:06:44 -0700</lastBuildDate>

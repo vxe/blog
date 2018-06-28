@@ -4,7 +4,7 @@
 
 baseurl = "https://vxe.github.io/blog/"
 languageCode = "en-us"
-title = "software and systems"
+title = "Stream of Consciousness Software"
 # Enable comments by entering your Disqus shortname
 disqusShortname = "vxe"
 # Enable Google Analytics by entering your tracking code
@@ -15,7 +15,7 @@ canonifyURLs = true
 # pygmentsUseClassic = true
 # linenos = inline
 PygmentsCodeFences = true
-PygmentsStyle = "fruity"
+PygmentsStyle = "emacs"
 
 
 
@@ -25,7 +25,7 @@ PygmentsStyle = "fruity"
 
 [params]
 	name = "Vijay Edwin"
-	description = "software and systems"
+	description = "Stream of Consciousness Software"
 	copyright = "POWERED BY [HUGO](//gohugo.io) - THEME: [HIKARI](//github.com/digitalcraftsman/hugo-hikari-theme) - © Vijay Edwin"
 
 	# Custom assets can be linked with their paths relative to static/

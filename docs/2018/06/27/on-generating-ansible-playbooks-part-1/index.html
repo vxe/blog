@@ -4,13 +4,13 @@
 
  <html class="no-js"> 
 <head>
-    <title>On Generating Ansible Playbooks Part 1 &middot; software and systems</title>
+    <title>On Generating Ansible Playbooks Part 1 &middot; Stream of Consciousness Software</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-us" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Vijay Edwin">
-    <meta name="description" content="software and systems">
+    <meta name="description" content="Stream of Consciousness Software">
     <meta name="generator" content="Hugo 0.42.1" />
 
     <!-- Stylesheets -->
@@ -75,7 +75,7 @@
         <header>
 	<div class="h-wrap">
 		
-		<h1 class="title"><a href="https://vxe.github.io/blog/">software and systems</a></h1>
+		<h1 class="title"><a href="https://vxe.github.io/blog/">Stream of Consciousness Software</a></h1>
 		
 		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
 	</div>
@@ -95,7 +95,7 @@
                     <p>I'm pretty impressed with ansible.  It honestly is the right tool for
 the job.  It has a problem though.  Its reliance on YAML.  I feel this
 is where clojure can save the day.  If only you had the following</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fb660a">run-playbook</span> <span style="color:#fb660a">inventory</span> <span style="color:#fb660a">plays</span>)</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#b8860b">run-playbook</span> <span style="color:#b8860b">inventory</span> <span style="color:#b8860b">plays</span>)</code></pre></div>
 <p>A playbook in this regime is a sequence of 'plays' which are clojure
 representation of the tasks which get composed out sequentially when
 writing a <code>playbook.yml</code> or the like.  Living in this world gives the
@@ -115,13 +115,13 @@ the imperative perspective.  No thanks.</p>
 than abstracting html in <a href="https://github.com/weavejester/hiccup" title="hiccup">hiccup</a> , in fact its a natural thing to want
 to do given the expressively of lisp.  I would like to generate this
 yaml</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#888">    </span>-<span style="color:#888"> </span>name:<span style="color:#888"> </span><span style="color:#0086d2">&#34;create directory for cache files&#34;</span><span style="color:#888">
-</span><span style="color:#888">      </span>file:<span style="color:#888"> </span>path=<span style="color:#0086d2">&#34;/tmp/cache-files&#34;</span><span style="color:#888"> </span>owner=<span style="color:#0086d2">&#34;vedwin&#34;</span><span style="color:#888"> </span>group=<span style="color:#0086d2">&#34;staff&#34;</span><span style="color:#888"> </span>state=<span style="color:#0086d2">&#34;directory&#34;</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">    </span>-<span style="color:#bbb"> </span>name:<span style="color:#bbb"> </span><span style="color:#b44">&#34;create directory for cache files&#34;</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span>file:<span style="color:#bbb"> </span>path=<span style="color:#b44">&#34;/tmp/cache-files&#34;</span><span style="color:#bbb"> </span>owner=<span style="color:#b44">&#34;vedwin&#34;</span><span style="color:#bbb"> </span>group=<span style="color:#b44">&#34;staff&#34;</span><span style="color:#bbb"> </span>state=<span style="color:#b44">&#34;directory&#34;</span></code></pre></div>
 <p>like this</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span> <span style="color:#0086d2">&#34;create directory for cache files&#34;</span> <span style="color:#0086d2">:path</span> <span style="color:#0086d2">&#34;/tmp/cache-files&#34;</span> <span style="color:#0086d2">:owner</span> <span style="color:#0086d2">&#34;vedwin&#34;</span> <span style="color:#0086d2">:group</span> <span style="color:#0086d2">&#34;staff&#34;</span> <span style="color:#0086d2">:state</span> <span style="color:#0086d2">&#34;directory&#34;</span>)</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#b8860b">task</span><span style="color:#b8860b">:file</span> <span style="color:#b44">&#34;create directory for cache files&#34;</span> <span style="color:#b8860b">:path</span> <span style="color:#b44">&#34;/tmp/cache-files&#34;</span> <span style="color:#b8860b">:owner</span> <span style="color:#b44">&#34;vedwin&#34;</span> <span style="color:#b8860b">:group</span> <span style="color:#b44">&#34;staff&#34;</span> <span style="color:#b8860b">:state</span> <span style="color:#b44">&#34;directory&#34;</span>)</code></pre></div>
 <p>which I, I suspect would implemented something like this</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#fb660a;font-weight:bold">defn </span><span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span>  [name &amp; {<span style="color:#0086d2">:keys</span> [path <span style="color:#fb660a">owner</span> <span style="color:#fb660a">group</span> <span style="color:#fb660a">state</span>]}
-                    (<span style="color:#fb660a">gen-playbook-fragment</span> <span style="color:#fb660a">file</span> name path <span style="color:#fb660a">owner</span> <span style="color:#fb660a">group</span> <span style="color:#fb660a">state</span>))</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">task</span><span style="color:#b8860b">:file</span>  [<span style="color:#a2f">name </span><span style="color:#666">&amp;</span> {<span style="color:#b8860b">:keys</span> [<span style="color:#a2f">path </span><span style="color:#b8860b">owner</span> <span style="color:#b8860b">group</span> <span style="color:#b8860b">state</span>]}
+                    (<span style="color:#b8860b">gen-playbook-fragment</span> <span style="color:#b8860b">file</span> <span style="color:#a2f">name path </span><span style="color:#b8860b">owner</span> <span style="color:#b8860b">group</span> <span style="color:#b8860b">state</span>))</code></pre></div>
 <p>With hopes that <code>gen-playbook-fragment</code> diligently checks for missing
 and default parameters.  Now we're in business. Generating a new task
 in a playbook is simply a function call and any conditional logic,
@@ -131,26 +131,26 @@ specification to be essentially machine readable.  Snuck in a mini
 rant there</p>
 
 <p>So <code>gen-playbook-fragment</code> is our task, fine</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#fb660a;font-weight:bold">defn </span><span style="color:#fb660a">gen-playbook-fragment</span> [<span style="color:#fb660a">plugin-name</span> &amp; <span style="color:#fb660a">values</span> ]
-    (cond (and (= <span style="color:#fb660a">plugin-name</span> <span style="color:#0086d2">&#34;file&#34;</span>)
-               (string? (nth <span style="color:#fb660a">values</span> <span style="color:#0086f7;font-weight:bold">1</span>))
-               (<span style="color:#fb660a">is-file-path?</span> (nth <span style="color:#fb660a">values</span> <span style="color:#0086f7;font-weight:bold">1</span>)))
-          (<span style="color:#fb660a">yaml.core/from-string</span> ([[<span style="color:#0086d2">:name</span> <span style="color:#fb660a">name</span>]
-                                   [<span style="color:#0086d2">:file</span> [(str <span style="color:#0086d2">&#34;path=&#34;</span> <span style="color:#fb660a">path</span>)
-                                           (str <span style="color:#0086d2">&#34;owener=&#34;</span> <span style="color:#fb660a">owner</span>)
-                                           (str <span style="color:#0086d2">&#34;group=&#34;</span> <span style="color:#fb660a">group</span>)
-                                           (str <span style="color:#0086d2">&#34;state=&#34;</span> <span style="color:#fb660a">state</span>)]]]))))</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">gen-playbook-fragment</span> [<span style="color:#b8860b">plugin-name</span> <span style="color:#666">&amp;</span> <span style="color:#b8860b">values</span> ]
+    (<span style="color:#a2f">cond </span>(<span style="color:#a2f">and </span>(<span style="color:#a2f">= </span><span style="color:#b8860b">plugin-name</span> <span style="color:#b44">&#34;file&#34;</span>)
+               (<span style="color:#a2f">string? </span>(<span style="color:#a2f">nth </span><span style="color:#b8860b">values</span> <span style="color:#666">1</span>))
+               (<span style="color:#b8860b">is-file-path?</span> (<span style="color:#a2f">nth </span><span style="color:#b8860b">values</span> <span style="color:#666">1</span>)))
+          (<span style="color:#b8860b">yaml.core/from-string</span> ([[<span style="color:#b8860b">:name</span> <span style="color:#b8860b">name</span>]
+                                   [<span style="color:#b8860b">:file</span> [(<span style="color:#a2f">str </span><span style="color:#b44">&#34;path=&#34;</span> <span style="color:#b8860b">path</span>)
+                                           (<span style="color:#a2f">str </span><span style="color:#b44">&#34;owener=&#34;</span> <span style="color:#b8860b">owner</span>)
+                                           (<span style="color:#a2f">str </span><span style="color:#b44">&#34;group=&#34;</span> <span style="color:#b8860b">group</span>)
+                                           (<span style="color:#a2f">str </span><span style="color:#b44">&#34;state=&#34;</span> <span style="color:#b8860b">state</span>)]]]))))</code></pre></div>
 <p>Or something like that, every new plugin being a new element in this
 case analysis with appropriate parameter checking in the predicate of
 the <code>cond</code>.</p>
 
 <p>In practice, why not some batch directory creation?</p>
-<div class="highlight"><pre style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (map #(<span style="color:#fb660a">task</span><span style="color:#0086d2">:file</span> (str <span style="color:#0086d2">&#34;creating &#34;</span> <span style="color:#fb660a">%</span>)
-                   <span style="color:#0086d2">:path</span> <span style="color:#fb660a">%</span>
-                   <span style="color:#0086d2">:owner</span> <span style="color:#0086d2">&#34;vedwin&#34;</span>
-                   <span style="color:#0086d2">:group</span> <span style="color:#0086d2">&#34;group&#34;</span>
-                   <span style="color:#0086d2">:state</span> <span style="color:#0086d2">&#34;directory&#34;</span>
-                   ) [<span style="color:#0086d2">&#34;~/tmp&#34;</span> <span style="color:#0086d2">&#34;~/var&#34;</span> <span style="color:#0086d2">&#34;~/src&#34;</span> <span style="color:#0086d2">&#34;~/opt&#34;</span>])</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f">map </span><span style="color:#666">#</span>(<span style="color:#b8860b">task</span><span style="color:#b8860b">:file</span> (<span style="color:#a2f">str </span><span style="color:#b44">&#34;creating &#34;</span> <span style="color:#b8860b">%</span>)
+                   <span style="color:#b8860b">:path</span> <span style="color:#b8860b">%</span>
+                   <span style="color:#b8860b">:owner</span> <span style="color:#b44">&#34;vedwin&#34;</span>
+                   <span style="color:#b8860b">:group</span> <span style="color:#b44">&#34;group&#34;</span>
+                   <span style="color:#b8860b">:state</span> <span style="color:#b44">&#34;directory&#34;</span>
+                   ) [<span style="color:#b44">&#34;~/tmp&#34;</span> <span style="color:#b44">&#34;~/var&#34;</span> <span style="color:#b44">&#34;~/src&#34;</span> <span style="color:#b44">&#34;~/opt&#34;</span>])</code></pre></div>
 <p>Pure bliss when compared to a templating language.  I think you'd even
 get nice parameter descriptions in your IDE meaning you wouldn't even
 need to look at the ansible docs for simple cases.</p>
