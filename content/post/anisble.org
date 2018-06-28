@@ -1,7 +1,7 @@
 ---
 title: "On Generating Ansible Playbooks Part 1" 
 date: 2018-06-27T20:06:44-07:00
-draft: true
+draft: false
 tags: ansible
 ---
 I'm pretty impressed with ansible.  It honestly is the right tool for
