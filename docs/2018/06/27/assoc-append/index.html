@@ -4,7 +4,7 @@
 
  <html class="no-js"> 
 <head>
-    <title>Shell Workflows in the Repl &middot; Stream of Consciousness Software</title>
+    <title>Assoc Append &middot; Stream of Consciousness Software</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-us" />
@@ -90,40 +90,36 @@
                     </time>
                     </h5>
                 </div>
-                <h1 class="page-title" itemprop="name headline">Shell Workflows in the Repl</h1>
+                <h1 class="page-title" itemprop="name headline">Assoc Append</h1>
                 <div itemprop="articleBody">
-                    <p>My goal in the repl is definitely to emulate the unix terminal, that
-is to say short easy to remember commands that can be combined easily
-into a large whole.  The combining part is what is tricky because we
-don't have "|" in the repl.  But how can we simulate it?  My first
-thought was to make the past param a function a function on which to
-process the output defined by the previous arguments, so something
-like:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">pipe-emulator</span> [<span style="color:#b8860b">value</span> <span style="color:#666">&amp;</span> <span style="color:#b8860b">f</span>]
-    (<span style="color:#a2f;font-weight:bold">let </span>[<span style="color:#b8860b">output</span> (<span style="color:#b8860b">compute</span> <span style="color:#b8860b">value</span>)]
-      (<span style="color:#a2f;font-weight:bold">if </span><span style="color:#b8860b">f</span> (<span style="color:#a2f">map </span><span style="color:#b8860b">f</span> <span style="color:#b8860b">output</span>)
-          <span style="color:#b8860b">output</span>)))</code></pre></div>
-<p>So our call of map on the output requires that our output be a
-sequence of some sort.  This seems like a restriction but really its
-identical to processing STDOUT which in reality is a sequence of
-strings which are processed line by line.  The function is optional
-because you might not need to process the output or instead will use
-an already defined function.</p>
+                    <p>Threw a solution together for this one but now realize this may not
+be a general solution. Still its a concise piece of code I hope to
+expand upon once I realize how to solve it for an arbitrarily nested
+map.</p>
 
-<p>I also like make functions variadic to simulate a drill-down type of
-data flow, and also to provide some built in documentation when the
-function is called with it's 0-arity.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">get-data</span>
-    ([] (<span style="color:#a2f">println </span><span style="color:#b44">&#34;1 args gets all the data\n 2 args data sort order&#34;</span>))
-    ([<span style="color:#b8860b">attribute</span>] (<span style="color:#b8860b">fetch-data-by</span> <span style="color:#b8860b">attribute</span>))
-    ([<span style="color:#b8860b">attribute</span> <span style="color:#b8860b">sort</span>] (<span style="color:#a2f">sort </span>(<span style="color:#b8860b">fetch-data-by</span> <span style="color:#b8860b">attribute</span>))))</code></pre></div>
-<p>It may seem redundant since in this case the arguments are essentially
-self documenting, but this is still valuable in the same way a "-h"
-flag is easier than looking up a man page.  I don't know what the
-current best practice is for multi-arity functions but personally I
-like them and it forces me to think about my future self who will be
-trying to call this function whilst having no recollection whatsoever
-what it does.</p>
+<h1 id="assoc-append">assoc-append</h1>
+
+<p>Assume a key <em>k</em> and value <em>v</em> which is a map.  We would like to assoc
+this pair onto an existing map <em>m</em> but in the case of an existing key ,
+rather than colliding, append the map <em>v</em> onto the value of the map
+stored at <code>(k m</code>)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">assoc-append</span> [<span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> <span style="color:#b8860b">v</span>]
+    (<span style="color:#a2f;font-weight:bold">if </span>(<span style="color:#a2f">contains? </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span>)
+      (<span style="color:#a2f">assoc </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> (<span style="color:#a2f">into </span>{} [(<span style="color:#b8860b">k</span> <span style="color:#b8860b">m</span>)
+                           <span style="color:#b8860b">v</span>]))
+      (<span style="color:#a2f">assoc </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> <span style="color:#b8860b">v</span>)))</code></pre></div>
+<ul>
+In short:
+<li>confirm the key exists in the map</li>
+<li>call <code>into</code> on a vector consisting of the new value map <code>v</code> and the existing map <code>(k m)</code></li>
+<li>if the key is not in the map assoc as usual.</li>
+</ul>
+
+<p>This worked fine in my purpose, but I can't help feeling this is a
+little hacky in that it assumes that <code>(k m</code>) will be a map with no
+nesting.  Then again since <code>into</code> doesn't make any requirements on the
+equality of type on its arguments, perhaps not?  In either case took a
+second to puzzle this one out, and was glad that it worked as intended.</p>
 
                 </div>
                 <div class="feat share">
@@ -154,12 +150,8 @@ what it does.</p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
                 
-                    <a rel="next" href="https://vxe.github.io/blog/2018/06/27/assoc-append/" id="next">
-                        <span class="nav-title nav-title-next">Newer</span> &rarr;
-                    </a>
                 
-                
-                    <a rel="prev" href="https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/" id="prev">
+                    <a rel="prev" href="https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/" id="prev">
                         &larr; <span class="nav-title nav-title-prev">Older</span>
                     </a>
                 

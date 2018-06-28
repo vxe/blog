@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jun 2018 21:29:57 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jun 2018 21:52:33 -0700</lastBuildDate>
     
 	<atom:link href="https://vxe.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Assoc Append</title>
+      <link>https://vxe.github.io/blog/2018/06/27/assoc-append/</link>
+      <pubDate>Wed, 27 Jun 2018 21:52:33 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/blog/2018/06/27/assoc-append/</guid>
+      <description>Threw a solution together for this one but now realize this may not be a general solution. Still its a concise piece of code I hope to expand upon once I realize how to solve it for an arbitrarily nested map.
+assoc-append Assume a key k and value v which is a map. We would like to assoc this pair onto an existing map m but in the case of an existing key , rather than colliding, append the map v onto the value of the map stored at (k m)</description>
+    </item>
     
     <item>
       <title>Shell Workflows in the Repl</title>

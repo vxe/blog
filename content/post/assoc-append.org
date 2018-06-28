@@ -1,0 +1,35 @@
+---
+title: "Assoc Append"
+date: 2018-06-27T21:52:33-07:00
+draft: false
+---
+
+Threw a solution together for this one but now realize this may not
+be a general solution. Still its a concise piece of code I hope to
+expand upon once I realize how to solve it for an arbitrarily nested
+map.  
+
+* assoc-append
+Assume a key /k/ and value /v/ which is a map.  We would like to assoc
+this pair onto an existing map /m/ but in the case of an existing key ,
+rather than colliding, append the map /v/ onto the value of the map
+stored at ~(k m~) 
+
+#+BEGIN_SRC clojure -n
+  (defn assoc-append [m k v]
+    (if (contains? m k)
+      (assoc m k (into {} [(k m)
+                           v]))
+      (assoc m k v)))
+#+END_SRC
+
+In short:
+- confirm the key exists in the map
+- call ~into~ on a vector consisting of the new value map ~v~ and the existing map ~(k m)~
+- if the key is not in the map assoc as usual.
+
+This worked fine in my purpose, but I can't help feeling this is a
+little hacky in that it assumes that ~(k m~) will be a map with no
+nesting.  Then again since ~into~ doesn't make any requirements on the
+equality of type on its arguments, perhaps not?  In either case took a
+second to puzzle this one out, and was glad that it worked as intended.
