@@ -1,0 +1,28 @@
+---
+title: "Intellij Issues"
+date: 2018-06-28T18:20:02-07:00
+draft: true
+---
+
+Ok I'm not one to complain but there are a couple things I can't
+figure out in Intellij that I can figure out that are kind of driving
+my low key insane.  First, however the positive.
+
+*** Java integration
+    Its nice that Intellij understands most java projects.  My solution
+    prior to this was restricting myself to projects which used maven
+    a because that was thing thing I understood the most, given its
+    similarity of lein, and the general support maven has within that
+    community. Still, knowing that I won't have to do extensive
+    configuration to test out some odd-ball java library is kind of nice,
+    even though the editing experience will be sub-standard compared to my
+    current tools.  Trade-offs you know?
+*** reasonably configurable
+    At this point in the game I know which keybindings I want and can
+    emulate them on most editors, so this isn't really a feature of
+    intellij but more like a minimum the requirement.
+
+    The ability to configure *most* keybindings is a definite plus and
+    one of the few reasons I gave this product a second thought.
+
+
