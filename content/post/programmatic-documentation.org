@@ -1,9 +1,8 @@
 ---
 title: "Documenting Namespace Dependencies in Code"
 date: 2018-06-30T04:32:39-07:00
-draft: true
+draft: false
 ---
-
 Did this on a whim and liked how it turned out.  Essentially the
 idea is that you codify your namespace dependencies in data instead of
 text or comments.  Consider a common namespace inheritance chain
@@ -43,15 +42,18 @@ Essentially self documenting, and a nice print function as that
 #+BEGIN_SRC 
 => (ns-dependencies-pp)
 Graph
-3 Nodes:
+4 Nodes:
+         :core 
          :auth 
          :data 
          :api 
-2 Edges:
+3 Edges:
+         :core <-> :auth 
          :auth <-> :data 
          :data <-> :api 
 #+END_SRC
 
 Not bad, and pretty painless. I would say more concise and
 potentially useful then natural language descriptions.  Imagine having
-this at your fingertips at the repl?  Into it
+this at your fingertips at the repl?  Into it.  [[https://github.com/Engelberg/ubergraph][ubergraph]] is pretty
+nice and worth checking out for actual graph processing as well.

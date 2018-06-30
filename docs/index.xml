@@ -6,10 +6,20 @@
     <description>Recent content on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jun 2018 21:52:33 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 30 Jun 2018 04:32:39 -0700</lastBuildDate>
     
 	<atom:link href="https://vxe.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Documenting Namespace Dependencies in Code</title>
+      <link>https://vxe.github.io/blog/2018/06/30/documenting-namespace-dependencies-in-code/</link>
+      <pubDate>Sat, 30 Jun 2018 04:32:39 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/blog/2018/06/30/documenting-namespace-dependencies-in-code/</guid>
+      <description>Did this on a whim and liked how it turned out. Essentially the idea is that you codify your namespace dependencies in data instead of text or comments. Consider a common namespace inheritance chain
+core -&amp;gt; auth -&amp;gt; data -&amp;gt; cli  These are three 4 namespaces each with need the symbols exported by the previous later. For examples core is needed by auth for various utilities and convenience functions for performing auth, which can be messy, in a readable form.</description>
+    </item>
     
     <item>
       <title>Assoc Append, or Dodging Key Collisions Like Neo</title>

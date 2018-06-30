@@ -4,7 +4,7 @@
 
  <html class="no-js"> 
 <head>
-    <title>Assoc Append &middot; Stream of Consciousness Software</title>
+    <title>Documenting Namespace Dependencies in Code &middot; Stream of Consciousness Software</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-us" />
@@ -86,40 +86,56 @@
                 <div class="feat">
                     <h5 class="page-date">
                     <time datetime="" itemprop="datePublished">
-                    27. June 2018
+                    30. June 2018
                     </time>
                     </h5>
                 </div>
-                <h1 class="page-title" itemprop="name headline">Assoc Append</h1>
+                <h1 class="page-title" itemprop="name headline">Documenting Namespace Dependencies in Code</h1>
                 <div itemprop="articleBody">
-                    <p>Threw a solution together for this one but now realize this may not
-be a general solution. Still its a concise piece of code I hope to
-expand upon once I realize how to solve it for an arbitrarily nested
-map.</p>
+                    <p>Did this on a whim and liked how it turned out.  Essentially the
+idea is that you codify your namespace dependencies in data instead of
+text or comments.  Consider a common namespace inheritance chain</p>
 
-<h1 id="assoc-append">assoc-append</h1>
+<pre><code>core -&gt; auth -&gt; data -&gt; cli
+</code></pre>
 
-<p>Assume a key <em>k</em> and value <em>v</em> which is a map.  We would like to assoc
-this pair onto an existing map <em>m</em> but in the case of an existing key ,
-rather than colliding, append the map <em>v</em> onto the value of the map
-stored at <code>(k m</code>)</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">assoc-append</span> [<span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> <span style="color:#b8860b">v</span>]
-    (<span style="color:#a2f;font-weight:bold">if </span>(<span style="color:#a2f">contains? </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span>)
-      (<span style="color:#a2f">assoc </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> (<span style="color:#a2f">into </span>{} [(<span style="color:#b8860b">k</span> <span style="color:#b8860b">m</span>)
-                           <span style="color:#b8860b">v</span>]))
-      (<span style="color:#a2f">assoc </span><span style="color:#b8860b">m</span> <span style="color:#b8860b">k</span> <span style="color:#b8860b">v</span>)))</code></pre></div>
-<ul>
-In short:
-<li>confirm the key exists in the map</li>
-<li>call <code>into</code> on a vector consisting of the new value map <code>v</code> and the existing map <code>(k m)</code></li>
-<li>if the key is not in the map assoc as usual.</li>
-</ul>
+<p>These are three 4 namespaces each with need the symbols exported by
+the previous later.  For examples <code>core</code> is needed by <code>auth</code> for various
+utilities and convenience functions for performing auth, which can be
+messy, in a readable form.</p>
 
-<p>This worked fine in my purpose, but I can't help feeling this is a
-little hacky in that it assumes that <code>(k m</code>) will be a map with no
-nesting.  Then again since <code>into</code> doesn't make any requirements on the
-equality of type on its arguments, perhaps not?  In either case took a
-second to puzzle this one out, and was glad that it worked as intended.</p>
+<p><code>data</code> needs <code>auth</code> to actually get the data provided by the service and
+build internal application data structures, need <code>cli</code> needs those
+structures to perform useful work.</p>
+
+<p>This right now is a linear dependency chain but without a doubt will
+revolve into something more tree like and eventually a full blown
+graph.  Why not cut to the chase and pick a graph library to handle
+the general case</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#b8860b">:require</span>        
+     [<span style="color:#b8860b">ubergraph.core</span> <span style="color:#b8860b">:as</span> <span style="color:#b8860b">uber</span>])</code></pre></div>
+<p>This one seemed alright, I like the name, whatever.  Adopting their hello world example yield the following</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">def </span><span style="color:#b8860b">ns-dependencies</span>
+    (<span style="color:#b8860b">uber/graph</span> [<span style="color:#b8860b">:core</span> <span style="color:#b8860b">:auth</span>][<span style="color:#b8860b">:auth</span> <span style="color:#b8860b">:data</span>] [<span style="color:#b8860b">:data</span> <span style="color:#b8860b">:cli</span>]))</code></pre></div>
+<p>Essentially self documenting, and a nice print function as that</p>
+
+<pre><code>=&gt; (ns-dependencies-pp)
+Graph
+4 Nodes:
+         :core 
+         :auth 
+         :data 
+         :api 
+3 Edges:
+         :core &lt;-&gt; :auth 
+         :auth &lt;-&gt; :data 
+         :data &lt;-&gt; :api 
+</code></pre>
+
+<p>Not bad, and pretty painless. I would say more concise and
+potentially useful then natural language descriptions.  Imagine having
+this at your fingertips at the repl?  Into it.  <a href="https://github.com/Engelberg/ubergraph" title="ubergraph">ubergraph</a> is pretty
+nice and worth checking out for actual graph processing as well.</p>
 
                 </div>
                 <div class="feat share">
@@ -151,7 +167,7 @@ second to puzzle this one out, and was glad that it worked as intended.</p>
 
                 
                 
-                    <a rel="prev" href="https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/" id="prev">
+                    <a rel="prev" href="https://vxe.github.io/blog/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/" id="prev">
                         &larr; <span class="nav-title nav-title-prev">Older</span>
                     </a>
                 
