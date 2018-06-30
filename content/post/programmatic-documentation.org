@@ -1,0 +1,57 @@
+---
+title: "Documenting Namespace Dependencies in Code"
+date: 2018-06-30T04:32:39-07:00
+draft: true
+---
+
+Did this on a whim and liked how it turned out.  Essentially the
+idea is that you codify your namespace dependencies in data instead of
+text or comments.  Consider a common namespace inheritance chain
+
+#+BEGIN_SRC 
+core -> auth -> data -> cli
+#+END_SRC
+
+These are three 4 namespaces each with need the symbols exported by
+the previous later.  For examples ~core~ is needed by ~auth~ for various
+utilities and convenience functions for performing auth, which can be
+messy, in a readable form.
+
+~data~ needs ~auth~ to actually get the data provided by the service and
+build internal application data structures, need ~cli~ needs those
+structures to perform useful work.
+
+This right now is a linear dependency chain but without a doubt will
+revolve into something more tree like and eventually a full blown
+graph.  Why not cut to the chase and pick a graph library to handle
+the general case
+
+#+BEGIN_SRC clojure
+  (:require        
+     [ubergraph.core :as uber])
+#+END_SRC
+
+This one seemed alright, I like the name, whatever.  Adopting their hello world example yield the following
+
+#+BEGIN_SRC clojure
+  (def ns-dependencies
+    (uber/graph [:core :auth][:auth :data] [:data :cli]))
+#+END_SRC
+
+Essentially self documenting, and a nice print function as that
+
+#+BEGIN_SRC 
+=> (ns-dependencies-pp)
+Graph
+3 Nodes:
+         :auth 
+         :data 
+         :api 
+2 Edges:
+         :auth <-> :data 
+         :data <-> :api 
+#+END_SRC
+
+Not bad, and pretty painless. I would say more concise and
+potentially useful then natural language descriptions.  Imagine having
+this at your fingertips at the repl?  Into it

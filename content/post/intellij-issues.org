@@ -24,5 +24,10 @@ my low key insane.  First, however the positive.
 
     The ability to configure *most* keybindings is a definite plus and
     one of the few reasons I gave this product a second thought.
-
-
+*** jenkins integration
+    Technically in emacs, and equivalent, but still this is nice.  I
+    imagine the interfaces for further development are pretty good
+    given both jenkins and intellij are built on java.  Jenkins has
+    gotten quite snazzy and is not as resource intensive as I
+    thought.  I can run an instance on my laptop without any
+    performance degradation.
