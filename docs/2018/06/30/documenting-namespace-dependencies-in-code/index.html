@@ -114,10 +114,10 @@ graph.  Why not cut to the chase and pick a graph library to handle
 the general case</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#b8860b">:require</span>        
      [<span style="color:#b8860b">ubergraph.core</span> <span style="color:#b8860b">:as</span> <span style="color:#b8860b">uber</span>])</code></pre></div>
-<p>This one seemed alright, I like the name, whatever.  Adopting their hello world example yield the following</p>
+<p>This one seemed alright, I like the name, whatever.  Adopting their hello world example yields the following</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">def </span><span style="color:#b8860b">ns-dependencies</span>
     (<span style="color:#b8860b">uber/graph</span> [<span style="color:#b8860b">:core</span> <span style="color:#b8860b">:auth</span>][<span style="color:#b8860b">:auth</span> <span style="color:#b8860b">:data</span>] [<span style="color:#b8860b">:data</span> <span style="color:#b8860b">:cli</span>]))</code></pre></div>
-<p>Essentially self documenting, and a nice print function as that</p>
+<p>Essentially self documenting. A nice print function as well.</p>
 
 <pre><code>=&gt; (ns-dependencies-pp)
 Graph
