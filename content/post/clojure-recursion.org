@@ -44,7 +44,7 @@ urls.
 
 - start with the initial url, aka the value with ~previous~ equal to
   "null"
-- if ~next~ is null you've reached the end of the list , give me the
+- if ~next~ is "null" you've reached the end of the list , give me the
   value of the current url
 - else conj the current url with a recursive call to the function with
   ~next~ url
