@@ -1,0 +1,66 @@
+---
+title: "Recurring through Spotify Tracks with Clojure"
+date: 2018-07-02T20:15:56-07:00
+draft: false
+---
+
+I've found the ~recur~ macros to be kind of strange looking.  I'm never
+in a hurry to wrap another layer of nesting around any kind of
+computation even though in this case its just one statement.  Most examples use ~recur~ with ~loop~ and often this gets kind of ugly.
+At the end of the day these constructs are just hacks around the fact
+that the JVM [[http://www.drdobbs.com/jvm/tail-call-optimization-and-java/240167044][doesn't have automatic tail call optimization]] .  However
+as I unwittingly found out you can still call functions recursively
+and, as long as the input is small, can benefit from the normal conciseness of
+functions written in such a way.
+
+So the problem was this, Spotify hands you an object which in an
+incredibly abbreviated form amounts to this
+
+#+BEGIN_EXAMPLE json
+{
+"data" : "value",
+"next" : "some-url",
+"previous" : "null"
+}
+#+END_EXAMPLE
+
+Essentially a doubly linked list.  When you reach the end
+the values for ~next~ and ~previous~ are swapped indicating the end of the
+list.  Given that these nodes are in groupings of 50, the list size in
+my case is less than 10 for my entire music library.  As such I feel
+it was safe to use the non-optimized recursive call to get all the
+urls.
+
+#+BEGIN_SRC clojure
+  (defn extract-track-grouping-urls [starting-url]
+    (let [current-value (http-get starting-url)]
+      (if (nil? (:next current-value))
+        url
+        (flatten (conj
+                  [url]
+                  (extract-track-grouping-urls (:next
+                                                current-offset)))))))
+#+END_SRC
+
+- start with the initial url, aka the value with ~previous~ equal to
+  "null"
+- if ~next~ is null you've reached the end of the list , give me the
+  value of the current url
+- else conj the current url with a recursive call to the function with
+  ~next~ url
+
+Simple.  
+
+I feel comfortable with a 10x growth of my music library before
+worrying about stack space, however I wish I could quantify that
+better?  You could also argue that ~flatten~ after the final ~conj~ is a
+little ugly as well. I would not be surprised if there is
+a clojure built-in which builds
+a flattened list that I don't know about yet.
+
+In an any case I think calling recursive functions in this manner for
+small input values is acceptable.  This function also gets called once
+in my application so my risk is reduced even further.  And if nothing
+else its good I can throw together something like this and have it
+work right away and then optimize it with ~loop~ and ~recur~ later if
+needed.  

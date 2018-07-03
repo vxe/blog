@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Jun 2018 04:32:39 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jul 2018 20:15:56 -0700</lastBuildDate>
     
 	<atom:link href="https://vxe.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Recurring through Spotify Tracks with Clojure</title>
+      <link>https://vxe.github.io/blog/2018/07/02/recurring-through-spotify-tracks-with-clojure/</link>
+      <pubDate>Mon, 02 Jul 2018 20:15:56 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/blog/2018/07/02/recurring-through-spotify-tracks-with-clojure/</guid>
+      <description>I&#39;ve found the recur macros to be kind of strange looking. I&#39;m never in a hurry to wrap another layer of nesting around any kind of computation even though in this case its just one statement. Most examples use recur with loop and often this gets kind of ugly. At the end of the day these constructs are just hacks around the fact that the JVM doesn&#39;t have automatic tail call optimization .</description>
+    </item>
     
     <item>
       <title>Documenting Namespace Dependencies in Code</title>
