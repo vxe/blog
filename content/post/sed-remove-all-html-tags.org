@@ -1,0 +1,16 @@
+# -*- mode:org -*-
+#+TITLE: removing html tags
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+---
+title: removing html tags
+date: 2018-08-03T23:17:28-07:00
+draft: false
+---
+A common problem, here's some ways to do it
+* sed
+#+BEGIN_SRC shell
+sed -e 's/<[^>]*>//g'
+#+END_SRC
+
+not bad

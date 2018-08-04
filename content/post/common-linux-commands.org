@@ -1,0 +1,164 @@
+# -*- mode:org -*-
+#+TITLE: ref
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+for new people
+
+** changing directories
+*** go to home directory
+    #+BEGIN_SRC shell
+    cd   # no arguments
+    #+END_SRC
+*** move up one directory
+    #+BEGIN_SRC shell
+    cd ..
+    #+END_SRC
+*** change to directory before last cd
+    #+BEGIN_SRC shell
+    cd -
+    #+END_SRC
+*** save current directory (eg long path name)
+    #+BEGIN_SRC shell
+    pushd .
+    #+END_SRC
+*** return to saved directory
+    #+BEGIN_SRC shell
+    popd
+    #+END_SRC
+** searching for files
+*** search filesystem
+    #+BEGIN_SRC shell
+    locate FILE
+    #+END_SRC
+*** search current directory and subdirectories for files by name
+    #+BEGIN_SRC shell
+    find . -iname 'FILENAME'
+    #+END_SRC
+*** find and delete files matching a regex in the current directory
+    #+BEGIN_SRC shell
+    find . -type f | grep 'REGEX' | xargs rm -rf 
+    #+END_SRC
+*** find and delete directories matching a regex in the current directory
+    #+BEGIN_SRC shell
+    find . -type d | grep 'REGEX' | xargs rm -rf 
+    #+END_SRC
+** file manipulation
+*** delete 
+    #+BEGIN_SRC shell
+   rm -rf FILENAME
+    #+END_SRC
+*** create empty file
+    #+BEGIN_SRC shell
+    touch FILENAME
+    #+END_SRC
+*** create directory
+    #+BEGIN_SRC shell
+    mkdir DIR
+    #+END_SRC
+*** create nested directories
+    #+BEGIN_SRC shell
+    mkdir -p /LONG/PATHNAME/HERE
+    #+END_SRC
+*** show name of current directory
+    #+BEGIN_SRC shell
+    pwd
+    #+END_SRC
+*** show file contents
+    #+BEGIN_SRC shell
+    cat FILE
+    #+END_SRC
+*** only show lines in file matching regex
+    #+BEGIN_SRC shell
+    cat FILE  | grep 'REGEX'
+    #+END_SRC
+*** only show lines in file matching multiples regexes , an 'OR' query
+    #+BEGIN_SRC shell
+    cat FILE  | grep -E 'REGEX_1 | REGEX_2 | REGEX_3 ....'
+    #+END_SRC
+*** show large file contents incrementally
+    #+BEGIN_SRC shell
+    less FILE
+    #+END_SRC
+*** view a file which is being written to
+    #+BEGIN_SRC shell
+    tail -f FILE
+    #+END_SRC
+*** view a file which is being written to but only print lines which match regex
+    #+BEGIN_SRC shell
+    tail -f FILE | perl -ne 'print if /REGEX/'
+    # slight variation, if line matches regex only print the part that matches, parenthesis around REGEX required
+    tail -f FILE | perl -ne 'print "$1\n" if /(REGEX)/' 
+    #+END_SRC
+*** find and replace contents of file by regex
+    #+BEGIN_SRC shell
+    sed -i.bak 's/REGEX/REPLACEMENT/g' file
+    cat file | sed 's/REGEX/REPLACEMENT/g'
+    #+END_SRC
+*** print out field in column-like data
+    #+BEGIN_SRC shell
+    cat file | awk '{print $3}' # print 3rd column in a space delimited file
+    cat file | awk -F, '{print $20}' # print 20th column in comma seperated file
+    cat file | awk -F\; '{print $140}' # print 140th column in semi-colon separated file
+    #+END_SRC
+** git
+*** new branch
+    #+BEGIN_SRC shell
+    git checkout -b 'branch-name-no-spaces'
+    #+END_SRC
+*** define and name an upstream repo
+    #+BEGIN_SRC shell
+    git remote add NAME GIT-URL
+    #+END_SRC
+*** pull remote branches to local repo
+    #+BEGIN_SRC shell
+    git fetch REMOTE_NAME # the default is 
+    #+END_SRC
+*** merge remote repo branch into local copy
+    #+BEGIN_SRC shell
+    git fetch REMOTE_NAME && git merge REMOTE_NAME/BRANCH_NAME
+    # eg
+    git fetch origin && git merge origin/master
+    #+END_SRC
+*** discard all work and go back to last merged commit
+    #+BEGIN_SRC shell
+    git reset
+    #+END_SRC
+** miscellaneous 
+*** convert unix time to human readable
+    #+BEGIN_SRC shell
+    date -d @UNIX_TIME
+    #+END_SRC
+*** extract all ip addresses from a file
+    #+BEGIN_SRC shell
+    cat file | perl -ne 'print "$1\n" if /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/' 
+    #+END_SRC
+*** get PID,interface, port of all server processes on a host
+    #+BEGIN_SRC shell
+    sudo lsof -iTCP -sTCP:LISTEN -P -n
+    #+END_SRC
+*** print all HTTP traffic (assumes port 80)
+    #+BEGIN_SRC shell
+    sudo tcpdump -A -s 0 'src SOURCE_IP_HERE and tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+    #+END_SRC
+*** do a dns lookup
+    #+BEGIN_SRC shell
+    dig +short FQDN
+    #+END_SRC
+*** do a reverse dns lookup
+    #+BEGIN_SRC shell
+    dig -x +short IP_ADDRESS
+    #+END_SRC
+*** get TTL of a dns record
+    #+BEGIN_SRC shell
+    dig FQDN TTL
+    #+END_SRC
+*** get switch port of host
+    #+BEGIN_SRC shell
+    sudo lldpcli show neigh
+    #+END_SRC
+*** traceroute scan
+    #+BEGIN_SRC shell
+    mtr HOST
+    #+END_SRC
+*** 
