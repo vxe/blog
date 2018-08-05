@@ -4,8 +4,11 @@
 ** containers
 ** networking
 ** cloud
+** personal-systems
 * programming
 ** general-knowledge
 ** design-and-style
 ** java-clojure-cpp-python
+** computer-science
 ** interview-questions
+** personal-programming
