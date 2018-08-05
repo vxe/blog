@@ -1,0 +1,11 @@
+* systems
+** modern linux administration
+** linux internals
+** containers
+** networking
+** cloud
+* programming
+** general-knowledge
+** design-and-style
+** java-clojure-cpp-python
+** interview-questions
