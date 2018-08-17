@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible on Stream of Consciousness Software</title>
-    <link>https://vxe.github.io/blog/tags/ansible/</link>
+    <link>https://vxe.github.io/wiki/tags/ansible/</link>
     <description>Recent content in Ansible on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Jun 2018 20:06:44 -0700</lastBuildDate>
     
-	<atom:link href="https://vxe.github.io/blog/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vxe.github.io/wiki/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>On Generating Ansible Playbooks Part 1</title>
-      <link>https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/</link>
+      <link>https://vxe.github.io/wiki/2018/06/27/on-generating-ansible-playbooks-part-1/</link>
       <pubDate>Wed, 27 Jun 2018 20:06:44 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/</guid>
+      <guid>https://vxe.github.io/wiki/2018/06/27/on-generating-ansible-playbooks-part-1/</guid>
       <description>I&#39;m pretty impressed with ansible. It honestly is the right tool for the job. It has a problem though. Its reliance on YAML. I feel this is where clojure can save the day. If only you had the following
 (run-playbook inventory plays) A playbook in this regime is a sequence of &#39;plays&#39; which are clojure representation of the tasks which get composed out sequentially when writing a playbook.yml or the like.</description>
     </item>

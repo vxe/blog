@@ -2,59 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Stream of Consciousness Software</title>
-    <link>https://vxe.github.io/blog/post/</link>
+    <link>https://vxe.github.io/wiki/post/</link>
     <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jul 2018 20:15:56 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 17 Aug 2018 13:41:32 -0700</lastBuildDate>
     
-	<atom:link href="https://vxe.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vxe.github.io/wiki/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>bear-osx-api-thing</title>
+      <link>https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/</link>
+      <pubDate>Fri, 17 Aug 2018 13:41:32 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/</guid>
+      <description>apparently you can create bear notes from the command line like so. Lets try and create a note with
+ title api test tage inbox/hello  should be
+bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello and calling it with
+open bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello no dice. Well first of all double quote the whole thing, and use the &amp;amp; to separate the query parameters, yielding
+open &amp;#34;bear://x-callback-url/create?title=api%20test&amp;amp;tags=inbox%2Fhello&amp;#34; boom! now for some elisp
+(defun bear-new-note (title tags) (interactive &amp;#34;stitle: \nstags-string: &amp;#34;) (async-shell-command (concat &amp;#34;open &amp;#34; &amp;#34;&amp;#39;&amp;#34; &amp;#34;bear://x-callback-url/create?</description>
+    </item>
+    
+    <item>
+      <title>removing html tags</title>
+      <link>https://vxe.github.io/wiki/2018/08/03/removing-html-tags/</link>
+      <pubDate>Fri, 03 Aug 2018 23:17:28 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/wiki/2018/08/03/removing-html-tags/</guid>
+      <description>sed A common problem, here&#39;s some ways to do it
+sed -e &amp;#39;s/&amp;lt;[^&amp;gt;]*&amp;gt;//g&amp;#39; not bad</description>
+    </item>
+    
+    <item>
       <title>Recurring through Spotify Tracks with Clojure</title>
-      <link>https://vxe.github.io/blog/2018/07/02/recurring-through-spotify-tracks-with-clojure/</link>
+      <link>https://vxe.github.io/wiki/2018/07/02/recurring-through-spotify-tracks-with-clojure/</link>
       <pubDate>Mon, 02 Jul 2018 20:15:56 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/07/02/recurring-through-spotify-tracks-with-clojure/</guid>
+      <guid>https://vxe.github.io/wiki/2018/07/02/recurring-through-spotify-tracks-with-clojure/</guid>
       <description>I&#39;ve found the recur macros to be kind of strange looking. I&#39;m never in a hurry to wrap another layer of nesting around any kind of computation even though in this case its just one statement. Most examples use recur with loop and often this gets kind of ugly. At the end of the day these constructs are just hacks around the fact that the JVM doesn&#39;t have automatic tail call optimization .</description>
     </item>
     
     <item>
       <title>Documenting Namespace Dependencies in Code</title>
-      <link>https://vxe.github.io/blog/2018/06/30/documenting-namespace-dependencies-in-code/</link>
+      <link>https://vxe.github.io/wiki/2018/06/30/documenting-namespace-dependencies-in-code/</link>
       <pubDate>Sat, 30 Jun 2018 04:32:39 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/06/30/documenting-namespace-dependencies-in-code/</guid>
+      <guid>https://vxe.github.io/wiki/2018/06/30/documenting-namespace-dependencies-in-code/</guid>
       <description>Did this on a whim and liked how it turned out. Essentially the idea is that you codify your namespace dependencies in data instead of text or comments. Consider a common namespace inheritance chain
 core -&amp;gt; auth -&amp;gt; data -&amp;gt; cli  These are three 4 namespaces each with need the symbols exported by the previous later. For examples core is needed by auth for various utilities and convenience functions for performing auth, which can be messy, in a readable form.</description>
     </item>
     
     <item>
       <title>Assoc Append, or Dodging Key Collisions Like Neo</title>
-      <link>https://vxe.github.io/blog/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</link>
+      <link>https://vxe.github.io/wiki/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</link>
       <pubDate>Wed, 27 Jun 2018 21:52:33 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</guid>
+      <guid>https://vxe.github.io/wiki/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</guid>
       <description>Threw this together for this one but now realize this may not be the general solution. Still its a concise piece of code I hope to expand upon once I realize how to solve it for an arbitrarily nested map.
 assoc-append Assume a key k and value v which is a map. We would like to assoc this pair onto an existing map m but in the case of an existing key , rather than colliding, append the map v onto the value of the map stored at (k m)</description>
     </item>
     
     <item>
       <title>Shell Workflows in the Repl</title>
-      <link>https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/</link>
+      <link>https://vxe.github.io/wiki/2018/06/27/shell-workflows-in-the-repl/</link>
       <pubDate>Wed, 27 Jun 2018 21:29:57 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/</guid>
+      <guid>https://vxe.github.io/wiki/2018/06/27/shell-workflows-in-the-repl/</guid>
       <description>My goal in the repl is definitely to emulate the unix terminal, that is to say short easy to remember commands that can be combined easily into a large whole. The combining part is what is tricky because we don&#39;t have &#34;|&#34; in the repl. But how can we simulate it? My first thought was to make the past param a function a function on which to process the output defined by the previous arguments, so something like:</description>
     </item>
     
     <item>
       <title>On Generating Ansible Playbooks Part 1</title>
-      <link>https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/</link>
+      <link>https://vxe.github.io/wiki/2018/06/27/on-generating-ansible-playbooks-part-1/</link>
       <pubDate>Wed, 27 Jun 2018 20:06:44 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/</guid>
+      <guid>https://vxe.github.io/wiki/2018/06/27/on-generating-ansible-playbooks-part-1/</guid>
       <description>I&#39;m pretty impressed with ansible. It honestly is the right tool for the job. It has a problem though. Its reliance on YAML. I feel this is where clojure can save the day. If only you had the following
 (run-playbook inventory plays) A playbook in this regime is a sequence of &#39;plays&#39; which are clojure representation of the tasks which get composed out sequentially when writing a playbook.yml or the like.</description>
     </item>

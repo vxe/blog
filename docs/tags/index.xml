@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Stream of Consciousness Software</title>
-    <link>https://vxe.github.io/blog/tags/</link>
+    <link>https://vxe.github.io/wiki/tags/</link>
     <description>Recent content in Tags on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 Jun 2018 20:06:44 -0700</lastBuildDate>
     
-	<atom:link href="https://vxe.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vxe.github.io/wiki/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ansible</title>
-      <link>https://vxe.github.io/blog/tags/ansible/</link>
+      <link>https://vxe.github.io/wiki/tags/ansible/</link>
       <pubDate>Wed, 27 Jun 2018 20:06:44 -0700</pubDate>
       
-      <guid>https://vxe.github.io/blog/tags/ansible/</guid>
+      <guid>https://vxe.github.io/wiki/tags/ansible/</guid>
       <description></description>
     </item>
     

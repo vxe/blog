@@ -3,55 +3,65 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vxe.github.io/blog/2018/07/02/recurring-through-spotify-tracks-with-clojure/</loc>
+    <loc>https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/</loc>
+    <lastmod>2018-08-17T13:41:32-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vxe.github.io/wiki/2018/08/03/removing-html-tags/</loc>
+    <lastmod>2018-08-03T23:17:28-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vxe.github.io/wiki/2018/07/02/recurring-through-spotify-tracks-with-clojure/</loc>
     <lastmod>2018-07-02T20:15:56-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/2018/06/30/documenting-namespace-dependencies-in-code/</loc>
+    <loc>https://vxe.github.io/wiki/2018/06/30/documenting-namespace-dependencies-in-code/</loc>
     <lastmod>2018-06-30T04:32:39-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</loc>
+    <loc>https://vxe.github.io/wiki/2018/06/27/assoc-append-or-dodging-key-collisions-like-neo/</loc>
     <lastmod>2018-06-27T21:52:33-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/2018/06/27/shell-workflows-in-the-repl/</loc>
+    <loc>https://vxe.github.io/wiki/2018/06/27/shell-workflows-in-the-repl/</loc>
     <lastmod>2018-06-27T21:29:57-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/2018/06/27/on-generating-ansible-playbooks-part-1/</loc>
+    <loc>https://vxe.github.io/wiki/2018/06/27/on-generating-ansible-playbooks-part-1/</loc>
     <lastmod>2018-06-27T20:06:44-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/tags/ansible/</loc>
+    <loc>https://vxe.github.io/wiki/tags/ansible/</loc>
     <lastmod>2018-06-27T20:06:44-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/categories/</loc>
+    <loc>https://vxe.github.io/wiki/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/post/</loc>
-    <lastmod>2018-07-02T20:15:56-07:00</lastmod>
+    <loc>https://vxe.github.io/wiki/post/</loc>
+    <lastmod>2018-08-17T13:41:32-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/</loc>
-    <lastmod>2018-07-02T20:15:56-07:00</lastmod>
+    <loc>https://vxe.github.io/wiki/</loc>
+    <lastmod>2018-08-17T13:41:32-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://vxe.github.io/blog/tags/</loc>
+    <loc>https://vxe.github.io/wiki/tags/</loc>
     <lastmod>2018-06-27T20:06:44-07:00</lastmod>
     <priority>0</priority>
   </url>

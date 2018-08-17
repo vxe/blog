@@ -4,7 +4,7 @@
 
  <html class="no-js"> 
 <head>
-    <title>Recurring through Spotify Tracks with Clojure &middot; Stream of Consciousness Software</title>
+    <title>removing html tags &middot; Stream of Consciousness Software</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-us" />
@@ -86,66 +86,17 @@
                 <div class="feat">
                     <h5 class="page-date">
                     <time datetime="" itemprop="datePublished">
-                    2. July 2018
+                    3. August 2018
                     </time>
                     </h5>
                 </div>
-                <h1 class="page-title" itemprop="name headline">Recurring through Spotify Tracks with Clojure</h1>
+                <h1 class="page-title" itemprop="name headline">removing html tags</h1>
                 <div itemprop="articleBody">
-                    <p>I've found the <code>recur</code> macros to be kind of strange looking.  I'm never
-in a hurry to wrap another layer of nesting around any kind of
-computation even though in this case its just one statement.  Most examples use <code>recur</code> with <code>loop</code> and often this gets kind of ugly.
-At the end of the day these constructs are just hacks around the fact
-that the JVM <a href="http://www.drdobbs.com/jvm/tail-call-optimization-and-java/240167044" title="doesn't have automatic tail call optimization">doesn't have automatic tail call optimization</a> .  However
-as I unwittingly found out you can still call functions recursively
-and, as long as the input is small, can benefit from the normal conciseness of
-functions written in such a way.</p>
+                    <h1 id="sed">sed</h1>
 
-<p>So the problem was this, Spotify hands you an object which in an
-incredibly abbreviated form amounts to this</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#008000;font-weight:bold">&#34;data&#34;</span> : <span style="color:#b44">&#34;value&#34;</span>,
-<span style="color:#008000;font-weight:bold">&#34;next&#34;</span> : <span style="color:#b44">&#34;some-url&#34;</span>,
-<span style="color:#008000;font-weight:bold">&#34;previous&#34;</span> : <span style="color:#b44">&#34;null&#34;</span>
-}</code></pre></div>
-<p>Essentially a doubly linked list.  When you reach the end
-the values for <code>next</code> and <code>previous</code> are swapped indicating the end of the
-list.  Given that these nodes are in groupings of 50, the list size in
-my case is less than 10 for my entire music library.  As such I feel
-it was safe to use the non-optimized recursive call to get all the
-urls.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a2f;font-weight:bold">defn </span><span style="color:#b8860b">extract-track-grouping-urls</span> [<span style="color:#b8860b">starting-url</span>]
-    (<span style="color:#a2f;font-weight:bold">let </span>[<span style="color:#b8860b">current-value</span> (<span style="color:#b8860b">http-get</span> <span style="color:#b8860b">starting-url</span>)]
-      (<span style="color:#a2f;font-weight:bold">if </span>(<span style="color:#a2f">nil? </span>(<span style="color:#b8860b">:next</span> <span style="color:#b8860b">current-value</span>))
-        <span style="color:#b8860b">url</span>
-        (<span style="color:#b8860b">flatten</span> (<span style="color:#b8860b">conj</span>
-                  [<span style="color:#b8860b">url</span>]
-                  (<span style="color:#b8860b">extract-track-grouping-urls</span> (<span style="color:#b8860b">:next</span>
-                                                <span style="color:#b8860b">current-offset</span>)))))))</code></pre></div>
-<ul>
-<li>start with the initial url, aka the value with <code>previous</code> equal to</li>
-  "null"
-<li>if <code>next</code> is "null" you've reached the end of the list , give me the</li>
-  value of the current url
-<li>else conj the current url with a recursive call to the function with</li>
-  <code>next</code> url
-</ul>
-
-<p>Simple.</p>
-
-<p>I feel comfortable with a 10x growth of my music library before
-worrying about stack space, however I wish I could quantify that
-better?  You could also argue that <code>flatten</code> after the final <code>conj</code> is a
-little ugly as well. I would not be surprised if there is
-a clojure built-in which builds
-a flattened list that I don't know about yet.</p>
-
-<p>In an any case I think calling recursive functions in this manner for
-small input values is acceptable.  This function also gets called once
-in my application so my risk is reduced even further.  And if nothing
-else its good I can throw together something like this and have it
-work right away and then optimize it with <code>loop</code> and <code>recur</code> later if
-needed.</p>
+<p>A common problem, here's some ways to do it</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sed -e <span style="color:#b44">&#39;s/&lt;[^&gt;]*&gt;//g&#39;</span></code></pre></div>
+<p>not bad</p>
 
                 </div>
                 <div class="feat share">
@@ -176,12 +127,12 @@ needed.</p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
                 
-                    <a rel="next" href="https://vxe.github.io/wiki/2018/08/03/removing-html-tags/" id="next">
+                    <a rel="next" href="https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/" id="next">
                         <span class="nav-title nav-title-next">Newer</span> &rarr;
                     </a>
                 
                 
-                    <a rel="prev" href="https://vxe.github.io/wiki/2018/06/30/documenting-namespace-dependencies-in-code/" id="prev">
+                    <a rel="prev" href="https://vxe.github.io/wiki/2018/07/02/recurring-through-spotify-tracks-with-clojure/" id="prev">
                         &larr; <span class="nav-title nav-title-prev">Older</span>
                     </a>
                 

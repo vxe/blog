@@ -1,0 +1,53 @@
+---
+title: bear-osx-api-thing
+date: 2018-08-17T13:41:32-07:00
+
+draft: false
+---
+
+apparently you can create bear notes from the command line [[http://www.bear-writer.com/faq/X-callback-url%2520Scheme%2520documentation/#create][like so]]. Lets try and create a note with
+
+- title api test
+- tage inbox/hello
+
+
+should be 
+
+#+BEGIN_SRC shell
+bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello
+#+END_SRC
+
+and calling it with
+#+BEGIN_SRC shell
+open bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello
+#+END_SRC
+
+#+RESULTS:
+
+no dice. Well first of all double quote the whole thing, and use the ~&~ to separate the query parameters, yielding
+
+#+BEGIN_SRC shell
+open "bear://x-callback-url/create?title=api%20test&tags=inbox%2Fhello"
+#+END_SRC
+
+#+RESULTS:
+
+boom!  now for some elisp
+
+#+BEGIN_SRC elisp :tangle bear.el
+  (defun bear-new-note (title tags)
+    (interactive "stitle: \nstags-string: ")
+    (async-shell-command (concat "open "
+                                "'"
+                                "bear://x-callback-url/create?title="
+                                (url-encode-url title)
+                                "&"
+                                "tags="
+                                (if (not (string= "" tags))
+                                    (url-encode-url tags)
+                                  "emacs")
+                                "'")))
+
+#+END_SRC
+
+and there you go, [[https://github.com/vxe/bear.el][bear tags in emacs]] .  I wish there was a non osx specific solution to this :\
