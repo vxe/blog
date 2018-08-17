@@ -5,7 +5,7 @@ date: 2018-08-17T13:41:32-07:00
 draft: false
 ---
 
-apparently you can create bear notes from the command line [[http://www.bear-writer.com/faq/X-callback-url%2520Scheme%2520documentation/#create][like so]]. Lets try and create a note with
+Apparently you can create bear notes from the command line [[http://www.bear-writer.com/faq/X-callback-url%2520Scheme%2520documentation/#create][like so]]. Lets try and create a note with
 
 - title api test
 - tage inbox/hello

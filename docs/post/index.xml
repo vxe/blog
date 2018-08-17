@@ -17,7 +17,7 @@
       <pubDate>Fri, 17 Aug 2018 13:41:32 -0700</pubDate>
       
       <guid>https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/</guid>
-      <description>apparently you can create bear notes from the command line like so. Lets try and create a note with
+      <description>Apparently you can create bear notes from the command line like so. Lets try and create a note with
  title api test tage inbox/hello  should be
 bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello and calling it with
 open bear://x-callback-url/create?title=api%20test?tags=inbox%2Fhello no dice. Well first of all double quote the whole thing, and use the &amp;amp; to separate the query parameters, yielding
