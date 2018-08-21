@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Stream of Consciousness Software</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Aug 2018 13:41:32 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 13:42:13 -0700</lastBuildDate>
     
 	<atom:link href="https://vxe.github.io/wiki/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reindex Spotlight on OSX</title>
+      <link>https://vxe.github.io/wiki/2018/08/21/reindex-spotlight-on-osx/</link>
+      <pubDate>Tue, 21 Aug 2018 13:42:13 -0700</pubDate>
+      
+      <guid>https://vxe.github.io/wiki/2018/08/21/reindex-spotlight-on-osx/</guid>
+      <description>So one day my spotlight kind of just working, which was incredibly annoying. Apparently it use a tool called mdutil to do the indexing, and poking it a couple of times will get the indexing going again. As of Tue Aug 21 13:43:47 PDT 2018 , this command works
+sudo mdutil -i on -E / and boom, your stupid spotlight index which breaks randomly, start working again</description>
+    </item>
     
     <item>
       <title>bear-osx-api-thing</title>

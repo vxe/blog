@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vxe.github.io/wiki/2018/08/21/reindex-spotlight-on-osx/</loc>
+    <lastmod>2018-08-21T13:42:13-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/</loc>
     <lastmod>2018-08-17T13:41:32-07:00</lastmod>
   </url>
@@ -50,13 +55,13 @@
   
   <url>
     <loc>https://vxe.github.io/wiki/post/</loc>
-    <lastmod>2018-08-17T13:41:32-07:00</lastmod>
+    <lastmod>2018-08-21T13:42:13-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://vxe.github.io/wiki/</loc>
-    <lastmod>2018-08-17T13:41:32-07:00</lastmod>
+    <lastmod>2018-08-21T13:42:13-07:00</lastmod>
     <priority>0</priority>
   </url>
   

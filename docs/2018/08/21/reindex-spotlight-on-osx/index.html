@@ -4,7 +4,7 @@
 
  <html class="no-js"> 
 <head>
-    <title>removing html tags &middot; Stream of Consciousness Software</title>
+    <title>Reindex Spotlight on OSX &middot; Stream of Consciousness Software</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="content-language" content="en-us" />
@@ -86,17 +86,19 @@
                 <div class="feat">
                     <h5 class="page-date">
                     <time datetime="" itemprop="datePublished">
-                    3. August 2018
+                    21. August 2018
                     </time>
                     </h5>
                 </div>
-                <h1 class="page-title" itemprop="name headline">removing html tags</h1>
+                <h1 class="page-title" itemprop="name headline">Reindex Spotlight on OSX</h1>
                 <div itemprop="articleBody">
-                    <h1 id="sed">sed</h1>
-
-<p>A common problem, here's some ways to do it</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sed -e <span style="color:#b44">&#39;s/&lt;[^&gt;]*&gt;//g&#39;</span></code></pre></div>
-<p>not bad</p>
+                    <p>So one day my spotlight kind of just working, which was incredibly
+annoying.  Apparently it use a tool called <code>mdutil</code> to do the indexing,
+and poking it a couple of times will get the indexing going again.
+As of Tue Aug 21 13:43:47 PDT 2018 , this command works</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo mdutil -i on -E /</code></pre></div>
+<p>and boom, your stupid spotlight index which breaks randomly, start
+working again</p>
 
                 </div>
                 <div class="feat share">
@@ -127,12 +129,8 @@
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
                 
-                    <a rel="next" href="https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/" id="next">
-                        <span class="nav-title nav-title-next">Newer</span> &rarr;
-                    </a>
                 
-                
-                    <a rel="prev" href="https://vxe.github.io/wiki/2018/07/02/recurring-through-spotify-tracks-with-clojure/" id="prev">
+                    <a rel="prev" href="https://vxe.github.io/wiki/2018/08/17/bear-osx-api-thing/" id="prev">
                         &larr; <span class="nav-title nav-title-prev">Older</span>
                     </a>
                 
