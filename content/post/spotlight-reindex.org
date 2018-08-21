@@ -1,0 +1,18 @@
+---
+title: Reindex Spotlight on OSX
+date: 2018-08-21T13:42:13-07:00
+
+draft: false
+---
+
+So one day my spotlight kind of just working, which was incredibly
+annoying.  Apparently it use a tool called ~mdutil~ to do the indexing,
+and poking it a couple of times will get the indexing going again.
+As of Tue Aug 21 13:43:47 PDT 2018 , this command works
+
+#+BEGIN_SRC shell
+sudo mdutil -i on -E /
+#+END_SRC
+
+and boom, your stupid spotlight index which breaks randomly, start
+working again
