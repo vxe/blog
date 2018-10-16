@@ -1,0 +1,20 @@
+# -*- mode:org -*-
+#+TITLE: linux-kernel-development
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+so most books make a pretty big deal about the whole syscall interface
+as if this all that really mattered.  However the primary purpose of
+the kernel is to provide an abstraction over hardware and such.  So
+what are the hardware elements that you would want to abstract on a
+digital computer.  Well...
+
+- memory
+- disks
+- network-interfaces
+
+Network interfaces is particularly interesting because we make a big
+deal all the time about complicated networking is.  Its is, but most
+of that complexity is routing architecture which facilitates the
+internet.  From the operating system perspective, you are simply
+pushing bytes to a stream output.  

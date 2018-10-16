@@ -1,0 +1,336 @@
+# -*- mode: blog -*-
+#+HUGO_BASE_DIR: ./
+#+SEQ_TODO: TODO DRAFT DONE
+
+* table of contents
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: posts
+  :EXPORT_HUGO_TYPE: post
+  :END:
+** drafts
+*** TODO pearsons coefficient in clojure
+    :PROPERTIES:
+    :EXPORT_FILE_NAME: pearsons-coefficient
+    :EXPORT_DATE: 2018-09-18
+    :END:
+    #+BEGIN_SRC clojure
+                   (defn get-time-series [url]
+                  (:body (clj-http.client/get url {:accept :json})))
+
+
+                (defn clean-time-series [ts]
+                             (map (fn [point]
+                                    [(second point)
+                                     (first point)])
+                                  (:datapoints (first (cheshire.core/parse-string ts true)))))
+
+
+                (defn get-and-clean-time-series [url]
+                             (clean-time-series  (get-time-series url)))
+
+
+                (defn get-independent-var [ts]
+                             (flatten (map (fn [points]
+                                             [(first points)]
+                                             )
+                                           ts)))
+
+
+                (defn get-dependent-var [ts]
+                             (flatten (map (fn [points]
+                                             [(second points)])
+                                           ts)))
+
+
+
+
+                (defn process-nil [ts1 ts2]
+                             (let [ts1-nil
+                                   (map (fn [points]
+                                             (if (= (second points) nil)
+                                               (first points)))
+                                        ts1)
+                                   ts2-nil
+                                   (map (fn [points]
+                                          (if (= (second points) nil)
+                                            (first points)))
+                                        ts2)
+                                   invalid-data (into #{} (conj ts1-nil ts2-nil))]
+                               [
+                                (drop-last 5 (filter (fn [points]
+                                                       (not (invalid-data (first points))))
+                                                     ts1))
+                                (drop-last 5 (filter (fn [points]
+                                                       (not (invalid-data (first points))))
+                                                     ts2))
+                                ]))
+
+                (defn correlate-time-series [ts1 ts2]
+                             (let [c (PearsonsCorrelation.)]
+                               (.correlation c (double-array ts1) (double-array ts2))
+                             )
+                             )
+               (defn clean-data [url1 url2]
+                   (process-nil (get-and-clean-time-series url1)
+                                (get-and-clean-time-series url2)))
+
+               (defn generate-ts-pair [url1 url2]
+                   (process-nil (get-and-clean-time-series url1)
+                                (get-and-clean-time-series url2)))
+
+               (defn generate-null-ts-pair [url]
+                            (let [metric-values (get-and-clean-time-series url)
+                                  empty-vector (for [point metric-values]
+                                                 [(first point) 0.0])]
+
+                              (process-nil metric-values
+                                           empty-vector
+                                           )))
+
+      (defn generate-null-ts-pair [url]
+        (let [metric-values (get-and-clean-time-series url)
+              empty-vector (into [] (for [point metric-values]
+                                      [(first point) 0.0]))
+              variance-factor 0.0000001
+              model-data (conj (rest empty-vector) [(first (first metric-values))
+                                                    variance-factor])]
+
+          (process-nil metric-values
+                       model-data)))
+
+                (defn pearson-corrlation [tspair]
+                  "take in a vector containing two clojure vectors of sample of data to be correlated"
+                  [tspair]
+                  (let [c (PearsonsCorrelation.)]
+                    (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
+                                                                                         (get-dependent-var
+                                                                                          (second tspair))))))
+
+
+
+                (defn spearman-corrlation [tspair]
+                  "take in a vector containing two clojure vectors of sample of data to be correlated"
+                  [tspair]
+                             (let [c (SpearmansCorrelation.)
+                                   computed-value                    (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
+                                                                                       (get-dependent-var
+                                                                                        (second tspair))))
+                                   ]
+                               (if (= (Double/isNaN computed-value))
+                               false
+                                 computed-value
+                                 )))
+
+                (defn pearson-corrlation [tspair]
+                  "take in a vector containing two clojure vectors of sample of data to be correlated"
+                  [tspair]
+                             (let [c (PearsonsCorrelation.)
+                                   computed-value (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
+                                                                                         (get-dependent-var
+                                                                                          (second tspair))))
+                                   ]
+                               (if (Double/isNaN computed-value)
+                                 false
+                                 computed-value
+                                 )
+                    ))
+
+           (defn gen-url [hostname graphite period]
+             (let [edge (last (re-matches (re-pattern "(([a-z-_]*)[0-9]*).([0-9a-z][0-9a-z][0-9a-z]).parsec.apple.com") hostname))]
+
+               (str "http://graphite."
+                    edge
+                    ".parsec.apple.com/render/?target="
+                    graphite
+                    "&from=-"
+                    period
+                    "hours&format=json")))
+
+    #+END_SRC
+
+*** graph correlation method, null graphs
+ if alerting
+ regex split rolename on components
+ look up rolename in paraspec-table to get cluster ranges
+ gen host group
+ ccoeff <- pmap (conj (correlate (gen-url rolename) (gen-url %))) host-groups
+ if (< (count host-group) (reduce +  ccoeff)
+ (prn anomaly detected)
+ )
+
+*** TODO Org Blogging Finally                        :programming:javascript:
+    :PROPERTIES:
+    :EXPORT_FILE_NAME: javascript-notes
+    :EXPORT_DATE: 2018-06-16
+    :END:
+    Proof that this stuff works
+**** tables
+
+
+     | thing | other-thing |
+     |-------+-------------|
+     |     1 |           2 |
+     |     2 |           4 |
+
+     not bad, not bad
+**** code
+     #+BEGIN_SRC lisp
+       (defn will-it-render? []
+         true)
+     #+END_SRC
+
+     #+BEGIN_SRC python
+     import boto3
+     #+END_SRC
+     not great, clojure defined as lisp but whateve... good enough, inline ~code~ works.
+** math
+*** applied 
+*** pure
+** statistics
+*** categorical variables
+** books
+*** [[file:./linux-kernel-development][linux-kernel-development]]
+*** the-linux-programming-interface
+*** [[file:./the-art-of-computer-programming][the-art-of-computer-programming]]
+*** sicp
+*** [[file:./routing-tcp][routing-tcp]]
+*** internet-routing-architectures
+*** [[file:./tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
+** data-structures
+*** [[file:./linear-lists][linear-lists]]
+**** -append
+**** -copy
+**** -count
+**** -delete
+**** -find
+**** -insert
+**** -sort
+**** -split
+**** -update-kth
+**** array
+**** [[file:./stack][stack]]
+**** bit-vector
+**** [[file:./linked-list][linked-list]]
+***** doubly
+***** circularly
+***** kernel-style
+**** [[file:./queue][queue]]
+**** deque
+**** [[file:./sequence][sequence]]
+*** trees
+**** -find-depth
+**** -inorder-tree-walk
+**** -iterative-tree-search
+**** -tree-delete
+**** -tree-insert
+**** -tree-maximum
+**** -tree-minimum
+**** -tree-predecessor
+**** -tree-search
+**** -tree-successor
+**** [[file:./heap][heap]]
+**** [[file:./trie][trie]]
+**** [[file:./search-tree][search-tree]]
+**** interval-tree
+**** persistent-tree
+*** [[file:./sets][sets]]
+**** -delete
+**** -extract-max
+**** -find-set
+**** -increase-key
+**** -insert
+**** -make-set
+**** -print-set
+**** -random-sample
+**** -search
+**** point-set
+**** disjoint-set
+**** dynamic-set
+**** multi-set
+**** ordered-set
+**** subset
+*** graphs
+**** -shortest-path
+**** -maximum-flow
+**** -minimum-spanning-tree
+**** -reachability
+**** -breadth-first-search
+**** -depth-first-search
+**** -vertex-cover
+**** -cardinality-matching
+**** -travelling-salesman
+**** -sort
+***** topological-sort
+**** -search
+***** breadth-first
+***** depth-first 
+*** associative-array
+**** veb-tree
+**** hash-table
+*** matricies
+**** -add-row
+**** -column-count
+**** -diagonal
+**** -dimension
+**** -lu-decomposition
+**** -lup-decomposition
+**** -mat-vec
+**** -matrix-multiply
+**** -shape
+**** -square-matrix-multiply
+**** [[file:./jacobian-matrix][jacobian-matrix]]
+*** [[file:./integers][integers]]
+*** [[file:./strings][strings]]
+*** [[file:./bits][bits]]
+** repos
+*** libvxe
+*** home
+** systems
+*** linux-kernel
+*** jni
+*** kubernetes
+** libraries
+*** graalvm
+**** hello world
+     - [ ] add graalvm to PATH
+     - [ ] statement to create a [[https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.html][Source]] object
+     #+BEGIN_SRC clojure
+     ;; this is broken because you can't eval plain string, you need a Source object
+       (let [vm (org.graalvm.polyglot.Context/create (into-array String ["js"] ))]
+         (.eval vm "print('hi')"))
+     #+END_SRC
+**** truffle
+***** create Source object from file
+      https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
+*** commons-math
+*** opencv
+*** essentia
+** tools
+*** emacs
+*** swig
+*** ansible
+*** antlr
+** languages
+*** c++
+*** forth
+*** clojure
+*** common-lisp
+*** asm
+*** clojurescript
+*** javascript
+*** java
+*** elisp
+*** python
+** techniques
+*** array/string manipulation
+*** stack/queue manipulation
+*** big-analysis
+*** linked-list manipulation
+*** mathematical concepts
+*** recursive/dynamic programming
+*** object-oriented design
+*** sorting and searching
+*** threading and locking
+*** tree/graph search
+*** bit manipulation
+*** scalability optimization

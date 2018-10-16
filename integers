@@ -1,0 +1,9 @@
+# -*- mode:org -*-
+#+TITLE: integers
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+a yes, the mighty integer.  The basis for number theory.  The one
+thing a computer can be counted on to calculate accurately.  You would
+think that you need a fair amount of number theory to do anything with
+in computer science.  Eh, maybe, maybe not.
