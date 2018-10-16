@@ -7,11 +7,11 @@
 The main difference between causal inference and inference of
 association is that the former analyzes the response of the effect
 variable when the cause is changed. The science of why things
-occur is called [[file:./etiology][etiology]]. Causal inference is an example of causal
+occur is called [[file:./etiology.org][etiology]]. Causal inference is an example of causal
 reasoning.
 
 
-I suppose this means, it should *not* be in the [[file:./inference][inference]] section?
+I suppose this means, it should *not* be in the [[file:./inference.org][inference]] section?
 
 idk.  The /response/ of the 'effect variable'  when the cause is
 changed?  

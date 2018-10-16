@@ -13,7 +13,7 @@ random variables Xₙ
 *** the-bootstrap
 *** parametric-inference
 *** hypothesis-testing-and-p-values
-*** [[file:./bayesian-inference][bayesian-inference]]
+*** [[file:./bayesian-inference.org][bayesian-inference]]
 *** statistical-decision-theory
 
 
