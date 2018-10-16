@@ -118,7 +118,6 @@ description
     - [[#kubernetes][kubernetes]]
   - [[#libraries][libraries]]
     - [[#graalvm][graalvm]]
-      - [[#hello-world][hello world]]
       - [[#truffle][truffle]]
         - [[#create-source-object-from-file][create Source object from file]]
     - [[#commons-math][commons-math]]
@@ -266,16 +265,8 @@ description
 *** jni
 *** kubernetes
 ** libraries
-*** graalvm
-**** hello world
-     - [ ] add graalvm to PATH
-     - [ ] statement to create a [[https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.html][Source]] object
-     #+BEGIN_SRC clojure
-     ;; this is broken because you can't eval plain string, you need a Source object
-       (let [vm (org.graalvm.polyglot.Context/create (into-array String ["js"] ))]
-         (.eval vm "print('hi')"))
-     #+END_SRC
-**** truffle
+*** [[file:./graalvm][graalvm]]
+**** [[file:./truffle][truffle]]
 ***** create Source object from file
       https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
 *** commons-math
