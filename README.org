@@ -1,188 +1,164 @@
-# -*- mode: blog -*-
-#+HUGO_BASE_DIR: ./
-#+SEQ_TODO: TODO DRAFT DONE
+# -*- mode:org;  -*-
+#+TITLE: wiki
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+# Local Variables:
+#      eval: (wiki-mode)
+#      End:
+
+
+description
+** Overview :TOC:
+- [[#table-of-contents][table of contents]]
+  - [[#math][math]]
+    - [[#applied][applied]]
+    - [[#pure][pure]]
+  - [[#statistics][statistics]]
+    - [[#categorical-variables][categorical variables]]
+  - [[#books][books]]
+    - [[#linux-kernel-development][linux-kernel-development]]
+    - [[#the-linux-programming-interface][the-linux-programming-interface]]
+    - [[#the-art-of-computer-programming][the-art-of-computer-programming]]
+    - [[#sicp][sicp]]
+    - [[#routing-tcp][routing-tcp]]
+    - [[#internet-routing-architectures][internet-routing-architectures]]
+    - [[#tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
+  - [[#data-structures][data-structures]]
+    - [[#linear-lists][linear-lists]]
+      - [[#-append][-append]]
+      - [[#-copy][-copy]]
+      - [[#-count][-count]]
+      - [[#-delete][-delete]]
+      - [[#-find][-find]]
+      - [[#-insert][-insert]]
+      - [[#-sort][-sort]]
+      - [[#-split][-split]]
+      - [[#-update-kth][-update-kth]]
+      - [[#array][array]]
+      - [[#stack][stack]]
+      - [[#bit-vector][bit-vector]]
+      - [[#linked-list][linked-list]]
+        - [[#doubly][doubly]]
+        - [[#circularly][circularly]]
+        - [[#kernel-style][kernel-style]]
+      - [[#queue][queue]]
+      - [[#deque][deque]]
+      - [[#sequence][sequence]]
+    - [[#trees][trees]]
+      - [[#-find-depth][-find-depth]]
+      - [[#-inorder-tree-walk][-inorder-tree-walk]]
+      - [[#-iterative-tree-search][-iterative-tree-search]]
+      - [[#-tree-delete][-tree-delete]]
+      - [[#-tree-insert][-tree-insert]]
+      - [[#-tree-maximum][-tree-maximum]]
+      - [[#-tree-minimum][-tree-minimum]]
+      - [[#-tree-predecessor][-tree-predecessor]]
+      - [[#-tree-search][-tree-search]]
+      - [[#-tree-successor][-tree-successor]]
+      - [[#heap][heap]]
+      - [[#trie][trie]]
+      - [[#search-tree][search-tree]]
+      - [[#interval-tree][interval-tree]]
+      - [[#persistent-tree][persistent-tree]]
+    - [[#sets][sets]]
+      - [[#-delete-1][-delete]]
+      - [[#-extract-max][-extract-max]]
+      - [[#-find-set][-find-set]]
+      - [[#-increase-key][-increase-key]]
+      - [[#-insert-1][-insert]]
+      - [[#-make-set][-make-set]]
+      - [[#-print-set][-print-set]]
+      - [[#-random-sample][-random-sample]]
+      - [[#-search][-search]]
+      - [[#point-set][point-set]]
+      - [[#disjoint-set][disjoint-set]]
+      - [[#dynamic-set][dynamic-set]]
+      - [[#multi-set][multi-set]]
+      - [[#ordered-set][ordered-set]]
+      - [[#subset][subset]]
+    - [[#graphs][graphs]]
+      - [[#-shortest-path][-shortest-path]]
+      - [[#-maximum-flow][-maximum-flow]]
+      - [[#-minimum-spanning-tree][-minimum-spanning-tree]]
+      - [[#-reachability][-reachability]]
+      - [[#-breadth-first-search][-breadth-first-search]]
+      - [[#-depth-first-search][-depth-first-search]]
+      - [[#-vertex-cover][-vertex-cover]]
+      - [[#-cardinality-matching][-cardinality-matching]]
+      - [[#-travelling-salesman][-travelling-salesman]]
+      - [[#-sort-1][-sort]]
+        - [[#topological-sort][topological-sort]]
+      - [[#-search-1][-search]]
+        - [[#breadth-first][breadth-first]]
+        - [[#depth-first][depth-first]]
+    - [[#associative-array][associative-array]]
+      - [[#veb-tree][veb-tree]]
+      - [[#hash-table][hash-table]]
+    - [[#matricies][matricies]]
+      - [[#-add-row][-add-row]]
+      - [[#-column-count][-column-count]]
+      - [[#-diagonal][-diagonal]]
+      - [[#-dimension][-dimension]]
+      - [[#-lu-decomposition][-lu-decomposition]]
+      - [[#-lup-decomposition][-lup-decomposition]]
+      - [[#-mat-vec][-mat-vec]]
+      - [[#-matrix-multiply][-matrix-multiply]]
+      - [[#-shape][-shape]]
+      - [[#-square-matrix-multiply][-square-matrix-multiply]]
+      - [[#jacobian-matrix][jacobian-matrix]]
+    - [[#integers][integers]]
+    - [[#strings][strings]]
+    - [[#bits][bits]]
+  - [[#repos][repos]]
+    - [[#libvxe][libvxe]]
+    - [[#home][home]]
+  - [[#systems][systems]]
+    - [[#linux-kernel][linux-kernel]]
+    - [[#jni][jni]]
+    - [[#kubernetes][kubernetes]]
+  - [[#libraries][libraries]]
+    - [[#graalvm][graalvm]]
+      - [[#hello-world][hello world]]
+      - [[#truffle][truffle]]
+        - [[#create-source-object-from-file][create Source object from file]]
+    - [[#commons-math][commons-math]]
+    - [[#opencv][opencv]]
+    - [[#essentia][essentia]]
+  - [[#tools][tools]]
+    - [[#emacs][emacs]]
+    - [[#swig][swig]]
+    - [[#ansible][ansible]]
+    - [[#antlr][antlr]]
+  - [[#languages][languages]]
+    - [[#c][c++]]
+    - [[#forth][forth]]
+    - [[#clojure][clojure]]
+    - [[#common-lisp][common-lisp]]
+    - [[#asm][asm]]
+    - [[#clojurescript][clojurescript]]
+    - [[#javascript][javascript]]
+    - [[#java][java]]
+    - [[#elisp][elisp]]
+    - [[#python][python]]
+  - [[#techniques][techniques]]
+    - [[#arraystring-manipulation][array/string manipulation]]
+    - [[#stackqueue-manipulation][stack/queue manipulation]]
+    - [[#big-analysis][big-analysis]]
+    - [[#linked-list-manipulation][linked-list manipulation]]
+    - [[#mathematical-concepts][mathematical concepts]]
+    - [[#recursivedynamic-programming][recursive/dynamic programming]]
+    - [[#object-oriented-design][object-oriented design]]
+    - [[#sorting-and-searching][sorting and searching]]
+    - [[#threading-and-locking][threading and locking]]
+    - [[#treegraph-search][tree/graph search]]
+    - [[#bit-manipulation][bit manipulation]]
+    - [[#scalability-optimization][scalability optimization]]
 
 * table of contents
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
   :EXPORT_HUGO_TYPE: post
   :END:
-** drafts
-*** TODO pearsons coefficient in clojure
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: pearsons-coefficient
-    :EXPORT_DATE: 2018-09-18
-    :END:
-    #+BEGIN_SRC clojure
-                   (defn get-time-series [url]
-                  (:body (clj-http.client/get url {:accept :json})))
-
-
-                (defn clean-time-series [ts]
-                             (map (fn [point]
-                                    [(second point)
-                                     (first point)])
-                                  (:datapoints (first (cheshire.core/parse-string ts true)))))
-
-
-                (defn get-and-clean-time-series [url]
-                             (clean-time-series  (get-time-series url)))
-
-
-                (defn get-independent-var [ts]
-                             (flatten (map (fn [points]
-                                             [(first points)]
-                                             )
-                                           ts)))
-
-
-                (defn get-dependent-var [ts]
-                             (flatten (map (fn [points]
-                                             [(second points)])
-                                           ts)))
-
-
-
-
-                (defn process-nil [ts1 ts2]
-                             (let [ts1-nil
-                                   (map (fn [points]
-                                             (if (= (second points) nil)
-                                               (first points)))
-                                        ts1)
-                                   ts2-nil
-                                   (map (fn [points]
-                                          (if (= (second points) nil)
-                                            (first points)))
-                                        ts2)
-                                   invalid-data (into #{} (conj ts1-nil ts2-nil))]
-                               [
-                                (drop-last 5 (filter (fn [points]
-                                                       (not (invalid-data (first points))))
-                                                     ts1))
-                                (drop-last 5 (filter (fn [points]
-                                                       (not (invalid-data (first points))))
-                                                     ts2))
-                                ]))
-
-                (defn correlate-time-series [ts1 ts2]
-                             (let [c (PearsonsCorrelation.)]
-                               (.correlation c (double-array ts1) (double-array ts2))
-                             )
-                             )
-               (defn clean-data [url1 url2]
-                   (process-nil (get-and-clean-time-series url1)
-                                (get-and-clean-time-series url2)))
-
-               (defn generate-ts-pair [url1 url2]
-                   (process-nil (get-and-clean-time-series url1)
-                                (get-and-clean-time-series url2)))
-
-               (defn generate-null-ts-pair [url]
-                            (let [metric-values (get-and-clean-time-series url)
-                                  empty-vector (for [point metric-values]
-                                                 [(first point) 0.0])]
-
-                              (process-nil metric-values
-                                           empty-vector
-                                           )))
-
-      (defn generate-null-ts-pair [url]
-        (let [metric-values (get-and-clean-time-series url)
-              empty-vector (into [] (for [point metric-values]
-                                      [(first point) 0.0]))
-              variance-factor 0.0000001
-              model-data (conj (rest empty-vector) [(first (first metric-values))
-                                                    variance-factor])]
-
-          (process-nil metric-values
-                       model-data)))
-
-                (defn pearson-corrlation [tspair]
-                  "take in a vector containing two clojure vectors of sample of data to be correlated"
-                  [tspair]
-                  (let [c (PearsonsCorrelation.)]
-                    (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
-                                                                                         (get-dependent-var
-                                                                                          (second tspair))))))
-
-
-
-                (defn spearman-corrlation [tspair]
-                  "take in a vector containing two clojure vectors of sample of data to be correlated"
-                  [tspair]
-                             (let [c (SpearmansCorrelation.)
-                                   computed-value                    (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
-                                                                                       (get-dependent-var
-                                                                                        (second tspair))))
-                                   ]
-                               (if (= (Double/isNaN computed-value))
-                               false
-                                 computed-value
-                                 )))
-
-                (defn pearson-corrlation [tspair]
-                  "take in a vector containing two clojure vectors of sample of data to be correlated"
-                  [tspair]
-                             (let [c (PearsonsCorrelation.)
-                                   computed-value (.correlation c (double-array (get-dependent-var (first tspair))) (double-array
-                                                                                         (get-dependent-var
-                                                                                          (second tspair))))
-                                   ]
-                               (if (Double/isNaN computed-value)
-                                 false
-                                 computed-value
-                                 )
-                    ))
-
-           (defn gen-url [hostname graphite period]
-             (let [edge (last (re-matches (re-pattern "(([a-z-_]*)[0-9]*).([0-9a-z][0-9a-z][0-9a-z]).parsec.apple.com") hostname))]
-
-               (str "http://graphite."
-                    edge
-                    ".parsec.apple.com/render/?target="
-                    graphite
-                    "&from=-"
-                    period
-                    "hours&format=json")))
-
-    #+END_SRC
-
-*** graph correlation method, null graphs
- if alerting
- regex split rolename on components
- look up rolename in paraspec-table to get cluster ranges
- gen host group
- ccoeff <- pmap (conj (correlate (gen-url rolename) (gen-url %))) host-groups
- if (< (count host-group) (reduce +  ccoeff)
- (prn anomaly detected)
- )
-
-*** TODO Org Blogging Finally                        :programming:javascript:
-    :PROPERTIES:
-    :EXPORT_FILE_NAME: javascript-notes
-    :EXPORT_DATE: 2018-06-16
-    :END:
-    Proof that this stuff works
-**** tables
-
-
-     | thing | other-thing |
-     |-------+-------------|
-     |     1 |           2 |
-     |     2 |           4 |
-
-     not bad, not bad
-**** code
-     #+BEGIN_SRC lisp
-       (defn will-it-render? []
-         true)
-     #+END_SRC
-
-     #+BEGIN_SRC python
-     import boto3
-     #+END_SRC
-     not great, clojure defined as lisp but whateve... good enough, inline ~code~ works.
 ** math
 *** applied 
 *** pure
