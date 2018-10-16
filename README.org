@@ -196,20 +196,20 @@ description
   :EXPORT_HUGO_SECTION: posts
   :EXPORT_HUGO_TYPE: post
   :END:
-** [[file:./math][math]]
+** [[file:./math.org][math]]
 *** applied 
 *** pure
 ** books
-*** [[file:./linux-kernel-development][linux-kernel-development]]
+*** [[file:./linux-kernel-development.org][linux-kernel-development]]
 *** the-linux-programming-interface
-*** [[file:./the-art-of-computer-programming][the-art-of-computer-programming]]
+*** [[file:./the-art-of-computer-programming.org][the-art-of-computer-programming]]
 *** sicp
-*** [[file:./routing-tcp][routing-tcp]]
+*** [[file:./routing-tcp.org][routing-tcp]]
 *** internet-routing-architectures
-*** [[file:./tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
+*** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
 ** data-science
-*** [[file:./data-structures][data-structures]]
-**** [[file:./linear-lists][linear-lists]]
+*** [[file:./data-structures.org][data-structures]]
+**** [[file:./linear-lists.org][linear-lists]]
 ***** -append
 ***** -copy
 ***** -count
@@ -218,17 +218,17 @@ description
 ***** -insert
 ***** -sort
 ***** -split
-***** [[file:./-update-kth][-update-kth]]
+***** [[file:./-update-kth.org][-update-kth]]
 ***** array
-***** [[file:./stack][stack]]
+***** [[file:./stack.org][stack]]
 ***** bnit-vector
-***** [[file:./linked-list][linked-list]]
+***** [[file:./linked-list.org][linked-list]]
 ****** doubly
 ****** circularly
 ****** kernel-style
-***** [[file:./queue][queue]]
+***** [[file:./queue.org][queue]]
 ***** deque
-***** [[file:./sequence][sequence]]
+***** [[file:./sequence.org][sequence]]
 **** trees
 ***** -find-depth
 ***** -inorder-tree-walk
@@ -240,12 +240,12 @@ description
 ***** -tree-predecessor
 ***** -tree-search
 ***** -tree-successor
-***** [[file:./heap][heap]]
-***** [[file:./trie][trie]]
-***** [[file:./search-tree][search-tree]]
+***** [[file:./heap.org][heap]]
+***** [[file:./trie.org][trie]]
+***** [[file:./search-tree.org][search-tree]]
 ***** interval-tree
 ***** persistent-tree
-**** [[file:./sets][sets]]
+**** [[file:./sets.org][sets]]
 ***** -delete
 ***** -extract-max
 ***** -find-set
@@ -277,7 +277,7 @@ description
 ****** breadth-first
 ****** depth-first 
 **** associative-array
-***** [[file:./veb-tree][veb-tree]]
+***** [[file:./veb-tree.org][veb-tree]]
 ***** hash-table
 **** matricies
 ***** -add-row
@@ -290,20 +290,20 @@ description
 ***** -matrix-multiply
 ***** -shape
 ***** -square-matrix-multiply
-***** [[file:./jacobian-matrix][jacobian-matrix]]
-**** [[file:./integers][integers]]
-**** [[file:./strings][strings]]
-**** [[file:./bits][bits]]
-*** [[file:./statistics][statistics]] 
+***** [[file:./jacobian-matrix.org][jacobian-matrix]]
+**** [[file:./integers.org][integers]]
+**** [[file:./strings.org][strings]]
+**** [[file:./bits.org][bits]]
+*** [[file:./statistics.org][statistics]]
 **** random-variables
 **** expectation
 **** inequalities
 **** convergence-of-random-variables
-**** +[[file:./inference][inference]]
+**** +[[file:./inference.org][inference]]
 **** linear-and-logistic-regression
-**** [[file:./multivariate-models][multivariate-models]]
+**** [[file:./multivariate-models.org][multivariate-models]]
 **** inference-about-independence
-**** [[file:./causal-inference][causal-inference]]
+**** [[file:./causal-inference.org][causal-inference]]
 **** directed-graphs-and-conditional-independence
 **** undirected-graphs
 **** log-linear-models
@@ -326,8 +326,8 @@ description
 *** tools
 **** search
 **** logic
-**** [[file:./classifiers][classifiers]]  
-**** [[file:./artificial-neural-network][artificial-neural-network]]
+**** [[file:./classifiers.org][classifiers]]
+**** [[file:./artificial-neural-network.org][artificial-neural-network]]
 ** repos
 *** libvxe
 *** home
@@ -336,7 +336,7 @@ description
 *** ipmi
 *** kubernetes
 ** tools
-*** [[file:./emacs][emacs]]
+*** [[file:./emacs.org][emacs]]
 *** swig
 *** ansible
 *** antlr
@@ -345,7 +345,7 @@ description
 *** forth
 *** clojure
 **** [[file:./graalvm][graalvm]]
-***** [[file:./truffle][truffle]]
+***** [[file:./truffle.org][truffle]]
 ****** create Source object from file
       https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
 **** commons-math
@@ -355,12 +355,12 @@ description
 *** asm
 *** clojurescript
 *** javascript
-**** [[file:./react-components][react-components]]
-**** [[file:./vorpal][vorpal]]
+**** [[file:./react-components.org][react-components]]
+**** [[file:./vorpal.org][vorpal]]
 *** java
 *** elisp
 *** python
-**** [[file:./sklearn][sklearn]]
+**** [[file:./sklearn.org][sklearn]]
 ** techniques
 *** array/string manipulation
 *** stack/queue manipulation
@@ -376,7 +376,7 @@ description
 *** scalability optimization
 ** music-production
 *** acoustics
-**** [[file:./pitch][pitch]]
+**** [[file:./pitch.org][pitch]]
 **** rhythym
 **** 
 
