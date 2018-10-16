@@ -1,0 +1,76 @@
+# _*_ mode:org _*_
+#+TITLE: math
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+So if your going to have a distinction, it should probably pure and
+applied, eh?  But what then do you do about statistics which seem to
+be both simultaneously largely pure and largely applied?  Perhaps you
+put it instead with computer science.  Continuous statistics seems
+like a purely academic exercise.  Also the motivation for all these
+thing are the discrete cases.  Perhaps statistics should get its own
+heading.
+
+Instead we're sort of going to throw out all of computer science.  Its
+really just a subscience of this other thing which were going to call
+data science literally for lack of a better term.  Data science
+encompasses computer science by taking the view that a computer is a
+device that can process data in the turing/lambda calculus sense.
+This gets us the clean break from electrical engineering which we
+need.  Then we look at the core objects of computer science and see
+they boil down to manipulations of data structures which fit nicely
+into the data science designation.  Algorithms, ok fine there's a some
+stuff about recursion and divide and conquer and what not but honestly
+that is not fundamental in the real sense of the world.  Every field
+has algorithms, and learning them is a pre-requisite for being
+competent in it and I don't think computer science adds any useful
+perspectives on this fact. 
+
+Furthermore, the real objects of study in computer science might be
+operating systems, compilers and maybe network routing theory.  Maybe.
+Most of these fields are largely implementation dependent, the "fact"
+these disciplines has been defined by convention of software vendors
+and not as the output of research of theoretical discourse.  Unix?
+The only thing one has to learn from studying unix is how unfortunate
+it is that operating system research essentially died in the 1970s.
+Compilers?  Learn lisp, and learn forth nad learn assembly.  The
+compilers that exist are for terrible language thus the terrible
+complexity within a the discipline of compiler theory is to be
+expected.  Routing routing?  I would say complexification of pretty
+standard graph theory problems, not these are not important ideas,
+they just are more thoroughly dealt from a the graph theory
+persepctive, computer science has provided applications not
+additional.  If we're not gaining any insight why study at all? 
+
+
+** further benefits
+   The problem of merging the fact that almost all computer
+   applications have a largely statistical nature is only a problem if
+   you maintain the original distinction between certain applications
+   of computer science to be an independent are of discourse.  In fact
+   its not, lump it all into software engineering if you need a label
+   for it and toss out computer science as applied mathematics.  Data
+   science on the other hand will save you.  The methods for
+   converting analog data into a digital representation is an art
+   worth of understanding, elucidation and accretion of ideas.
+   Statistics, can primarily be thought of in this , the general
+   concept of 'summarization'.  Machine learning as the concept of
+   'classification'.  Data-structures, the concept of 'modeling'.
+   Modeling of course like algorithms could be said to be part of all
+   science, however computer science does add additional insight in
+   this case, by formally defining recurring objects in practice as
+   abstract things, like.
+   - queues, 
+   - concurrency, 
+   - interpretation,
+   - parallelism, 
+
+- so there you go a long winded explanation of why data-science is
+  actually a thing and why computer science is not.   
+
+
+
+* local_vars
+  # Local Variables:
+  # eval: (auto-fill-mode)
+  # End:

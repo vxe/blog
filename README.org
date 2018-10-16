@@ -2,9 +2,6 @@
 #+TITLE: wiki
 #+STARTUP: indent
 #+OPTIONS: toc:nil
-# Local Variables:
-#      eval: (wiki-mode)
-#      End:
 
 
 description
@@ -13,8 +10,6 @@ description
   - [[#math][math]]
     - [[#applied][applied]]
     - [[#pure][pure]]
-  - [[#statistics][statistics]]
-    - [[#categorical-variables][categorical variables]]
   - [[#books][books]]
     - [[#linux-kernel-development][linux-kernel-development]]
     - [[#the-linux-programming-interface][the-linux-programming-interface]]
@@ -23,92 +18,94 @@ description
     - [[#routing-tcp][routing-tcp]]
     - [[#internet-routing-architectures][internet-routing-architectures]]
     - [[#tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
-  - [[#data-structures][data-structures]]
-    - [[#linear-lists][linear-lists]]
-      - [[#-append][-append]]
-      - [[#-copy][-copy]]
-      - [[#-count][-count]]
-      - [[#-delete][-delete]]
-      - [[#-find][-find]]
-      - [[#-insert][-insert]]
-      - [[#-sort][-sort]]
-      - [[#-split][-split]]
-      - [[#-update-kth][-update-kth]]
-      - [[#array][array]]
-      - [[#stack][stack]]
-      - [[#bit-vector][bit-vector]]
-      - [[#linked-list][linked-list]]
-        - [[#doubly][doubly]]
-        - [[#circularly][circularly]]
-        - [[#kernel-style][kernel-style]]
-      - [[#queue][queue]]
-      - [[#deque][deque]]
-      - [[#sequence][sequence]]
-    - [[#trees][trees]]
-      - [[#-find-depth][-find-depth]]
-      - [[#-inorder-tree-walk][-inorder-tree-walk]]
-      - [[#-iterative-tree-search][-iterative-tree-search]]
-      - [[#-tree-delete][-tree-delete]]
-      - [[#-tree-insert][-tree-insert]]
-      - [[#-tree-maximum][-tree-maximum]]
-      - [[#-tree-minimum][-tree-minimum]]
-      - [[#-tree-predecessor][-tree-predecessor]]
-      - [[#-tree-search][-tree-search]]
-      - [[#-tree-successor][-tree-successor]]
-      - [[#heap][heap]]
-      - [[#trie][trie]]
-      - [[#search-tree][search-tree]]
-      - [[#interval-tree][interval-tree]]
-      - [[#persistent-tree][persistent-tree]]
-    - [[#sets][sets]]
-      - [[#-delete-1][-delete]]
-      - [[#-extract-max][-extract-max]]
-      - [[#-find-set][-find-set]]
-      - [[#-increase-key][-increase-key]]
-      - [[#-insert-1][-insert]]
-      - [[#-make-set][-make-set]]
-      - [[#-print-set][-print-set]]
-      - [[#-random-sample][-random-sample]]
-      - [[#-search][-search]]
-      - [[#point-set][point-set]]
-      - [[#disjoint-set][disjoint-set]]
-      - [[#dynamic-set][dynamic-set]]
-      - [[#multi-set][multi-set]]
-      - [[#ordered-set][ordered-set]]
-      - [[#subset][subset]]
-    - [[#graphs][graphs]]
-      - [[#-shortest-path][-shortest-path]]
-      - [[#-maximum-flow][-maximum-flow]]
-      - [[#-minimum-spanning-tree][-minimum-spanning-tree]]
-      - [[#-reachability][-reachability]]
-      - [[#-breadth-first-search][-breadth-first-search]]
-      - [[#-depth-first-search][-depth-first-search]]
-      - [[#-vertex-cover][-vertex-cover]]
-      - [[#-cardinality-matching][-cardinality-matching]]
-      - [[#-travelling-salesman][-travelling-salesman]]
-      - [[#-sort-1][-sort]]
-        - [[#topological-sort][topological-sort]]
-      - [[#-search-1][-search]]
-        - [[#breadth-first][breadth-first]]
-        - [[#depth-first][depth-first]]
-    - [[#associative-array][associative-array]]
-      - [[#veb-tree][veb-tree]]
-      - [[#hash-table][hash-table]]
-    - [[#matricies][matricies]]
-      - [[#-add-row][-add-row]]
-      - [[#-column-count][-column-count]]
-      - [[#-diagonal][-diagonal]]
-      - [[#-dimension][-dimension]]
-      - [[#-lu-decomposition][-lu-decomposition]]
-      - [[#-lup-decomposition][-lup-decomposition]]
-      - [[#-mat-vec][-mat-vec]]
-      - [[#-matrix-multiply][-matrix-multiply]]
-      - [[#-shape][-shape]]
-      - [[#-square-matrix-multiply][-square-matrix-multiply]]
-      - [[#jacobian-matrix][jacobian-matrix]]
-    - [[#integers][integers]]
-    - [[#strings][strings]]
-    - [[#bits][bits]]
+  - [[#data-science][data-science]]
+    - [[#data-structures][data-structures]]
+      - [[#linear-lists][linear-lists]]
+        - [[#-append][-append]]
+        - [[#-copy][-copy]]
+        - [[#-count][-count]]
+        - [[#-delete][-delete]]
+        - [[#-find][-find]]
+        - [[#-insert][-insert]]
+        - [[#-sort][-sort]]
+        - [[#-split][-split]]
+        - [[#-update-kth][-update-kth]]
+        - [[#array][array]]
+        - [[#stack][stack]]
+        - [[#bit-vector][bit-vector]]
+        - [[#linked-list][linked-list]]
+          - [[#doubly][doubly]]
+          - [[#circularly][circularly]]
+          - [[#kernel-style][kernel-style]]
+        - [[#queue][queue]]
+        - [[#deque][deque]]
+        - [[#sequence][sequence]]
+      - [[#trees][trees]]
+        - [[#-find-depth][-find-depth]]
+        - [[#-inorder-tree-walk][-inorder-tree-walk]]
+        - [[#-iterative-tree-search][-iterative-tree-search]]
+        - [[#-tree-delete][-tree-delete]]
+        - [[#-tree-insert][-tree-insert]]
+        - [[#-tree-maximum][-tree-maximum]]
+        - [[#-tree-minimum][-tree-minimum]]
+        - [[#-tree-predecessor][-tree-predecessor]]
+        - [[#-tree-search][-tree-search]]
+        - [[#-tree-successor][-tree-successor]]
+        - [[#heap][heap]]
+        - [[#trie][trie]]
+        - [[#search-tree][search-tree]]
+        - [[#interval-tree][interval-tree]]
+        - [[#persistent-tree][persistent-tree]]
+      - [[#sets][sets]]
+        - [[#-delete-1][-delete]]
+        - [[#-extract-max][-extract-max]]
+        - [[#-find-set][-find-set]]
+        - [[#-increase-key][-increase-key]]
+        - [[#-insert-1][-insert]]
+        - [[#-make-set][-make-set]]
+        - [[#-print-set][-print-set]]
+        - [[#-random-sample][-random-sample]]
+        - [[#-search][-search]]
+        - [[#point-set][point-set]]
+        - [[#disjoint-set][disjoint-set]]
+        - [[#dynamic-set][dynamic-set]]
+        - [[#multi-set][multi-set]]
+        - [[#ordered-set][ordered-set]]
+        - [[#subset][subset]]
+      - [[#graphs][graphs]]
+        - [[#-shortest-path][-shortest-path]]
+        - [[#-maximum-flow][-maximum-flow]]
+        - [[#-minimum-spanning-tree][-minimum-spanning-tree]]
+        - [[#-reachability][-reachability]]
+        - [[#-breadth-first-search][-breadth-first-search]]
+        - [[#-depth-first-search][-depth-first-search]]
+        - [[#-vertex-cover][-vertex-cover]]
+        - [[#-cardinality-matching][-cardinality-matching]]
+        - [[#-travelling-salesman][-travelling-salesman]]
+        - [[#-sort-1][-sort]]
+          - [[#topological-sort][topological-sort]]
+        - [[#-search-1][-search]]
+          - [[#breadth-first][breadth-first]]
+          - [[#depth-first][depth-first]]
+      - [[#associative-array][associative-array]]
+        - [[#veb-tree][veb-tree]]
+        - [[#hash-table][hash-table]]
+      - [[#matricies][matricies]]
+        - [[#-add-row][-add-row]]
+        - [[#-column-count][-column-count]]
+        - [[#-diagonal][-diagonal]]
+        - [[#-dimension][-dimension]]
+        - [[#-lu-decomposition][-lu-decomposition]]
+        - [[#-lup-decomposition][-lup-decomposition]]
+        - [[#-mat-vec][-mat-vec]]
+        - [[#-matrix-multiply][-matrix-multiply]]
+        - [[#-shape][-shape]]
+        - [[#-square-matrix-multiply][-square-matrix-multiply]]
+        - [[#jacobian-matrix][jacobian-matrix]]
+      - [[#integers][integers]]
+      - [[#strings][strings]]
+      - [[#bits][bits]]
+      - [[#statistics][statistics]]
   - [[#repos][repos]]
     - [[#libvxe][libvxe]]
     - [[#home][home]]
@@ -152,17 +149,16 @@ description
     - [[#treegraph-search][tree/graph search]]
     - [[#bit-manipulation][bit manipulation]]
     - [[#scalability-optimization][scalability optimization]]
+- [[#local-vars][local vars]]
 
 * table of contents
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
   :EXPORT_HUGO_TYPE: post
   :END:
-** math
+** [[file:./math][math]]
 *** applied 
 *** pure
-** statistics
-*** categorical variables
 ** books
 *** [[file:./linux-kernel-development][linux-kernel-development]]
 *** the-linux-programming-interface
@@ -171,92 +167,94 @@ description
 *** [[file:./routing-tcp][routing-tcp]]
 *** internet-routing-architectures
 *** [[file:./tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
-** data-structures
-*** [[file:./linear-lists][linear-lists]]
-**** -append
-**** -copy
-**** -count
-**** -delete
-**** -find
-**** -insert
-**** -sort
-**** -split
-**** -update-kth
-**** array
-**** [[file:./stack][stack]]
-**** bit-vector
-**** [[file:./linked-list][linked-list]]
-***** doubly
-***** circularly
-***** kernel-style
-**** [[file:./queue][queue]]
-**** deque
-**** [[file:./sequence][sequence]]
-*** trees
-**** -find-depth
-**** -inorder-tree-walk
-**** -iterative-tree-search
-**** -tree-delete
-**** -tree-insert
-**** -tree-maximum
-**** -tree-minimum
-**** -tree-predecessor
-**** -tree-search
-**** -tree-successor
-**** [[file:./heap][heap]]
-**** [[file:./trie][trie]]
-**** [[file:./search-tree][search-tree]]
-**** interval-tree
-**** persistent-tree
-*** [[file:./sets][sets]]
-**** -delete
-**** -extract-max
-**** -find-set
-**** -increase-key
-**** -insert
-**** -make-set
-**** -print-set
-**** -random-sample
-**** -search
-**** point-set
-**** disjoint-set
-**** dynamic-set
-**** multi-set
-**** ordered-set
-**** subset
-*** graphs
-**** -shortest-path
-**** -maximum-flow
-**** -minimum-spanning-tree
-**** -reachability
-**** -breadth-first-search
-**** -depth-first-search
-**** -vertex-cover
-**** -cardinality-matching
-**** -travelling-salesman
-**** -sort
-***** topological-sort
-**** -search
-***** breadth-first
-***** depth-first 
-*** associative-array
-**** veb-tree
-**** hash-table
-*** matricies
-**** -add-row
-**** -column-count
-**** -diagonal
-**** -dimension
-**** -lu-decomposition
-**** -lup-decomposition
-**** -mat-vec
-**** -matrix-multiply
-**** -shape
-**** -square-matrix-multiply
-**** [[file:./jacobian-matrix][jacobian-matrix]]
-*** [[file:./integers][integers]]
-*** [[file:./strings][strings]]
-*** [[file:./bits][bits]]
+** data-science
+*** data-structures
+**** [[file:./linear-lists][linear-lists]]
+***** -append
+***** -copy
+***** -count
+***** -delete
+***** -find
+***** -insert
+***** -sort
+***** -split
+***** -update-kth
+***** array
+***** [[file:./stack][stack]]
+***** bit-vector
+***** [[file:./linked-list][linked-list]]
+****** doubly
+****** circularly
+****** kernel-style
+***** [[file:./queue][queue]]
+***** deque
+***** [[file:./sequence][sequence]]
+**** trees
+***** -find-depth
+***** -inorder-tree-walk
+***** -iterative-tree-search
+***** -tree-delete
+***** -tree-insert
+***** -tree-maximum
+***** -tree-minimum
+***** -tree-predecessor
+***** -tree-search
+***** -tree-successor
+***** [[file:./heap][heap]]
+***** [[file:./trie][trie]]
+***** [[file:./search-tree][search-tree]]
+***** interval-tree
+***** persistent-tree
+**** [[file:./sets][sets]]
+***** -delete
+***** -extract-max
+***** -find-set
+***** -increase-key
+***** -insert
+***** -make-set
+***** -print-set
+***** -random-sample
+***** -search
+***** point-set
+***** disjoint-set
+***** dynamic-set
+***** multi-set
+***** ordered-set
+***** subset
+**** graphs
+***** -shortest-path
+***** -maximum-flow
+***** -minimum-spanning-tree
+***** -reachability
+***** -breadth-first-search
+***** -depth-first-search
+***** -vertex-cover
+***** -cardinality-matching
+***** -travelling-salesman
+***** -sort
+****** topological-sort
+***** -search
+****** breadth-first
+****** depth-first 
+**** associative-array
+***** veb-tree
+***** hash-table
+**** matricies
+***** -add-row
+***** -column-count
+***** -diagonal
+***** -dimension
+***** -lu-decomposition
+***** -lup-decomposition
+***** -mat-vec
+***** -matrix-multiply
+***** -shape
+***** -square-matrix-multiply
+***** [[file:./jacobian-matrix][jacobian-matrix]]
+**** [[file:./integers][integers]]
+**** [[file:./strings][strings]]
+**** [[file:./bits][bits]]
+**** [[file:./statistics][statistics]]
 ** repos
 *** libvxe
 *** home
@@ -301,3 +299,10 @@ description
 *** tree/graph search
 *** bit manipulation
 *** scalability optimization
+
+
+
+* local vars
+# Local Variables:
+# eval: (wiki-mode)
+# End:
