@@ -32,7 +32,7 @@ description
         - [[#-update-kth][-update-kth]]
         - [[#array][array]]
         - [[#stack][stack]]
-        - [[#bit-vector][bit-vector]]
+        - [[#bnit-vector][bnit-vector]]
         - [[#linked-list][linked-list]]
           - [[#doubly][doubly]]
           - [[#circularly][circularly]]
@@ -195,10 +195,10 @@ description
 ***** -insert
 ***** -sort
 ***** -split
-***** -update-kth
+***** [[file:./-update-kth][-update-kth]]
 ***** array
 ***** [[file:./stack][stack]]
-***** bit-vector
+***** bnit-vector
 ***** [[file:./linked-list][linked-list]]
 ****** doubly
 ****** circularly

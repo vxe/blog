@@ -27,7 +27,66 @@
 
     https://orgmode.org/worg/org-contrib/babel/uses.html
     
+    ok fine one demo
     
+**** demo piping unix command to R
+         #+name: directories
+         #+begin_src shell :results replace
+         cd ~/wiki && du -sc * |grep -v total 
+         #+end_src
+
+         #+RESULTS: directories
+         |    8 | Makefile                        |
+         |   24 | README.org                      |
+         |    8 | append                          |
+         |    8 | archetypes                      |
+         |    8 | array                           |
+         |    8 | bayesian-inference              |
+         |    8 | bits                            |
+         |    8 | blog.md                         |
+         |    8 | causal-inference                |
+         |    8 | config.toml                     |
+         |    8 | config.yaml                     |
+         |   72 | content                         |
+         |    8 | data-structures                 |
+         | 1000 | docs                            |
+         |    8 | emacs                           |
+         |    8 | etiology                        |
+         |    8 | find-depth                      |
+         |    8 | graalvm                         |
+         |    8 | heap                            |
+         |   96 | img                             |
+         |    8 | inference                       |
+         |    8 | integers                        |
+         |    0 | linear-lists                    |
+         |    8 | linux-kernel-development        |
+         |    8 | math                            |
+         |    8 | multivariate-models             |
+         |   16 | org-babel                       |
+         |    8 | queue                           |
+         |    8 | routing-tcp                     |
+         |    8 | sequence                        |
+         |    8 | sets                            |
+         |    8 | sicp                            |
+         |    8 | sklearn                         |
+         |   24 | software.org                    |
+         |    8 | stack                           |
+         |    8 | statistics                      |
+         |    8 | strings                         |
+         |    8 | tcp-illustrated-vol-1           |
+         |    8 | the-art-of-computer-programming |
+         | 1136 | themes                          |
+         |    8 | trees                           |
+         |    8 | trie                            |
+         |    8 | truffle                         |
+         |    8 | veb-tree                        |
+
+         
+         #+name: directory-pie-chart(dirs = directories)
+         #+begin_src R :session R-pie-example :file ../../images/babel/dirs.png
+         pie(dirs[,1], labels = dirs[,2])
+         #+end_src
+
     
    
 *** code blocks as a polyglot linuga franca
