@@ -6,11 +6,14 @@
 
 ** overview :TOC:
 - [[#org-babel][org-babel]]
+- [[#cli-wrapper][cli-wrapper]]
 - [[#ob-async][ob-async]]
   - [[#hello-world][hello world]]
 - [[#local_vars][local_vars]]
 
 * [[file:./org-babel][org-babel]]
+* [[file:./cli-wrapper][cli-wrapper]]
+
 * ob-async
 ** hello world
 been hoping to have this working for awhile, lets see.

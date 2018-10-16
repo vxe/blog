@@ -123,14 +123,30 @@ description
       - [[#classification][classification]]
       - [[#probability-redux-stochastic-processes][probability-redux-stochastic-processes]]
       - [[#simulation-methods][simulation-methods]]
+  - [[#ai][ai]]
+    - [[#problem-solving][problem-solving]]
+    - [[#knowledge-representation][knowledge-representation]]
+    - [[#planning][planning]]
+    - [[#learning][learning]]
+    - [[#nlp][nlp]]
+    - [[#perception][perception]]
+      - [[#computer-vision][computer-vision]]
+      - [[#audio-analysis][audio-analysis]]
+    - [[#motion][motion]]
+    - [[#social-reasoning][social-reasoning]]
+    - [[#tools][tools]]
+      - [[#search][search]]
+      - [[#logic][logic]]
+      - [[#classifiers][classifiers]]
+      - [[#artificial-neural-network][artificial-neural-network]]
   - [[#repos][repos]]
     - [[#libvxe][libvxe]]
     - [[#home][home]]
   - [[#systems][systems]]
     - [[#linux-kernel][linux-kernel]]
-    - [[#jni][jni]]
+    - [[#ipmi][ipmi]]
     - [[#kubernetes][kubernetes]]
-  - [[#tools][tools]]
+  - [[#tools-1][tools]]
     - [[#emacs][emacs]]
     - [[#swig][swig]]
     - [[#ansible][ansible]]
@@ -149,6 +165,8 @@ description
     - [[#asm][asm]]
     - [[#clojurescript][clojurescript]]
     - [[#javascript][javascript]]
+      - [[#react-components][react-components]]
+      - [[#vorpal][vorpal]]
     - [[#java][java]]
     - [[#elisp][elisp]]
     - [[#python][python]]
@@ -166,6 +184,11 @@ description
     - [[#treegraph-search][tree/graph search]]
     - [[#bit-manipulation][bit manipulation]]
     - [[#scalability-optimization][scalability optimization]]
+  - [[#music-production][music-production]]
+    - [[#acoustics][acoustics]]
+      - [[#pitch][pitch]]
+      - [[#rhythym][rhythym]]
+      - [[#][]]
 - [[#local-vars][local vars]]
 
 * table of contents
@@ -289,12 +312,28 @@ description
 **** classification
 **** probability-redux-stochastic-processes
 **** simulation-methods
+** ai
+*** problem-solving
+*** knowledge-representation
+*** planning
+*** learning
+*** nlp
+*** perception
+**** computer-vision
+**** audio-analysis
+*** motion
+*** social-reasoning
+*** tools
+**** search
+**** logic
+**** [[file:./classifiers][classifiers]]  
+**** [[file:./artificial-neural-network][artificial-neural-network]]
 ** repos
 *** libvxe
 *** home
 ** systems
 *** linux-kernel
-*** jni
+*** ipmi
 *** kubernetes
 ** tools
 *** [[file:./emacs][emacs]]
@@ -316,6 +355,8 @@ description
 *** asm
 *** clojurescript
 *** javascript
+**** [[file:./react-components][react-components]]
+**** [[file:./vorpal][vorpal]]
 *** java
 *** elisp
 *** python
@@ -333,8 +374,11 @@ description
 *** tree/graph search
 *** bit manipulation
 *** scalability optimization
-
-
+** music-production
+*** acoustics
+**** [[file:./pitch][pitch]]
+**** rhythym
+**** 
 
 * local vars
 # Local Variables:
