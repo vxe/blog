@@ -2,11 +2,68 @@
 #+TITLE: statistics
 #+STARTUP: indent
 #+OPTIONS: toc:nil
-so why st
+so what are the major topics of statistics you may ask?  Well who the
+fuck knows, I'm using this from a book called all of statistics or
+something, seems like a good place to begin 
+
+
+- [ ] random-variables
+- [ ] expectation
+- [ ] inequalities
+- [ ] convergence-of-random-variables
+- [ ] models-statistical-inference-and-learning
+- [ ] estimating-the-cdf-and-statistical-functionals
+- [ ] the-bootstrap
+- [ ] parametric-inference
+- [ ] hypothesis-testing-and-p-values
+- [ ] bayesian-inference
+- [ ] statistical-decision-theory
+- [ ] linear-and-logistic-regression
+- [ ] multivariate-models
+- [ ] inference-about-independence
+- [ ] causal-inference
+- [ ] directed-graphs-and-conditional-independence
+- [ ] undirected-graphs
+- [ ] log-linear-models
+- [ ] nonparametric-curve-estimation
+- [ ] smoothing-using-orthogonal-functions
+- [ ] classification
+- [ ] probability-redux-stochastic-processes
+- [ ] simulation-methods
+
+
+yeah that seems like a pretty good example, some thing that stand out
+are definitely , smoothing using orthogonal functions, good
+application to holt winters and time series analysis probems ,
+infereacne seems like a big topic which I know absolutely nothing
+about. 
+
+Some stuff looks kind of stupid like staistical functionals.  You know
+its a stupid word when its not defined in my emacs dictionary.
+Honestly any topic that could labled as continuous or continuum math
+is not interesting to me. Probablity theory is another area where
+things could potentially get out of hand pretty quickly.  Need just
+enough to be dangerous here you know.
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* 
 * local_vars
   # Local Variables:
   # eval: (auto-fill-mode)

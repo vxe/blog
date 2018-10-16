@@ -60,10 +60,15 @@ additional.  If we're not gaining any insight why study at all?
    science, however computer science does add additional insight in
    this case, by formally defining recurring objects in practice as
    abstract things, like.
+
    - queues, 
    - concurrency, 
    - interpretation,
    - parallelism, 
+
+     An almost certainly a ton more, good thing some one took the time
+     to recover the term data science from the mass-marketed public
+     wouldn't you say.
 
 - so there you go a long winded explanation of why data-science is
   actually a thing and why computer science is not.   

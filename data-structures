@@ -1,0 +1,31 @@
+# _*_ mode:org _*_
+#+TITLE: data-structures
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+[[file:math::*further%20benefits][The relevance of this topic can be seen here]] .  I'd say more but one
+of the purported benefits of this new system is that there is less
+duplication which I think is a fine goal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* local_vars
+  # Local Variables:
+  # eval: (auto-fill-mode)
+  # End:

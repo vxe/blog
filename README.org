@@ -105,7 +105,24 @@ description
       - [[#integers][integers]]
       - [[#strings][strings]]
       - [[#bits][bits]]
-      - [[#statistics][statistics]]
+    - [[#statistics][statistics]]
+      - [[#random-variables][random-variables]]
+      - [[#expectation][expectation]]
+      - [[#inequalities][inequalities]]
+      - [[#convergence-of-random-variables][convergence-of-random-variables]]
+      - [[#inference][+inference]]
+      - [[#linear-and-logistic-regression][linear-and-logistic-regression]]
+      - [[#multivariate-models][multivariate-models]]
+      - [[#inference-about-independence][inference-about-independence]]
+      - [[#causal-inference][causal-inference]]
+      - [[#directed-graphs-and-conditional-independence][directed-graphs-and-conditional-independence]]
+      - [[#undirected-graphs][undirected-graphs]]
+      - [[#log-linear-models][log-linear-models]]
+      - [[#nonparametric-curve-estimation][nonparametric-curve-estimation]]
+      - [[#smoothing-using-orthogonal-functions][smoothing-using-orthogonal-functions]]
+      - [[#classification][classification]]
+      - [[#probability-redux-stochastic-processes][probability-redux-stochastic-processes]]
+      - [[#simulation-methods][simulation-methods]]
   - [[#repos][repos]]
     - [[#libvxe][libvxe]]
     - [[#home][home]]
@@ -113,13 +130,6 @@ description
     - [[#linux-kernel][linux-kernel]]
     - [[#jni][jni]]
     - [[#kubernetes][kubernetes]]
-  - [[#libraries][libraries]]
-    - [[#graalvm][graalvm]]
-      - [[#truffle][truffle]]
-        - [[#create-source-object-from-file][create Source object from file]]
-    - [[#commons-math][commons-math]]
-    - [[#opencv][opencv]]
-    - [[#essentia][essentia]]
   - [[#tools][tools]]
     - [[#emacs][emacs]]
     - [[#swig][swig]]
@@ -129,6 +139,12 @@ description
     - [[#c][c++]]
     - [[#forth][forth]]
     - [[#clojure][clojure]]
+      - [[#graalvm][graalvm]]
+        - [[#truffle][truffle]]
+          - [[#create-source-object-from-file][create Source object from file]]
+      - [[#commons-math][commons-math]]
+      - [[#opencv][opencv]]
+      - [[#essentia][essentia]]
     - [[#common-lisp][common-lisp]]
     - [[#asm][asm]]
     - [[#clojurescript][clojurescript]]
@@ -136,6 +152,7 @@ description
     - [[#java][java]]
     - [[#elisp][elisp]]
     - [[#python][python]]
+      - [[#sklearn][sklearn]]
   - [[#techniques][techniques]]
     - [[#arraystring-manipulation][array/string manipulation]]
     - [[#stackqueue-manipulation][stack/queue manipulation]]
@@ -168,7 +185,7 @@ description
 *** internet-routing-architectures
 *** [[file:./tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
 ** data-science
-*** data-structures
+*** [[file:./data-structures][data-structures]]
 **** [[file:./linear-lists][linear-lists]]
 ***** -append
 ***** -copy
@@ -237,7 +254,7 @@ description
 ****** breadth-first
 ****** depth-first 
 **** associative-array
-***** veb-tree
+***** [[file:./veb-tree][veb-tree]]
 ***** hash-table
 **** matricies
 ***** -add-row
@@ -254,7 +271,24 @@ description
 **** [[file:./integers][integers]]
 **** [[file:./strings][strings]]
 **** [[file:./bits][bits]]
-**** [[file:./statistics][statistics]]
+*** [[file:./statistics][statistics]] 
+**** random-variables
+**** expectation
+**** inequalities
+**** convergence-of-random-variables
+**** +[[file:./inference][inference]]
+**** linear-and-logistic-regression
+**** [[file:./multivariate-models][multivariate-models]]
+**** inference-about-independence
+**** [[file:./causal-inference][causal-inference]]
+**** directed-graphs-and-conditional-independence
+**** undirected-graphs
+**** log-linear-models
+**** nonparametric-curve-estimation
+**** smoothing-using-orthogonal-functions
+**** classification
+**** probability-redux-stochastic-processes
+**** simulation-methods
 ** repos
 *** libvxe
 *** home
@@ -262,16 +296,8 @@ description
 *** linux-kernel
 *** jni
 *** kubernetes
-** libraries
-*** [[file:./graalvm][graalvm]]
-**** [[file:./truffle][truffle]]
-***** create Source object from file
-      https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
-*** commons-math
-*** opencv
-*** essentia
 ** tools
-*** emacs
+*** [[file:./emacs][emacs]]
 *** swig
 *** ansible
 *** antlr
@@ -279,6 +305,13 @@ description
 *** c++
 *** forth
 *** clojure
+**** [[file:./graalvm][graalvm]]
+***** [[file:./truffle][truffle]]
+****** create Source object from file
+      https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
+**** commons-math
+**** opencv
+**** essentia
 *** common-lisp
 *** asm
 *** clojurescript
@@ -286,6 +319,7 @@ description
 *** java
 *** elisp
 *** python
+**** [[file:./sklearn][sklearn]]
 ** techniques
 *** array/string manipulation
 *** stack/queue manipulation
