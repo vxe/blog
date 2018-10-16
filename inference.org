@@ -1,0 +1,40 @@
+# _*_ mode:org _*_
+#+TITLE: inference
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+ok so the key thing in my mind with inference is that its primary goal
+is to deduce the underlying probability distribution of a series of
+random variables Xₙ 
+
+** overview
+*** models-statistical-inference-and-learning
+*** estimating-the-cdf-and-statistical-functionals
+*** the-bootstrap
+*** parametric-inference
+*** hypothesis-testing-and-p-values
+*** [[file:./bayesian-inference][bayesian-inference]]
+*** statistical-decision-theory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* local_vars
+  # Local Variables:
+  # eval: (wiki-mode)
+  # End:

@@ -1,0 +1,179 @@
+# _*_ mode:org _*_
+#+TITLE: org-babel
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+** literate programming
+
+   essentially ob is the extension which make literate programming
+   happening my admitting the existence of a :tangle keyword which
+   extract source code from expository text.
+
+
+*** the power of a name
+    Its funny how most tutorials gloss over or grossly underestimate
+    the fact that *all* of the power of ob lies in the fact you can make
+    blocks trivially and assign them a name.  This layer of
+    indierectino means that single block can be used for unlimited
+    puprposes.  The entire infrastructure of Jupyter notebooks is
+    needless complexity to implement a named execution of a piece of code.
+
+*** named source blocks as n-ary pipes
+    so fine we can name stuff, who care, this is programming and all
+    we do is name things anyway, why should this be any different.
+    Well the fact of the matter is that any child block which knows
+    about our named block will get new output anytime the top level
+    block is evaluated.  A demo? no.  rtfm:
+
+    https://orgmode.org/worg/org-contrib/babel/uses.html
+    
+    ok fine one demo
+    
+**** demo piping unix command to R
+         #+name: directories
+         #+begin_src shell :results replace
+         cd ~/wiki && du -sc * |grep -v total 
+         #+end_src
+
+         #+RESULTS: directories
+         |    8 | Makefile                        |
+         |   24 | README.org                      |
+         |    8 | append                          |
+         |    8 | archetypes                      |
+         |    8 | array                           |
+         |    8 | bayesian-inference              |
+         |    8 | bits                            |
+         |    8 | blog.md                         |
+         |    8 | causal-inference                |
+         |    8 | config.toml                     |
+         |    8 | config.yaml                     |
+         |   72 | content                         |
+         |    8 | data-structures                 |
+         | 1000 | docs                            |
+         |    8 | emacs                           |
+         |    8 | etiology                        |
+         |    8 | find-depth                      |
+         |    8 | graalvm                         |
+         |    8 | heap                            |
+         |   96 | img                             |
+         |    8 | inference                       |
+         |    8 | integers                        |
+         |    0 | linear-lists                    |
+         |    8 | linux-kernel-development        |
+         |    8 | math                            |
+         |    8 | multivariate-models             |
+         |   16 | org-babel                       |
+         |    8 | queue                           |
+         |    8 | routing-tcp                     |
+         |    8 | sequence                        |
+         |    8 | sets                            |
+         |    8 | sicp                            |
+         |    8 | sklearn                         |
+         |   24 | software.org                    |
+         |    8 | stack                           |
+         |    8 | statistics                      |
+         |    8 | strings                         |
+         |    8 | tcp-illustrated-vol-1           |
+         |    8 | the-art-of-computer-programming |
+         | 1136 | themes                          |
+         |    8 | trees                           |
+         |    8 | trie                            |
+         |    8 | truffle                         |
+         |    8 | veb-tree                        |
+
+         
+         #+name: directory-pie-chart(dirs = directories)
+         #+begin_src R :session R-pie-example :file ../../images/babel/dirs.png
+         pie(dirs[,1], labels = dirs[,2])
+         #+end_src
+
+    
+   
+*** code blocks as a polyglot linuga franca
+    #+BEGIN_EXAMPLE
+      A Meta-programming Language for Org-mode
+
+      Because the return value of a function written in one language 
+      can be
+      passed to a function written in another language, or to an Org-mode
+      table, which is itself programmable, Babel can be used as a
+      meta-functional programming language. With Babel, functions from many
+      languages can work together. You can mix and match languages, using
+      each language for the tasks to which it is best suited.
+
+    #+END_EXAMPLE
+*** superior to Jupyter
+
+   #+BEGIN_QUOTE
+   I have used both Jupyter Notebooks and org mode with org-babel
+   extensively and I agree with the OP regrading the fact that the
+   org-babel workflow is vastly superior, OP did point out a few features
+   which org mode workflow has and Jupyter Notebooks don't but I will try
+   and provide a comprehensive list:
+
+   1. Plain text format, git and git diffs work
+   2. You can combine many languages in a single document, and every code
+      block can be part of a separate session, as an analogy to Jupyter
+      Notebooks, you can have multiple kernels backing a single notebook
+      and you can decide what kernel you want the current code block to
+      run in.
+   3. You can edit a code block in the major mode for that language,
+      i.e. you get all the features of Emacs while editing code:
+      documentation, auto-complete, snippets and anything Emacs can do,
+      and Emacs can do a lot :)
+   4. You can have internal and external links to any part of the
+      document (or any other org-mode file) within the editor which get
+      exported as links in the HTML file too. Want to refer to a code
+      block you used before, just name it and drop a link. Extremely
+      useful in binding the whole document together.
+
+   5. Literate Programming support -- You can decide the order the
+      concepts are introduced in according to the human reader, not
+      according to the execution order the machine demands it to be in:
+
+     #+NAME: named_code_block :eval no
+     function_not_defined_yet()
+
+     #NAME: complete_code_block
+     def function_not_defined_yet():
+         print("nice function innit?")
+  
+     <<named_code_block>>
+  
+   The <<named_code_block>> gets expanded to whatever you defined it and
+   you control the way you want to structure the document to be the most
+   readable. You can keep working backed by a REPL in the initial stages
+   and then extract(tangle in literate programming speak) to a file,
+   again in the order you want using the <<named_code_block>> (NOWEB
+   syntax). So one org-mode can generate your whole project if you wish
+   so.
+
+
+   6. With the internal and external links and <<named_code_block>>
+      (NOWEB syntax) the org-mode file is closer to being a hypertext
+      file than Jupyter Notebook even though Jupyter Notebook is the one
+      running in a browser.
+
+
+   I have covered only the major features of org-babel, I haven't even
+   covered all the features. I love Jupyter Notebooks too, but org-babel
+   is something else. I am currently working on a toy ray tracer in
+   Clojure in literate programming style and loving every moment :)
+
+   #+END_QUOTE
+** literate devops
+   Or a special case of the previous, since we're fucking with unix
+   everything is a byte stream and can expected to be read from stdin
+   and routed to stdout.
+
+   the strategy then is pretty simple wouldn't you say?
+   1. write a bunch of code blocks/commands
+   2. string them together using tables
+   3. sidechain them out to visualization programs
+   4. solve IT problems in much greater depth than what is otherwise
+      possible .
+
+* local_vars
+  # Local Variables:
+  # eval: (wiki-mode)
+  # End:

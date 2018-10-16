@@ -1,0 +1,189 @@
+#+HUGO_BASE_DIR: ./
+#+SEQ_TODO: TODO DRAFT DONE
+* software                                                         :software:
+  :PROPERTIES:
+  :EXPORT_HUGO_SECTION: posts
+  :EXPORT_HUGO_TYPE: post
+  :END:
+** systems                                                           :systems:
+*** linux :linux:
+*** opencv :opencv:
+*** commons-math :common_math:
+** data-structures                                          :data_structures:
+*** array                                                             :array:
+**** parallel
+***** p-matrix-multiple-recursive
+***** p-merge
+***** p-scan
+***** p-scan-down
+***** p-scan-up
+**** deterministic_search
+**** add_subarray
+**** binary_search
+**** bubblesort
+**** bucket_sort
+**** compare_exchange
+**** counting_sort
+**** find_max_crossing_subarray
+**** hoare_partition
+**** insertion_sort
+**** merge
+**** merge_sort
+**** minimum
+**** partition
+**** permute_by_cyclic
+**** permute_by_cyclic
+**** permute_by_sorting
+**** permute_with_all
+**** permute_without_identiy
+**** quicksort
+**** radix_sort
+**** random
+**** random_search
+**** randomize_in_place
+**** randomized_hire_assistant
+**** randomized_partition
+**** randomized_quicksort
+**** randomized_select
+**** recursive_fft
+**** reduce
+**** scan
+**** scramble_search
+**** select
+**** sum_array
+**** tail_recursive_quicksort
+*** graph                                                             :graph:
+**** ford_fulkerson
+**** bfs
+**** approx_min_weight_vc
+**** approx_tsp_tour
+**** approx_vertex_cover
+**** bellman_for
+**** connected_components
+**** dag_shortest_paths
+**** dfs
+**** dfs_visit
+**** dijkstra
+**** faster_all_pairs_shortest_paths
+**** ford_fulkerson_method
+**** generic_mst
+**** graph_isomorphism
+**** ham_cycle
+**** hopcroft_kaarp
+**** initialize_preflow
+**** initialize_single_source
+**** max_flow_by_scaling
+**** maybe_mst
+**** mst_kruskal
+**** mst_prim
+**** mst_reduce
+**** print_All_pairs_shortest_path
+**** print_path
+**** relabel_to_front
+**** strongly_connected_components
+**** topological_sort
+**** transitive_closure
+*** search-tree                                          :search_tree:
+**** red-black-tree                                          :red_black_tree:
+**** b_tree                                                          :b_tree:
+**** os_tree                                                        :os_tree:
+**** avl_tree                                                      :avl_tree:
+**** inorder_tree_walk                                    :inorder_tree_walk:
+**** iterative_tree_search                            :iterative_tree_search:
+**** left_rotate                                                :left_rotate:
+**** optimal_bst                                                :optimal_bst:
+**** right_rotate                                              :right_rotate:
+**** optimal_bst                                                :optimal_bst:
+**** tight_rotate                                              :right_rotate:
+**** transplant                                                  :transplant:
+**** tree_delete                                                :tree_delete:
+**** tree_insert                                                :tree_insert:
+**** tree_maximum                                              :tree_maximum:
+**** tree_minimum                                              :tree_minimum:
+**** tree_predecessor                                      :tree_predecessor:
+**** tree_search                                                :tree_search:
+**** tree_successor                                          :tree_successor:
+*** heap                                                               :heap:
+**** fibonacci_heap                                          :fibonacci_heap:
+***** fib_heap_link                                            :fib_heap_link:
+***** fib_heap_prune                                          :fib_heap_prune:
+***** fib_heap_union                                          :fib_heap_union:
+**** build_max_heap                                           :build_max_heap:
+**** build_min_heap                                           :build_min_heap:
+**** cascading_cut                                             :cascading_cut:
+**** consolidate                                                 :consolidate:
+**** cut                                                                 :cut:
+**** extract_min                                                 :extract_min:
+**** heap_decrease_key                                     :heap_decrease_key:
+**** heap_delete                                                 :heap_delete:
+**** heap_extract_max                                       :heap_extract_max:
+**** heap_extract_min                                       :heap_extract_min:
+**** heap_increase_key                                     :heap_increase_key:
+**** heap_maximum                                               :heap_maximum:
+**** heap_minimum                                               :heap_minimum:
+**** heapsort                                                       :heapsort:
+**** left                                                               :left:
+**** link                                                               :link:
+**** make_heap                                                     :make_heap:
+**** max_heap_insert                                         :max_heap_insert:
+**** min_heap_insert                                         :min_heap_insert:
+**** min_heapify                                                 :min_heapify:
+**** parent                                                           :parent:
+**** pisano_deleter:pisano_delete:
+**** right                                                            :right:
+**** union                                                            :union:
+*** matrix                                                           :matrix:
+**** linear-program                                          :linear_program:   
+**** 
+*** set                                                                 :set:
+**** dynamic-set                                                :dynamic_set:
+**** disjoint-set                                              :disjoint_set:
+**** ordered-set                                                :ordered_set:
+**** dynamic-multiset                                      :dynamic_multiset:
+*** map                                                                 :map:
+**** veb-tree                                                      :veb_tree:
+**** hash-table                                                  :hash_table:
+*** integer                                                         :integer:
+    ok an integers a sequence of bits, its a data structure and the
+    operations on are the bitwise operators ok an integers a sequence
+    of bits, its a data structure and the operations on are the
+    bitwise operators
+*** linked-list                                                 :linked_list:
+**** doubly-linked-list                                  :doubly_linked_list:
+**** circularly-linked-list                          :circularly_linked_list:
+**** kernel-list                                                :kernel_list:
+***** kernel linked list tutorial
+      [[https://isis.poly.edu/kulesh/stuff/src/klist/][link]] 
+
+*** stack                                                             :stack:
+*** rod                                                                 :rod:
+*** string                                                           :string:
+*** line                                                               :line:
+*** interval                                                       :interval:
+**** interval-tree                                            :interval_tree:
+*** sequence                                                       :sequence:
+*** graph                                                             :graph:
+**** edge                                                              :edge:
+**** vertex                                                          :vertex:
+*** queue                                                             :queue:
+*** relation                                                       :relation:
+*** matroid                                                         :matroid:
+*** persistent-tree                                         :presistent_tree:
+*** point                                                             :point:
+*** polynomial                                                   :polynomial:
+** interview                                                      :interview:
+*** scalability                                                 :scalability:
+*** stacks_and_queues                                     :stacks_and_queues:
+*** big_o                                                             :big_o:
+*** arrays_and_strings                                   :arrays_and_strings:
+*** linked_lists                                               :linked_lists:
+*** math_logic                                                   :math_logic:
+*** bit_manipulation                                       :bit_manipulation:
+*** recursion_dynamic_programming             :recursion_dynamic_programming:
+*** object_oriented_design                           :object_oriented_design:
+*** sorting_searching                                     :sorting_searching:
+*** threads_locks                                             :threads_locks:
+*** trees_graphs                                               :trees_graphs:
+** languages                                                      :languages:
+** projects                                                        :projects:
+** applications                                                :applications:

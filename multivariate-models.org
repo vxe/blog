@@ -1,0 +1,44 @@
+# _*_ mode:org _*_
+#+TITLE: multivariate-models
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+ok multivariate models, here we go....
+
+from ze wikipedia
+
+#+BEGIN_QUOTE
+Multivariate statistics is a subdivision of statistics encompassing
+the simultaneous observation and analysis of more than one outcome
+variable. The application of multivariate statistics is multivariate
+analysis.
+#+END_QUOTE
+
+ok fine but what about the distinction between models and general
+calculable statistics?  
+
+Probably models which require look and more than one outcome of the
+randomized process of which it is observing.  Sounds like a terrible
+idea.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* local_vars
+  # Local Variables:
+  # eval: (auto-fill-mode)
+  # End:

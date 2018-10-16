@@ -1,0 +1,4 @@
+# -*- mode:org -*-
+#+TITLE: bits
+#+STARTUP: indent
+#+OPTIONS: toc:nil

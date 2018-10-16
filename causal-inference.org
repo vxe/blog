@@ -1,0 +1,37 @@
+# _*_ mode:org _*_
+#+TITLE: causal-inference
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+The main difference between causal inference and inference of
+association is that the former analyzes the response of the effect
+variable when the cause is changed. The science of why things
+occur is called [[file:./etiology][etiology]]. Causal inference is an example of causal
+reasoning.
+
+
+I suppose this means, it should *not* be in the [[file:./inference][inference]] section?
+
+idk.  The /response/ of the 'effect variable'  when the cause is
+changed?  
+
+
+In other words, causal inference is alchemy.  It still seems useful
+idk, its would be nice if you could easily determine cause and effect
+by just looking at data.  
+
+
+
+
+
+
+
+
+
+
+
+* local_vars
+  # Local Variables:
+  # eval: (wiki-mode)
+  # End:

@@ -1,0 +1,5 @@
+# -*- mode:org -*-
+#+TITLE: trie
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+

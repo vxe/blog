@@ -1,0 +1,11 @@
+# -*- mode:org -*-
+#+TITLE: array
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+so the array, wtf is that?  Its a name for what might conventionally called
+a contiguous of sequentially memory, disk or ram.  Obviously, an array is a 
+far better name.  However its also used to describe vectors, which are 
+1-d matricies, which can be /modeled/ using arrays but have additional
+properties
+
