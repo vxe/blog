@@ -3,3 +3,4 @@
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
+so why are strings, mathematical structures?  Information Theory!

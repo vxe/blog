@@ -307,6 +307,10 @@ description
         - [[#multi-set][multi-set]]
         - [[#ordered-set][ordered-set]]
         - [[#subset][subset]]
+      - [[#associative-array][associative-array]]
+        - [[#veb-tree][veb-tree]]
+        - [[#hash-table][hash-table]]
+    - [[#mathematical-structures][mathematical-structures]]
       - [[#graphs-1][graphs]]
         - [[#-shortest-path][-shortest-path]]
           - [[#dijkstra][dijkstra]]
@@ -315,6 +319,7 @@ description
           - [[#bellman-ford][bellman-ford]]
           - [[#floyd-warshall][floyd-warshall]]
           - [[#johnson][johnson]]
+          - [[#travelling-salesman][travelling-salesman]]
         - [[#-maximum-flow][-maximum-flow]]
         - [[#-minimum-spanning-tree][-minimum-spanning-tree]]
         - [[#-reachability][-reachability]]
@@ -322,15 +327,11 @@ description
         - [[#-depth-first-search][-depth-first-search]]
         - [[#-vertex-cover][-vertex-cover]]
         - [[#-cardinality-matching][-cardinality-matching]]
-        - [[#-travelling-salesman][-travelling-salesman]]
         - [[#-sort-1][-sort]]
           - [[#topological-sort][topological-sort]]
         - [[#-search-1][-search]]
           - [[#breadth-first][breadth-first]]
           - [[#depth-first][depth-first]]
-      - [[#associative-array][associative-array]]
-        - [[#veb-tree][veb-tree]]
-        - [[#hash-table][hash-table]]
       - [[#matricies][matricies]]
         - [[#-add-row][-add-row]]
         - [[#-column-count][-column-count]]
@@ -344,8 +345,19 @@ description
         - [[#-square-matrix-multiply][-square-matrix-multiply]]
         - [[#jacobian-matrix][jacobian-matrix]]
       - [[#integers][integers]]
-      - [[#strings][strings]]
-      - [[#bits][bits]]
+        - [[#-biased-random][-biased-random]]
+        - [[#-euclid][-euclid]]
+        - [[#-fib][-fib]]
+        - [[#-miller-rabin][-miller-rabin]]
+        - [[#-pollard-rho][-pollard-rho]]
+        - [[#-pseudoprime][-pseudoprime]]
+      - [[#sequences][sequences]]
+        - [[#strings][strings]]
+          - [[#-finite-automaton-matcher][-finite-automaton-matcher]]
+          - [[#-kmp-match][-kmp-match]]
+          - [[#-rabin-karp-match][-rabin-karp-match]]
+          - [[#-repitition-matcher][-repitition-matcher]]
+        - [[#bits][bits]]
     - [[#statistics][statistics]]
       - [[#random-variables][random-variables]]
       - [[#expectation][expectation]]
@@ -745,6 +757,10 @@ description
 ***** multi-set
 ***** ordered-set
 ***** subset
+**** associative-array
+***** [[file:./veb-tree.org][veb-tree]]
+***** hash-table
+*** mathematical-structures
 **** graphs
 ***** -shortest-path
 ****** dijkstra
@@ -753,6 +769,7 @@ description
 ****** bellman-ford
 ****** floyd-warshall
 ****** johnson
+****** [[file:./travelling-salesman.org][travelling-salesman]]
 ***** -maximum-flow
 ***** -minimum-spanning-tree
 ***** -reachability
@@ -760,15 +777,11 @@ description
 ***** -depth-first-search
 ***** -[[file:./vertex-cover.org][vertex-cover]] 
 ***** -cardinality-matching
-***** -travelling-salesman
 ***** -sort
 ****** topological-sort
 ***** -search
 ****** breadth-first
 ****** depth-first 
-**** associative-array
-***** [[file:./veb-tree.org][veb-tree]]
-***** hash-table
 **** matricies
 ***** -add-row
 ***** -column-count
@@ -782,8 +795,19 @@ description
 ***** -square-matrix-multiply
 ***** [[file:./jacobian-matrix.org][jacobian-matrix]]
 **** [[file:./integers.org][integers]]
-**** [[file:./strings.org][strings]]
-**** [[file:./bits.org][bits]]
+***** -biased-random
+***** -euclid
+***** -fib
+***** -miller-rabin
+***** -pollard-rho
+***** -pseudoprime
+**** sequences
+***** [[file:./strings.org][strings]]
+****** -finite-automaton-matcher
+****** -kmp-match
+****** -rabin-karp-match
+****** -repitition-matcher
+***** [[file:./bits.org][bits]]
 *** [[file:./statistics.org][statistics]]
 **** random-variables
 **** expectation

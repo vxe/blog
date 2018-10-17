@@ -8,6 +8,23 @@ of the purported benefits of this new system is that there is less
 duplication which I think is a fine goal.
 
 
+* The fundamental distinctions
+
+- fundamental structures
+- mathematical structures
+
+
+In short fudamental structures are concepts which map directly into
+the architecture of the digital computer and defined in terms of its
+primitive operations. Essentially this amounts to linear lists, trees
+and sets.  Additionally fundamental structures are aptly name since
+they are the building blocks upon which all programs are built and by
+their natures can be subtyped in to special purpose data-structures
+with varying space and time complexity.
+
+Mathematical structures are structures which map directly to the
+machinery of modern mathematics, and only incidentally are
+implementable on a digital computer.
 
 
 
@@ -25,7 +42,9 @@ duplication which I think is a fine goal.
 
 
 
-* local_vars
-  # Local Variables:
-  # eval: (auto-fill-mode)
-  # End:
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
