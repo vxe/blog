@@ -1,0 +1,101 @@
+# _*_ mode:org _*_
+#+TITLE: constraint-satisfaction
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+norvig again:
+
+#+BEGIN_QUOTE
+We use a factored representation for each state: a set of variables,
+each of which has a value. A problem is solved when each variable has
+a value that satisfies all the constraints on the variable. A problem
+described this way is called a constraint satisfaction problem, or
+CSP.
+
+*CONSTRAINT SATISFACTION PROBLEM CSP*
+
+search algorithms take advantage of the structure of states and use
+general-purpose rather than problem-specific heuristics to enable the
+solution of complex problems. The main idea is to eliminate large
+portions of the search space all at once by identifying variable/
+value combinations that violate the constraints.
+
+Russell, Stuart; Peter Nerving. Artificial Intelligence: A Modern
+Approach, 3/e (Kindle Locations 4945-4950). 
+Pearson HE, Inc.. Kindle Edition.
+#+END_QUOTE
+
+we shall co-opt the definition of the CSP 
+
+
+We are interested in X,D,C:
+
+X is a set of variables {X₁ ... Xₙ}
+D is a set of domains {D₁ ... Dₙ}
+C is a set of constraints that specify allowable combinations of
+variables
+
+domains are composed of allowable values {v₁ .. vₖ} for each of the
+corresponding variables Xᵢ 
+
+constraints are defined by a pair (/scope/ . /rel/) where /scope/ is a tuple
+of variables that participate in the constraint C and /rel/ is a
+relation that defines the values that those variables can take on.
+
+
+
+
+
+** overview                                                             :TOC:
+- [[#example-problem][example problem]]
+  - [[#model-definition][model definition]]
+  - [[#solver-client][solver client]]
+- [[#isnt-this-just-algebra][isn't this just algebra?]]
+- [[#sat-vs-csp][SAT vs CSP]]
+- [[#factored-representation][factored-representation]]
+- [[#constraint-satisfaction-problem][constraint-satisfaction-problem]]
+
+* example problem
+
+a consider the sum x + y = z , for a specified z what are the possible
+values for (+ x y)?
+
+the constraint satisfaction approach says defined a model which
+encapsulates this idea of adding two values to get a third fixed
+value.  Then pass it to a solver and get a list of all possible values
+for which meet your constraints.
+
+in practice:
+
+** model definition
+ #+BEGIN_SRC clojure
+   (def model
+     [($in :x 1 6)
+      ($in :y 3 7)
+      ($= ($+ :x :y) 10)])
+ #+END_SRC
+
+** solver client
+   #+BEGIN_SRC clojure
+   (solutions model)
+   #+END_SRC
+
+* isn't this just algebra?
+It is.  But that's incredibly useful, in is definitely starting down a
+trail of reasoning which will lead toward linear programming.
+Literally any problem that involves combining known quantities through
+mathematical operations to obtain a desired quantity fits this
+paradigm. 
+
+however due to some of the terminology, we have some confusion on the
+difference between two related techniques
+
+* SAT vs CSP
+
+
+* factored-representation
+
+* constraint-satisfaction-problem
+
+
+

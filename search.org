@@ -1,0 +1,61 @@
+# _*_ mode:org _*_
+#+TITLE: search
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+some thoughts from paid/norvig
+
+#+BEGIN_QUOTE
+Also, as it turns out, the techniques that allow computers to play
+well are not the same as the techniques that good human players
+use. Humans are capable of recognizing abstract patterns learned from
+previous games, and formulating plans of attack and defense. While
+some computer programs try to emulate this approach, the more
+succesful programs work by rapidly searching thousands of possible
+sequences of moves, making fairly superficial evaluations of the worth
+of each sequence.
+
+Norvig, Peter. Paradigms of Artificial Intelligence Programming: Case
+Studies in Common Lisp (Kindle Locations 7653-7656). 
+Elsevier Science. Kindle Edition.
+#+END_QUOTE
+
+ok searching thousands of possibilities.  That sounds like the best
+case scenario.  (insert knuth quote about search being combinatorial) 
+
+
+But still search is a well developed area in AI, and there is probably
+a good amount of useful tech here to understand.
+
+
+* problem solving
+not surprisingly, search is a pretty standard problem solving
+technique.  Problem, keys lost, solution generate a list of all place
+could be, sequentially check them until key-count == true.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

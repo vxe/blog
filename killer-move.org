@@ -1,0 +1,47 @@
+# _*_ mode:org _*_
+#+TITLE: killer-move
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+yes! killer move.  What a suggestive name.  I've heard this repeatedly
+in the context of game-playing and problem-solving.  What is the
+killer move?
+
+#+BEGIN_QUOTE
+In this section, we consider the killer heuristic, which states that a
+move that has proven to be a good one in one line of play is also
+likely to be a good one in another line of play. 
+
+To use chess as perhaps a more familiar example, suppose I consider
+one move, and it leads to the opponent replying by capturing my
+queen. This is a killer move, one that I would like to
+avoid. Therefore, when I consider other possible moves, I want to
+immediately consider the possibility of the opponent making that
+queen-capturing move.
+
+Norvig, Peter. Paradigms of Artificial Intelligence Programming: Case
+Studies in Common Lisp (Kindle Locations 8029-8032). 
+Elsevier Science. Kindle Edition.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

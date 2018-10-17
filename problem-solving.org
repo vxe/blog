@@ -1,0 +1,29 @@
+# _*_ mode:org _*_
+#+TITLE: problem-solving
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

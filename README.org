@@ -5,7 +5,7 @@
 
 
 description
-** Overview :TOC:
+** Overview                                                            :TOC:
 - [[#table-of-contents][table of contents]]
   - [[#math][math]]
     - [[#applied][applied]]
@@ -74,6 +74,12 @@ description
         - [[#subset][subset]]
       - [[#graphs][graphs]]
         - [[#-shortest-path][-shortest-path]]
+          - [[#dijkstra][dijkstra]]
+          - [[#a][a*]]
+          - [[#dag-shortest-paths][dag-shortest-paths]]
+          - [[#bellman-ford][bellman-ford]]
+          - [[#floyd-warshall][floyd-warshall]]
+          - [[#johnson][johnson]]
         - [[#-maximum-flow][-maximum-flow]]
         - [[#-minimum-spanning-tree][-minimum-spanning-tree]]
         - [[#-reachability][-reachability]]
@@ -125,6 +131,7 @@ description
       - [[#simulation-methods][simulation-methods]]
   - [[#ai][ai]]
     - [[#problem-solving][problem-solving]]
+      - [[#constraint-satisfaction][constraint-satisfaction]]
     - [[#knowledge-representation][knowledge-representation]]
     - [[#planning][planning]]
     - [[#learning][learning]]
@@ -136,6 +143,10 @@ description
     - [[#social-reasoning][social-reasoning]]
     - [[#tools][tools]]
       - [[#search][search]]
+        - [[#killer-move][killer-move]]
+        - [[#local-search][local-search]]
+        - [[#adversarial-search][adversarial-search]]
+        - [[#alpha-beta-pruning][alpha-beta-pruning]]
       - [[#logic][logic]]
       - [[#classifiers][classifiers]]
       - [[#artificial-neural-network][artificial-neural-network]]
@@ -153,15 +164,18 @@ description
     - [[#antlr][antlr]]
   - [[#languages][languages]]
     - [[#c][c++]]
+      - [[#opencv][opencv]]
     - [[#forth][forth]]
     - [[#clojure][clojure]]
+      - [[#rolling-stones][rolling-stones]]
+      - [[#loco][loco]]
       - [[#graalvm][graalvm]]
         - [[#truffle][truffle]]
           - [[#create-source-object-from-file][create Source object from file]]
       - [[#commons-math][commons-math]]
-      - [[#opencv][opencv]]
       - [[#essentia][essentia]]
     - [[#common-lisp][common-lisp]]
+    - [[#racket][racket]]
     - [[#asm][asm]]
     - [[#clojurescript][clojurescript]]
     - [[#javascript][javascript]]
@@ -263,12 +277,18 @@ description
 ***** subset
 **** graphs
 ***** -shortest-path
+****** dijkstra
+****** a*
+****** dag-shortest-paths
+****** bellman-ford
+****** floyd-warshall
+****** johnson
 ***** -maximum-flow
 ***** -minimum-spanning-tree
 ***** -reachability
 ***** -breadth-first-search
 ***** -depth-first-search
-***** -vertex-cover
+***** -[[file:./vertex-cover.org][vertex-cover]] 
 ***** -cardinality-matching
 ***** -travelling-salesman
 ***** -sort
@@ -313,7 +333,8 @@ description
 **** probability-redux-stochastic-processes
 **** simulation-methods
 ** ai
-*** problem-solving
+*** [[file:./problem-solving.org][problem-solving]]
+**** [[file:./constraint-satisfaction.org][constraint-satisfaction]]
 *** knowledge-representation
 *** planning
 *** learning
@@ -324,7 +345,11 @@ description
 *** motion
 *** social-reasoning
 *** tools
-**** search
+**** [[file:./search.org][search]]
+***** [[file:./killer-move.org][killer-move]]
+***** local-search
+***** adversarial-search
+***** alpha-beta-pruning
 **** logic
 **** [[file:./classifiers.org][classifiers]]
 **** [[file:./artificial-neural-network.org][artificial-neural-network]]
@@ -342,16 +367,19 @@ description
 *** antlr
 ** languages
 *** c++
+**** opencv
 *** forth
 *** clojure
+**** [[file:./rolling-stones.org][rolling-stones]]
+**** [[file:./loco.org][loco]]
 **** [[file:./graalvm][graalvm]]
 ***** [[file:./truffle.org][truffle]]
 ****** create Source object from file
       https://www.graalvm.org/sdk/javadoc/org/graalvm/polyglot/Source.Builder.html
 **** commons-math
-**** opencv
 **** essentia
 *** common-lisp
+*** [[file:./racket.org][racket]]
 *** asm
 *** clojurescript
 *** javascript
