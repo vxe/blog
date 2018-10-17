@@ -1,0 +1,37 @@
+# _*_ mode:org _*_
+#+TITLE: travelling-salesman
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+ok so the travelling salesman problem is officially this:
+
+#+BEGIN_QUOTE
+Given a list of cities and the distances between each pair of cities,
+what is the shortest possible route that visits each city and returns
+to the origin city?
+#+END_QUOTE
+
+
+aka its by definition a shortest-path problem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
