@@ -9,6 +9,241 @@ description
 - [[#table-of-contents][table of contents]]
   - [[#math][math]]
     - [[#applied][applied]]
+      - [[#concepts][concepts]]
+        - [[#matroids][matroids]]
+        - [[#braid-groups][braid-groups]]
+        - [[#expanders][expanders]]
+        - [[#knot-polynomials][knot-polynomials]]
+        - [[#axiom-of-choice][axiom-of-choice]]
+        - [[#axiom-of-determinacy][axiom-of-determinacy]]
+        - [[#bayesian-analysis][bayesian-analysis]]
+        - [[#c-star-algebras][c-star-algebras]]
+        - [[#calabi-yau-manifolds][calabi-yau-manifolds]]
+        - [[#cardinals][cardinals]]
+        - [[#categories][categories]]
+        - [[#compactness][compactness]]
+        - [[#computational-complexity][computational-complexity]]
+        - [[#curvature][curvature]]
+        - [[#designs][designs]]
+        - [[#determinants][determinants]]
+        - [[#differentials-forms][differentials-forms]]
+        - [[#dimension][dimension]]
+        - [[#distributions][distributions]]
+        - [[#duality][duality]]
+        - [[#dynamical-systems-chaos][dynamical-systems-chaos]]
+        - [[#elliptic-curves][elliptic-curves]]
+        - [[#euclidian-algorithms][euclidian-algorithms]]
+        - [[#euler-navier-stokes][euler-navier-stokes]]
+        - [[#exponential-and-log-functions][exponential-and-log-functions]]
+        - [[#fast-fourier-transform][fast-fourier-transform]]
+        - [[#fourier-transform][fourier-transform]]
+        - [[#fuchsian-groups][fuchsian-groups]]
+        - [[#function-spaces][function-spaces]]
+        - [[#galois-groups][galois-groups]]
+        - [[#gamma-function][gamma-function]]
+        - [[#generating-function][generating-function]]
+        - [[#genus][genus]]
+        - [[#graphs][graphs]]
+        - [[#hamiltonians][hamiltonians]]
+        - [[#heat-equation][heat-equation]]
+        - [[#hilbert-spaces][hilbert-spaces]]
+        - [[#homology-and-cohomology][homology-and-cohomology]]
+        - [[#homotopy-groups][homotopy-groups]]
+        - [[#ideal-class-group][ideal-class-group]]
+        - [[#irrational-transcendental-numbers][irrational-transcendental-numbers]]
+        - [[#ising-model][ising-model]]
+        - [[#jordan-normal-form][jordan-normal-form]]
+        - [[#k-theory][k-theory]]
+        - [[#i-functions][i-functions]]
+        - [[#leech-lattice][leech-lattice]]
+        - [[#lie-theory][lie-theory]]
+        - [[#linear-nonlinear-solitons][linear-nonlinear-solitons]]
+        - [[#linear-nonlinear-waves][linear-nonlinear-waves]]
+        - [[#linear-operators-properties][linear-operators-properties]]
+        - [[#local-and-globals-in-number-theory][local-and-globals-in-number-theory]]
+        - [[#mandelbrot-set][mandelbrot-set]]
+        - [[#manifolds][manifolds]]
+        - [[#measures][measures]]
+        - [[#metric-spaces][metric-spaces]]
+        - [[#models-of-set-theory][models-of-set-theory]]
+        - [[#modular-arithmetic][modular-arithmetic]]
+        - [[#modular-forms][modular-forms]]
+        - [[#moduli-spaces][moduli-spaces]]
+        - [[#monster-group][monster-group]]
+        - [[#normed-and-banach-spaces][normed-and-banach-spaces]]
+        - [[#number-fields][number-fields]]
+        - [[#optimization-and-lagrange-multipliers][optimization-and-lagrange-multipliers]]
+        - [[#orbifolds][orbifolds]]
+        - [[#ordinals][ordinals]]
+        - [[#peano-axioms][peano-axioms]]
+        - [[#permutation-groups][permutation-groups]]
+        - [[#phase-transitions][phase-transitions]]
+        - [[#pi][pi]]
+        - [[#probability-distributinos][probability-distributinos]]
+        - [[#projective-space][projective-space]]
+        - [[#quadratic-forms][quadratic-forms]]
+        - [[#quantum-computation][quantum-computation]]
+        - [[#quantum-groups][quantum-groups]]
+        - [[#quaternions-octonions-normed-division][quaternions-octonions-normed-division]]
+        - [[#representations][representations]]
+        - [[#ricci-flow][ricci-flow]]
+        - [[#reimann-surfaces][reimann-surfaces]]
+        - [[#riemann-zeta-function][riemann-zeta-function]]
+        - [[#rings-ideals-and-modules][rings-ideals-and-modules]]
+        - [[#schemes][schemes]]
+        - [[#schrodinger-equation][schrodinger-equation]]
+        - [[#simplex-algorithm][simplex-algorithm]]
+        - [[#tensor-products][tensor-products]]
+        - [[#the-spectrum][the-spectrum]]
+        - [[#topological-spaces][topological-spaces]]
+        - [[#transforms][transforms]]
+        - [[#trigonometric-functions][trigonometric-functions]]
+        - [[#universal-covers][universal-covers]]
+        - [[#variational-methods][variational-methods]]
+        - [[#varieties][varieties]]
+        - [[#vector-bundles][vector-bundles]]
+        - [[#von-neumann-algebras][von-neumann-algebras]]
+        - [[#wavelets][wavelets]]
+        - [[#zermalo-fraenkel-axioms][zermalo-fraenkel-axioms]]
+      - [[#mathematicians][mathematicians]]
+        - [[#al-khwarizmi][al-khwarizmi]]
+        - [[#legendre][legendre]]
+        - [[#apollonius][apollonius]]
+        - [[#mobius][mobius]]
+        - [[#cauchy][cauchy]]
+        - [[#de-morgan][de-morgan]]
+        - [[#bolzano][bolzano]]
+        - [[#pascal][pascal]]
+        - [[#jacobi][jacobi]]
+        - [[#waring][waring]]
+        - [[#kummer][kummer]]
+        - [[#viete][viete]]
+        - [[#cardano][cardano]]
+        - [[#newton][newton]]
+        - [[#bolyai][bolyai]]
+        - [[#dalembert][d'alembert]]
+        - [[#liouville][liouville]]
+        - [[#lagrange][lagrange]]
+        - [[#piza][piza]]
+        - [[#euler][euler]]
+        - [[#lobachevskii][lobachevskii]]
+        - [[#dirichlet][dirichlet]]
+        - [[#fermat][fermat]]
+        - [[#laplace][laplace]]
+        - [[#pythagoras][pythagoras]]
+        - [[#bombelli][bombelli]]
+        - [[#descartes][descartes]]
+        - [[#poissan][poissan]]
+        - [[#stevin][stevin]]
+        - [[#hamilton][hamilton]]
+        - [[#turing][turing]]
+        - [[#tarski][tarski]]
+        - [[#weil][weil]]
+        - [[#archimedes][archimedes]]
+        - [[#russell][russell]]
+        - [[#jordan][jordan]]
+        - [[#gauss][gauss]]
+        - [[#hermite][hermite]]
+        - [[#klein][klein]]
+        - [[#cartan][cartan]]
+        - [[#artin][artin]]
+        - [[#borel][borel]]
+        - [[#mathieu][mathieu]]
+        - [[#noether][noether]]
+        - [[#euclid][euclid]]
+        - [[#galois][galois]]
+        - [[#hausdorff][hausdorff]]
+        - [[#frobenius][frobenius]]
+        - [[#riesz][riesz]]
+        - [[#cantor][cantor]]
+        - [[#riemann][riemann]]
+        - [[#birkhoff][birkhoff]]
+        - [[#boole][boole]]
+        - [[#green][green]]
+        - [[#peano][peano]]
+        - [[#hardy][hardy]]
+        - [[#leibniz][leibniz]]
+        - [[#frege][frege]]
+        - [[#lebesgue][lebesgue]]
+        - [[#sylvester][sylvester]]
+        - [[#fourier][fourier]]
+        - [[#littlewood][littlewood]]
+        - [[#von-neumann][von-neumann]]
+        - [[#dedekind][dedekind]]
+        - [[#weierstrass][weierstrass]]
+        - [[#godel][godel]]
+        - [[#kornecker][kornecker]]
+        - [[#brouwer][brouwer]]
+        - [[#abel][abel]]
+        - [[#wiener][wiener]]
+        - [[#lie][lie]]
+        - [[#bernoullis][bernoullis]]
+        - [[#sierpinski][sierpinski]]
+        - [[#clifford][clifford]]
+      - [[#branches][branches]]
+        - [[#extermal-probabalistic-combinatorics][extermal-probabalistic-combinatorics]]
+        - [[#set-theory][set-theory]]
+        - [[#mathematical-analysis][mathematical-analysis]]
+        - [[#algebraic-geometry][algebraic-geometry]]
+        - [[#algebraic-numbers][algebraic-numbers]]
+        - [[#algebraic-topology][algebraic-topology]]
+        - [[#analytic-number-theory][analytic-number-theory]]
+        - [[#arithmetic-geometry][arithmetic-geometry]]
+        - [[#computational-complexity-1][computational-complexity]]
+        - [[#computational-number-theory][computational-number-theory]]
+        - [[#differential-topology][differential-topology]]
+        - [[#dynamics][dynamics]]
+        - [[#enumerative-and-algebraic-combinatorics][enumerative-and-algebraic-combinatorics]]
+        - [[#general-relativity][general-relativity]]
+        - [[#geometric-combinatorial-group-theory][geometric-combinatorial-group-theory]]
+        - [[#high-dimensional-geometry-and-probability][high-dimensional-geometry-and-probability]]
+        - [[#logic-and-model-theory][logic-and-model-theory]]
+        - [[#mirror-symmetry][mirror-symmetry]]
+        - [[#moduli-spaces-1][moduli-spaces]]
+        - [[#numerical-analysis][numerical-analysis]]
+        - [[#operator-algebras][operator-algebras]]
+        - [[#partial-differential-equations][partial-differential-equations]]
+        - [[#probabilistic-model-of-critical-phenomenon][probabilistic-model-of-critical-phenomenon]]
+        - [[#representation-theory][representation-theory]]
+        - [[#stochastic-processes][stochastic-processes]]
+        - [[#vertex-operator-algebras][vertex-operator-algebras]]
+      - [[#theorems-and-problems][theorems-and-problems]]
+        - [[#fundamental-theorem-of-algebra][fundamental-theorem-of-algebra]]
+        - [[#abc-conjecture][abc-conjecture]]
+        - [[#atiyah-singer-index-theorem][atiyah-singer-index-theorem]]
+        - [[#banach-tarski-paradox][banach-tarski-paradox]]
+        - [[#birch-swinnerton-dyer-conjecture][birch-swinnerton-dyer-conjecture]]
+        - [[#carlesons-theorem][carlesons-theorem]]
+        - [[#central-limit-theorem][central-limit-theorem]]
+        - [[#circle-packing][circle-packing]]
+        - [[#classification-of-finite-simple-groups][classification-of-finite-simple-groups]]
+        - [[#dirichelets-theorem][dirichelets-theorem]]
+        - [[#ergodic-theorem][ergodic-theorem]]
+        - [[#fermats-last-theorem][fermats-last-theorem]]
+        - [[#fixed-point-theorems][fixed-point-theorems]]
+        - [[#four-color-theorem][four-color-theorem]]
+        - [[#class-field-theory][class-field-theory]]
+        - [[#fundamental-theorem-of-arithmetic][fundamental-theorem-of-arithmetic]]
+        - [[#godels-theorem][godels-theorem]]
+        - [[#goromovs-polynomial-growth-theorem][goromovs-polynomial-growth-theorem]]
+        - [[#hilberts-nullensatz][hilberts-nullensatz]]
+        - [[#independence-of-the-continuun-hypothesis][independence-of-the-continuun-hypothesis]]
+        - [[#inequalities][inequalities]]
+        - [[#insolubility-of-the-halting-problem][insolubility-of-the-halting-problem]]
+        - [[#liouvilles-and-roth-theorems][liouvilles-and-roth-theorems]]
+        - [[#mostows-strong-rigidity-theorem][mostows-strong-rigidity-theorem]]
+        - [[#insolubility-of-the-quinitic][insolubility-of-the-quinitic]]
+        - [[#p-vs-np-problem][p-vs-np-problem]]
+        - [[#poincare-conjecture][poincare-conjecture]]
+        - [[#riemann-hypothesis][riemann-hypothesis]]
+        - [[#additive-number-theory][additive-number-theory]]
+        - [[#mordell-conjecture][mordell-conjecture]]
+        - [[#riemann-roch-theorem][riemann-roch-theorem]]
+        - [[#robertson-seymour-theorem][robertson-seymour-theorem]]
+        - [[#resolution-of-singularities][resolution-of-singularities]]
+        - [[#three-body-problem][three-body-problem]]
+        - [[#uniformization-theorem][uniformization-theorem]]
+        - [[#weil-conjecture][weil-conjecture]]
     - [[#pure][pure]]
   - [[#books][books]]
     - [[#linux-kernel-development][linux-kernel-development]]
@@ -72,7 +307,7 @@ description
         - [[#multi-set][multi-set]]
         - [[#ordered-set][ordered-set]]
         - [[#subset][subset]]
-      - [[#graphs][graphs]]
+      - [[#graphs-1][graphs]]
         - [[#-shortest-path][-shortest-path]]
           - [[#dijkstra][dijkstra]]
           - [[#a][a*]]
@@ -114,7 +349,7 @@ description
     - [[#statistics][statistics]]
       - [[#random-variables][random-variables]]
       - [[#expectation][expectation]]
-      - [[#inequalities][inequalities]]
+      - [[#inequalities-1][inequalities]]
       - [[#convergence-of-random-variables][convergence-of-random-variables]]
       - [[#inference][+inference]]
       - [[#linear-and-logistic-regression][linear-and-logistic-regression]]
@@ -212,6 +447,241 @@ description
   :END:
 ** [[file:./math.org][math]]
 *** applied 
+**** concepts
+***** matroids
+***** braid-groups
+***** expanders
+***** knot-polynomials
+***** axiom-of-choice
+***** axiom-of-determinacy
+***** bayesian-analysis
+***** c-star-algebras
+***** calabi-yau-manifolds
+***** cardinals
+***** categories
+***** compactness
+***** computational-complexity
+***** curvature
+***** designs
+***** determinants
+***** differentials-forms
+***** dimension
+***** distributions
+***** duality
+***** dynamical-systems-chaos
+***** elliptic-curves
+***** euclidian-algorithms
+***** euler-navier-stokes
+***** exponential-and-log-functions
+***** fast-fourier-transform
+***** fourier-transform
+***** fuchsian-groups
+***** function-spaces
+***** galois-groups
+***** gamma-function
+***** generating-function
+***** genus
+***** graphs
+***** hamiltonians
+***** heat-equation
+***** hilbert-spaces
+***** homology-and-cohomology
+***** homotopy-groups
+***** ideal-class-group
+***** irrational-transcendental-numbers
+***** ising-model
+***** jordan-normal-form
+***** k-theory
+***** i-functions
+***** leech-lattice
+***** lie-theory
+***** linear-nonlinear-solitons
+***** linear-nonlinear-waves
+***** linear-operators-properties
+***** local-and-globals-in-number-theory
+***** mandelbrot-set
+***** manifolds
+***** measures
+***** metric-spaces
+***** models-of-set-theory
+***** modular-arithmetic
+***** modular-forms
+***** moduli-spaces
+***** monster-group
+***** normed-and-banach-spaces
+***** number-fields
+***** optimization-and-lagrange-multipliers
+***** orbifolds
+***** ordinals
+***** peano-axioms
+***** permutation-groups
+***** phase-transitions
+***** pi
+***** probability-distributinos
+***** projective-space
+***** quadratic-forms
+***** quantum-computation
+***** quantum-groups
+***** quaternions-octonions-normed-division
+***** representations
+***** ricci-flow
+***** reimann-surfaces
+***** riemann-zeta-function
+***** rings-ideals-and-modules
+***** schemes
+***** schrodinger-equation
+***** simplex-algorithm
+***** tensor-products
+***** the-spectrum
+***** topological-spaces
+***** transforms
+***** trigonometric-functions
+***** universal-covers
+***** variational-methods
+***** varieties
+***** vector-bundles
+***** von-neumann-algebras
+***** wavelets
+***** zermalo-fraenkel-axioms
+**** mathematicians
+***** al-khwarizmi
+***** legendre
+***** apollonius
+***** mobius
+***** cauchy
+***** de-morgan
+***** bolzano
+***** pascal
+***** jacobi
+***** waring
+***** kummer
+***** viete
+***** cardano
+***** newton
+***** bolyai
+***** d'alembert
+***** liouville
+***** lagrange
+***** piza
+***** euler
+***** lobachevskii
+***** dirichlet
+***** fermat
+***** laplace
+***** pythagoras
+***** bombelli
+***** descartes
+***** poissan
+***** stevin
+***** hamilton
+***** turing
+***** tarski
+***** weil
+***** archimedes
+***** russell
+***** jordan
+***** gauss
+***** hermite
+***** klein
+***** cartan
+***** artin
+***** borel
+***** mathieu
+***** noether
+***** euclid
+***** galois
+***** hausdorff
+***** frobenius
+***** riesz
+***** cantor
+***** riemann
+***** birkhoff
+***** boole
+***** green
+***** peano
+***** hardy
+***** leibniz
+***** frege
+***** lebesgue
+***** sylvester
+***** fourier
+***** littlewood
+***** von-neumann
+***** dedekind
+***** weierstrass
+***** godel
+***** kornecker
+***** brouwer
+***** abel
+***** wiener
+***** lie
+***** bernoullis
+***** sierpinski
+***** clifford
+**** branches
+***** extermal-probabalistic-combinatorics
+***** set-theory
+***** mathematical-analysis
+***** algebraic-geometry
+***** algebraic-numbers
+***** algebraic-topology
+***** analytic-number-theory
+***** arithmetic-geometry
+***** computational-complexity
+***** computational-number-theory
+***** differential-topology
+***** dynamics
+***** enumerative-and-algebraic-combinatorics
+***** general-relativity
+***** geometric-combinatorial-group-theory
+***** high-dimensional-geometry-and-probability
+***** logic-and-model-theory
+***** mirror-symmetry
+***** moduli-spaces
+***** numerical-analysis
+***** operator-algebras
+***** partial-differential-equations
+***** probabilistic-model-of-critical-phenomenon
+***** representation-theory
+***** stochastic-processes
+***** vertex-operator-algebras
+**** theorems-and-problems
+***** fundamental-theorem-of-algebra
+***** abc-conjecture
+***** atiyah-singer-index-theorem
+***** banach-tarski-paradox
+***** birch-swinnerton-dyer-conjecture
+***** carlesons-theorem
+***** central-limit-theorem
+***** circle-packing
+***** classification-of-finite-simple-groups
+***** dirichelets-theorem
+***** ergodic-theorem
+***** fermats-last-theorem
+***** fixed-point-theorems
+***** four-color-theorem
+***** class-field-theory
+***** fundamental-theorem-of-arithmetic
+***** godels-theorem
+***** goromovs-polynomial-growth-theorem
+***** hilberts-nullensatz
+***** independence-of-the-continuun-hypothesis
+***** inequalities
+***** insolubility-of-the-halting-problem
+***** liouvilles-and-roth-theorems
+***** mostows-strong-rigidity-theorem
+***** insolubility-of-the-quinitic
+***** p-vs-np-problem
+***** poincare-conjecture
+***** riemann-hypothesis
+***** additive-number-theory
+***** mordell-conjecture
+***** riemann-roch-theorem
+***** robertson-seymour-theorem
+***** resolution-of-singularities
+***** three-body-problem
+***** uniformization-theorem
+***** weil-conjecture
 *** pure
 ** books
 *** [[file:./linux-kernel-development.org][linux-kernel-development]]
