@@ -1,0 +1,33 @@
+# _*_ mode:org _*_
+#+TITLE: subset
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+./sets/subsets
+./sets/subsets/approx-subset-sum
+./sets/subsets/approx-subset-sum/merge-lists
+./sets/subsets/exact-subset-sum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

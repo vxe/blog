@@ -1,0 +1,31 @@
+# _*_ mode:org _*_
+#+TITLE: matroid
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+./sets/matroid
+./sets/matroid/girth
+./sets/matroid/greedy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

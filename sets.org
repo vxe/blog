@@ -26,3 +26,14 @@ a way to compute:
 
 yeah, idk that's still kind of vague.
 
+
+./sets/insert
+./sets/extract-max
+./sets/delete
+./sets/random-sample
+./sets/make-set
+./sets/search
+./sets/find-set
+./sets/print-set
+./sets/increase-key
+

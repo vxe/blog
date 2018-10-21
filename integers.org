@@ -7,3 +7,15 @@ a yes, the mighty integer.  The basis for number theory.  The one
 thing a computer can be counted on to calculate accurately.  You would
 think that you need a fair amount of number theory to do anything with
 in computer science.  Eh, maybe, maybe not.
+
+
+./numbers
+./numbers/witness
+./numbers/miller-rabin
+./numbers/pollard-rho
+./numbers/pseudoprime
+./numbers/extended-euclid
+./numbers/modular-linear-equation-solver
+./numbers/euclid
+./numbers/fib
+./numbers/biased-random

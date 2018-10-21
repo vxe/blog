@@ -1,0 +1,54 @@
+# _*_ mode:org _*_
+#+TITLE: matricies
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+./matricies/matrix-chain-multiply
+./matricies/vector-space
+./matricies/square-matrix-multiply-recursive
+./matricies/add-row
+./matricies/jacobian-matrix
+./matricies/parallel
+./matricies/parallel/p-square-matrix-multiply
+./matricies/parallel/p-transpose
+./matricies/shape
+./matricies/recursive-matrix-chain
+./matricies/lu-decomposition
+./matricies/square-matrix-multiply
+./matricies/lookup-chain
+./matricies/memoized-matrix-chain
+./matricies/mat-vec-main-loop
+./matricies/dimensionality
+./matricies/mat-vec
+./matricies/matrix-multiply
+./matricies/lup-solve
+./matricies/column-count
+./matricies/lup-decomposition
+./matricies/diagonal
+./matricies/print-optimal-parens
+./matricies/matrix-chain-order
+./matricies/iterative-fft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

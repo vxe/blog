@@ -254,7 +254,7 @@ description
     - [[#internet-routing-architectures][internet-routing-architectures]]
     - [[#tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
   - [[#data-science][data-science]]
-    - [[#data-structures][data-structures]]
+- [[#data-structures][data-structures]]
       - [[#linear-lists][linear-lists]]
         - [[#-append][-append]]
         - [[#-copy][-copy]]
@@ -310,7 +310,9 @@ description
       - [[#associative-array][associative-array]]
         - [[#veb-tree][veb-tree]]
         - [[#hash-table][hash-table]]
+      - [[#memory][memory]]
     - [[#mathematical-structures][mathematical-structures]]
+      - [[#matroid][matroid]]
       - [[#graphs-1][graphs]]
         - [[#-shortest-path][-shortest-path]]
           - [[#dijkstra][dijkstra]]
@@ -449,7 +451,6 @@ description
     - [[#acoustics][acoustics]]
       - [[#pitch][pitch]]
       - [[#rhythym][rhythym]]
-      - [[#][]]
 - [[#local-vars][local vars]]
 
 * table of contents
@@ -704,8 +705,8 @@ description
 *** internet-routing-architectures
 *** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
 ** data-science
-*** [[file:./data-structures.org][data-structures]]
-**** [[file:./linear-lists.org][linear-lists]]
+* [[file:./data-structures.org][data-structures]]
+**** [[file:./linear-lists.org][linear-lists]] 
 ***** -append
 ***** -copy
 ***** -count
@@ -715,9 +716,9 @@ description
 ***** -sort
 ***** -split
 ***** [[file:./-update-kth.org][-update-kth]]
-***** array
+***** [[file:./array.org][array]]
 ***** [[file:./stack.org][stack]]
-***** bit-vector
+***** [[file:./bit-vector.org][bit-vector]]
 ***** [[file:./linked-list.org][linked-list]]
 ****** doubly
 ****** circularly
@@ -725,7 +726,7 @@ description
 ***** [[file:./queue.org][queue]]
 ***** deque
 ***** [[file:./sequence.org][sequence]]
-**** trees
+**** [[file:./trees.org][trees]]
 ***** -find-depth
 ***** -inorder-tree-walk
 ***** -iterative-tree-search
@@ -741,7 +742,7 @@ description
 ***** [[file:./search-tree.org][search-tree]]
 ***** interval-tree
 ***** persistent-tree
-**** [[file:./sets.org][sets]]
+**** [[file:./sets.org][sets]] 
 ***** -delete
 ***** -extract-max
 ***** -find-set
@@ -751,17 +752,23 @@ description
 ***** -print-set
 ***** -random-sample
 ***** -search
-***** point-set
-***** disjoint-set
-***** dynamic-set
-***** multi-set
-***** ordered-set
-***** subset
-**** associative-array
+***** [[file:./point-set.org][point-set]]
+***** [[file:./disjoint-set.org][disjoint-set]]
+***** [[file:./dynamic-set.org][dynamic-set]]
+***** [[file:./multi-set.org][multi-set]]
+***** [[file:./ordered-set.org][ordered-set]]
+***** [[file:./subset.org][subset]]
+**** [[file:./associative-array.org][associative-array]]
 ***** [[file:./veb-tree.org][veb-tree]]
-***** hash-table
+***** [[file:./hash-table.org][hash-table]]
+**** memory
+./memory
+./memory/free-object
+./memory/allocate-node
+./memory/allocate-object
 *** mathematical-structures
-**** graphs
+**** [[file:./matroid.org][matroid]]
+**** [[file:./graphs.org][graphs]]
 ***** -shortest-path
 ****** dijkstra
 ****** a*
@@ -782,7 +789,7 @@ description
 ***** -search
 ****** breadth-first
 ****** depth-first 
-**** matricies
+**** [[file:./matricies.org][matricies]]
 ***** -add-row
 ***** -column-count
 ***** -diagonal
@@ -793,7 +800,7 @@ description
 ***** -matrix-multiply
 ***** -shape
 ***** -square-matrix-multiply
-***** [[file:./jacobian-matrix.org][jacobian-matrix]]
+***** [[file:./jacobian-matrix.org][jacobian-matrix]] 
 **** [[file:./integers.org][integers]]
 ***** -biased-random
 ***** -euclid
@@ -900,8 +907,6 @@ description
 *** acoustics
 **** [[file:./pitch.org][pitch]]
 **** rhythym
-**** 
-
 * local vars
 # Local Variables:
 # eval: (wiki-mode)

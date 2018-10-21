@@ -1,0 +1,83 @@
+# _*_ mode:org _*_
+#+TITLE: graphs
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+The graph is a precise mathematical specification of things and their
+connectivity to other things.
+
+./graphs/mst
+./graphs/mst/generic-mst
+./graphs/mst/maybe-mst-c
+./graphs/mst/mst-kruskal
+./graphs/mst/maybe-mst-b
+./graphs/mst/maybe-mst-a
+./graphs/mst/mst-reduce
+./graphs/mst/mst-prim
+./graphs/travelling-salesman-problem
+./graphs/travelling-salesman-problem/approx-tsp-tour
+./graphs/vertex-cover
+./graphs/vertex-cover/approx-vertex-cover
+./graphs/vertex-cover/approx-min-weight-vc
+./graphs/shortest-path
+./graphs/shortest-path/slow-all-pairs-shortest-paths
+./graphs/shortest-path/bellman-ford
+./graphs/shortest-path/floyd-warshall
+./graphs/shortest-path/print-all-pairs-shortest-path
+./graphs/shortest-path/extend-shortest-paths
+./graphs/shortest-path/dag-shortest-paths
+./graphs/shortest-path/faster-all-pairs-shortest-paths
+./graphs/shortest-path/dijkstra
+./graphs/shortest-path/dijkstra/initialize-single-source
+./graphs/shortest-path/dijkstra/extract-min
+./graphs/shortest-path/dijkstra/relax
+./graphs/shortest-path/johnson
+./graphs/search
+./graphs/search/dfs
+./graphs/search/dfs/dfs-visit
+./graphs/search/bfs
+./graphs/maximum-flow
+./graphs/maximum-flow/max-flow-by-scaling
+./graphs/maximum-flow/relabel-to-front
+./graphs/maximum-flow/relabel-to-front/discharge
+./graphs/maximum-flow/generic-push-relabel
+./graphs/maximum-flow/initialize-preflow
+./graphs/maximum-flow/ford-fulkerson-method
+./graphs/maximum-flow/ford-fulkerson-method/algorithm
+./graphs/maximum-flow/ford-fulkerson-method/concepts
+./graphs/maximum-flow/ford-fulkerson-method/concepts/augmenting-paths
+./graphs/maximum-flow/ford-fulkerson-method/concepts/residual-networks
+./graphs/maximum-flow/ford-fulkerson-method/concepts/cuts
+./graphs/maximum-flow/ford-fulkerson-method/concepts/cuts/max-flow-min-cut-theorem
+./graphs/reachability
+./graphs/reachability/transitive-closure
+./graphs/reachability/connected-components
+./graphs/reachability/connected-components/same-component
+./graphs/reachability/strongly-connected-components
+./graphs/sorting
+./graphs/sorting/topological-sort
+./graphs/cardinality-matching
+./graphs/cardinality-matching/hopcroft-karp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

@@ -1,0 +1,24 @@
+# _*_ mode:org _*_
+#+TITLE: associative-array
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

@@ -9,3 +9,25 @@ a queue, the next thing is not the front of the queue but the back.
 
 That's actually a super simple concept. I don't know why its so hard
 for me to grasp.
+
+./linear-lists/stack
+./linear-lists/stack/top
+./linear-lists/stack/rot
+./linear-lists/stack/pop
+./linear-lists/stack/div-mod
+./linear-lists/stack/2drop
+./linear-lists/stack/multipop
+./linear-lists/stack/next-to-top
+./linear-lists/stack/2dup
+./linear-lists/stack/stack-empty
+./linear-lists/stack/swap
+./linear-lists/stack/over
+./linear-lists/stack/dup
+./linear-lists/stack/push
+./linear-lists/stack/load
+./linear-lists/stack/drop
+./linear-lists/stack/definition
+./linear-lists/stack/list
+./linear-lists/stack/2over
+./linear-lists/stack/multipush
+./linear-lists/stack/2swap

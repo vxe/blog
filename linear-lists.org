@@ -1,0 +1,13 @@
+./linear-lists
+./linear-lists/split
+./linear-lists/insert
+./linear-lists/sort
+./linear-lists/delete
+./linear-lists/update-kth
+./linear-lists/append
+./linear-lists/count
+./linear-lists/deque
+./linear-lists/deque/definition
+./linear-lists/doubly-linked-list
+./linear-lists/copy
+./linear-lists/find

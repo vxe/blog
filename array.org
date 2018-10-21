@@ -1,4 +1,77 @@
-# -*- mode:org -*-
+# _*_ mode:org _*_
+#+TITLE: array
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+./linear-lists/array
+./linear-lists/array/hoare-partition
+./linear-lists/array/deterministic-search
+./linear-lists/array/sum-arrays
+./linear-lists/array/compare-exchange
+./linear-lists/array/permute-by-cyclic
+./linear-lists/array/find-max-crossing-subarray
+./linear-lists/array/permute-without-identity
+./linear-lists/array/parallel
+./linear-lists/array/parallel/p-scan-down
+./linear-lists/array/parallel/p-scan-2
+./linear-lists/array/parallel/p-matrix-multiply-recursive
+./linear-lists/array/parallel/p-scan-3
+./linear-lists/array/parallel/p-merge-sort
+./linear-lists/array/parallel/p-merge
+./linear-lists/array/parallel/p-scan-1
+./linear-lists/array/parallel/p-scan-up
+./linear-lists/array/randomize-in-place
+./linear-lists/array/recursive-fft
+./linear-lists/array/bubblesort
+./linear-lists/array/merge
+./linear-lists/array/permute-by-sorting
+./linear-lists/array/reduce
+./linear-lists/array/counting-sort
+./linear-lists/array/randomized-select
+./linear-lists/array/random-search
+./linear-lists/array/find-maximum-subarray
+./linear-lists/array/merge-sort
+./linear-lists/array/insertion-sort
+./linear-lists/array/scan
+./linear-lists/array/add-subarray
+./linear-lists/array/permute-with-all
+./linear-lists/array/randomized-partition
+./linear-lists/array/scramble-search
+./linear-lists/array/randomized-quicksort
+./linear-lists/array/bucket-sort
+./linear-lists/array/randomized-hire-assistant
+./linear-lists/array/radix-sort
+./linear-lists/array/tail-recursive-quicksort
+./linear-lists/array/minimum
+./linear-lists/array/select
+./linear-lists/array/partition
+./linear-lists/array/random
+./linear-lists/array/binary-search
+./linear-lists/array/quicksort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:# -*- mode:org -*-
 #+TITLE: array
 #+STARTUP: indent
 #+OPTIONS: toc:nil

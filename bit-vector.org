@@ -1,0 +1,42 @@
+# _*_ mode:org _*_
+#+TITLE: bit-vector
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+./linear-lists/bit-vector
+./linear-lists/bit-vector/bit-reverse-copy
+./linear-lists/bit-vector/xor
+./linear-lists/bit-vector/find-first-one
+./linear-lists/bit-vector/not
+./linear-lists/bit-vector/bit-reversed-increment
+./linear-lists/bit-vector/reset
+./linear-lists/bit-vector/modular-exponentiation
+./linear-lists/bit-vector/bianry-to-hexadecimal
+./linear-lists/bit-vector/and
+./linear-lists/bit-vector/increment
+./linear-lists/bit-vector/or
+./linear-lists/bit-vector/hamming-weight
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

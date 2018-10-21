@@ -1,0 +1,37 @@
+# _*_ mode:org _*_
+#+TITLE: point-set
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+./sets/point-set
+./sets/point-set/print-intersecting-segments
+./sets/point-set/below
+./sets/point-set/any-segments-intersect
+./sets/point-set/graham-scan
+./sets/point-set/on-segment
+./sets/point-set/direction
+./sets/point-set/segments-intersect
+./sets/point-set/above
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

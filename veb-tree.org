@@ -10,6 +10,21 @@ purely functional maps.
 
 
 
+./maps/veb-tree
+./maps/veb-tree/create-new-rs-veb-tree
+./maps/veb-tree/proto-veb-minimum
+./maps/veb-tree/veb-tree-predecessor
+./maps/veb-tree/veb-tree-minimum
+./maps/veb-tree/proto-veb-successor
+./maps/veb-tree/veb-empty-tree-insert
+./maps/veb-tree/veb-tree-delete
+./maps/veb-tree/veb-tree-insert
+./maps/veb-tree/proto-veb-insert
+./maps/veb-tree/proto-veb-member
+./maps/veb-tree/veb-tree-maximum
+./maps/veb-tree/veb-tree-member
+./maps/veb-tree/veb-tree-successor
+
 
 
 

@@ -10,3 +10,8 @@ grow indefinitely and since you never really see the end can keep
 procrastinating on it.  
 
 
+
+./linear-lists/queue
+./linear-lists/queue/dequeue
+./linear-lists/queue/enqueue
+./linear-lists/queue/definition

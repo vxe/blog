@@ -1,0 +1,31 @@
+# _*_ mode:org _*_
+#+TITLE: ordered-set
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+./sets/ordered-set
+./sets/ordered-set/predecessor
+./sets/ordered-set/successor
+./sets/ordered-set/maximum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

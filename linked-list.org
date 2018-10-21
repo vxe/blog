@@ -1,0 +1,16 @@
+# _*_ mode:org _*_
+#+TITLE: linked-list
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+./linear-lists/linked-list
+./linear-lists/linked-list/car
+./linear-lists/linked-list/list-search
+./linear-lists/linked-list/trim
+./linear-lists/linked-list/cdr
+./linear-lists/linked-list/list-delete
+./linear-lists/linked-list/list-insert
+./linear-lists/linked-list/compact-list-search
+./linear-lists/linked-list/compactify-list

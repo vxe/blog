@@ -1,0 +1,34 @@
+# _*_ mode:org _*_
+#+TITLE: dynamic-set
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+./sets/dynamic-set
+./sets/dynamic-set/min-gap
+./sets/dynamic-set/off-line-minimum
+./sets/dynamic-set/on-line-maximum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

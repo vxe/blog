@@ -4,3 +4,14 @@
 #+OPTIONS: toc:nil
 
 so why are strings, mathematical structures?  Information Theory!
+
+
+./text/repetition-matcher
+./text/naive-string-matcher
+./text/kmp-matcher
+./text/kmp-matcher/compute-prefix-function
+./text/finite-automaton-matcher
+./text/rabin-karp-matcher
+./text/characters
+./text/characters/huffman
+./text/characters/compute-transition-function

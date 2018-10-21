@@ -12,6 +12,12 @@ number of terms of the series to be calculated, and thus the decrement
 of it corresponds to sequential steps of the recursion.  eg the zeta
 function 
 
+./linear-lists/sequence
+./linear-lists/sequence/print-lcs
+./linear-lists/sequence/hire-assistant
+./linear-lists/sequence/lcs-length
+
+
 #+BEGIN_SRC elisp
 (defun zeta (n s)
          (if (= n 0)

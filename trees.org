@@ -1,7 +1,116 @@
-# -*- mode:org -*-
-#+TITLE: trees, the jocks of the plant kingdom
+# _*_ mode:org _*_
+#+TITLE: trees
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
-
 ok trees seem useful you know?
+
+light em up!
+
+
+./trees
+./trees/tree-predecessor
+./trees/inorder-tree-walk
+./trees/interval-tree
+./trees/interval-tree/interval-delete
+./trees/interval-tree/interval-insert
+./trees/interval-tree/interval-search-exactly
+./trees/interval-tree/definition
+./trees/interval-tree/interval-search
+./trees/tree-search
+./trees/tree-minimum
+./trees/find-depth
+./trees/trie
+./trees/trie/hash-array-mapped-trie
+./trees/heap
+./trees/heap/right
+./trees/heap/heap-increase-key
+./trees/heap/max-heapify
+./trees/heap/pisano-delete
+./trees/heap/heap-decrease-key
+./trees/heap/make-heap
+./trees/heap/cascading-cut
+./trees/heap/extract-min
+./trees/heap/heap-minimum
+./trees/heap/left
+./trees/heap/consolidate
+./trees/heap/max-heap-insert
+./trees/heap/heap-extract-max
+./trees/heap/heap-delete
+./trees/heap/link
+./trees/heap/parent
+./trees/heap/union
+./trees/heap/build-max-heap
+./trees/heap/heapsort
+./trees/heap/fibonacci-heap
+./trees/heap/fibonacci-heap/fib-heap-link
+./trees/heap/fibonacci-heap/fib-heap-union
+./trees/heap/fibonacci-heap/cut
+./trees/heap/fibonacci-heap/fib-heap-prune
+./trees/heap/heap-maximum
+./trees/heap/heap-extract-min
+./trees/heap/build-min-heap
+./trees/heap/min-heap-insert
+./trees/heap/min-heapify
+./trees/definition
+./trees/search-tree
+./trees/search-tree/avl-tree
+./trees/search-tree/avl-tree/avl-insert
+./trees/search-tree/avl-tree/balance
+./trees/search-tree/right-rotate
+./trees/search-tree/b-tree
+./trees/search-tree/b-tree/b-tree-insert
+./trees/search-tree/b-tree/b-tree-delete
+./trees/search-tree/b-tree/b-tree-split-child
+./trees/search-tree/b-tree/b-tree-insert-nonfull
+./trees/search-tree/b-tree/b-tree-search
+./trees/search-tree/b-tree/b-tree-create
+./trees/search-tree/transplant
+./trees/search-tree/red-black-tree
+./trees/search-tree/red-black-tree/rb-join
+./trees/search-tree/red-black-tree/rb-delete
+./trees/search-tree/red-black-tree/rb-delete-fixup
+./trees/search-tree/red-black-tree/rb-insert
+./trees/search-tree/red-black-tree/rb-transplant
+./trees/search-tree/red-black-tree/rb-enumerate
+./trees/search-tree/red-black-tree/rb-insert-fixup
+./trees/search-tree/os-tree
+./trees/search-tree/os-tree/os-select
+./trees/search-tree/os-tree/os-rank
+./trees/search-tree/os-tree/os-key-rank
+./trees/search-tree/os-tree/definition
+./trees/search-tree/treap
+./trees/search-tree/treap/treap-insert
+./trees/search-tree/left-rotate
+./trees/search-tree/optimal-bst
+./trees/tree-successor
+./trees/iterative-tree-search
+./trees/tree-maximum
+./trees/tree-insert
+./trees/tree-delete
+./trees/persistent-tree
+./trees/persistent-tree/persistent-tree-insert
+./trees/persistent-tree/persistent-tree-insert/example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:# -*- mode:org -*-
