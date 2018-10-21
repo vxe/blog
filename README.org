@@ -386,6 +386,9 @@ description
     - [[#knowledge-representation][knowledge-representation]]
       - [[#ontologies][ontologies]]
     - [[#planning][planning]]
+      - [[#classical-planning][classical-planning]]
+      - [[#optimization][optimization]]
+      - [[#sat-and-constraint-solving][SAT-and-constraint Solving]]
     - [[#learning][learning]]
     - [[#nlp][nlp]]
     - [[#perception][perception]]
@@ -844,6 +847,10 @@ description
 *** knowledge-representation
 **** ontologies
 *** [[file:./planning.org][planning]]
+**** [[file:./classical-planning.org][classical-planning]]
+**** optimization
+**** SAT-and-constraint Solving
+
 *** learning
 *** nlp
 *** perception

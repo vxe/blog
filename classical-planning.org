@@ -1,0 +1,36 @@
+# _*_ mode:org _*_
+#+TITLE: classical-planning
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+The simplest possible planning problem, known as the Classical Planning Problem, is determined by:
+
+- [ ] a unique known initial state,
+- [ ] durationless actions,
+- [ ] deterministic actions,
+- [ ] which can be taken only one at a time,
+- [ ] and a single agent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
