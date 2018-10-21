@@ -1,0 +1,4 @@
+# algorithms
+#lifestyle/self-improvement/learning/algorithms
+
+whenever you learn a new algorithm, name it and add it to #software-engineering/data-structures

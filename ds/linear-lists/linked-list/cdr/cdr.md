@@ -1,0 +1,2 @@
+# cdr
+#software-engineering/data-structures/linear-lists/linked-list/cdr

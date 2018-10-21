@@ -1,0 +1,3 @@
+# HEAP
+heaps are the most important array structure
+#software-engineering/data-structures/trees/HEAP

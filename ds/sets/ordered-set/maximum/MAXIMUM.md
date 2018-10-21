@@ -1,0 +1,7 @@
+# MAXIMUM
+
+MAXIMUM(S) A query on a totally ordered set S that returns a pointer to the element of S with the largest key.
+
+
+
+#software-engineering/data-structures/sets/ordered-set/MAXIMUM

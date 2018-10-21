@@ -1,0 +1,7 @@
+# EUCLID
+EUCLID(a,b)
+1 if b == 0 
+2   return a 
+3 else return EUCLID(b,a mod b)
+
+#software-engineering/data-structures/numbers/EUCLID

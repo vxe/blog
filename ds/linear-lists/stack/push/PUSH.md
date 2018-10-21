@@ -1,0 +1,7 @@
+# PUSH
+PUSH(S,x)
+1 S.top =  S.top + 1 
+2 S[S.top] =  x
+
+
+#software-engineering/data-structures/linear-lists/STACK/PUSH

@@ -1,0 +1,18 @@
+# COMPUTE-TRANSITION-FUNCTION
+
+COMPUTE-TRANSITION-FUNCTION(P,∑) 
+1  m = P.length
+2  for q = 0 to m
+3    for each character a ∈ ∑ 
+4       k = min(m+1, q+2)
+5       repeat 
+6         k = k - 1
+7       until p_k ⊐ P_qa
+8       δ(q,a) = k 
+9  return δ
+
+
+## reference
+* [algorithm - Can anyone explain transition-function in String matching using finite automata? - Stack Overflow](https://stackoverflow.com/questions/47130618/can-anyone-explain-transition-function-in-string-matching-using-finite-automata)
+
+#software-engineering/data-structures/text/CHARACTERS/COMPUTE-TRANSITION-FUNCTION

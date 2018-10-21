@@ -1,0 +1,5 @@
+# HASH-DELETE
+Write pseudocode for HASH-DELETE as outlined in the text, and modify HASHINSERT to handle the special value DELETED.
+
+
+#software-engineering/data-structures/maps/HASH-TABLE/HASH-DELETE

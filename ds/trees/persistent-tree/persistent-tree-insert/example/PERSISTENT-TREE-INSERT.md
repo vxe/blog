@@ -1,0 +1,10 @@
+# PERSISTENT-TREE-INSERT
+#software-engineering/data-structures/trees/persistent-tree/PERSISTENT-TREE-INSERT/example
+
+[Persistent data
+![](PERSISTENT-TREE-INSERT/438px-Purely_functional_tree_after.svg.png)
+![](PERSISTENT-TREE-INSERT/348px-Purely_functional_tree_before.svg.png)
+ structure - Wikipedia](https://en.wikipedia.org/wiki/Persistent_data_structure#Trees)
+
+
+

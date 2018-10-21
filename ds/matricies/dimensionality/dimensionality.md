@@ -1,0 +1,2 @@
+# dimensionality
+#software-engineering/data-structures/matricies/dimensionality

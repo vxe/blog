@@ -1,0 +1,7 @@
+# LEFT
+LEFT(i) 
+1 return 2i
+
+
+
+#software-engineering/data-structures/trees/HEAP/LINK

@@ -1,0 +1,8 @@
+OVER 
+simply makes a copy of the “a” and leapfrogs it over the “b”:
+
+( a b -- a b a )
+
+#software-engineering/languages/forth/stack-operations/over #software-engineering/data-structures/linear-lists/STACK/over
+
+

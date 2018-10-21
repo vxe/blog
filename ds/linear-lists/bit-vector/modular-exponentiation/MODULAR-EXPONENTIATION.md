@@ -1,0 +1,16 @@
+# MODULAR-EXPONENTIATION
+
+MODULAR-EXPONENTIATION(a, b, n)
+1 c = 0 
+2 d = 1 
+3 let <bₖ, bₖ₋₁,..., bₒ> be the binary representation of b 
+4 for i = k downto 0 
+5   c = 2c 
+6   d = (d * d) mod n
+7   if bᵢ == 1 
+8     c = c + 1 
+9     d = (d * a) mod n
+10 return d
+
+
+#software-engineering/data-structures/linear-lists/bit-vector/MODULAR-EXPONENTIATION

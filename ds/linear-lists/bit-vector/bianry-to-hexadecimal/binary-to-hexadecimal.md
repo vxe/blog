@@ -1,0 +1,2 @@
+# binary-to-hexadecimal
+#software-engineering/data-structures/linear-lists/bit-vector/bianry-to-hexadecimal

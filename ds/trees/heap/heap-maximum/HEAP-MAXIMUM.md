@@ -1,0 +1,6 @@
+# HEAP-MAXIMUM
+HEAP-MAXIMUM.(A) 
+1 return A[1]
+
+
+#software-engineering/data-structures/trees/HEAP/HEAP-MAXIMUM
