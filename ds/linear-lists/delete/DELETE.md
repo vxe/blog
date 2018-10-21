@@ -1,3 +1,0 @@
-# DELETE
-#software-engineering/data-structures/linear-lists/DELETE
-	

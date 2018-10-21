@@ -1,7 +1,0 @@
-DROP	
-( n -- )
-Discards the top stack item.
-
-#software-engineering/languages/forth/stack-operations/drop #software-engineering/data-structures/linear-lists/STACK/drop
-
-

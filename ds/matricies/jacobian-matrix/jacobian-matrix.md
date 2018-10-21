@@ -1,2 +1,0 @@
-# jacobian-matrix
-#software-engineering/data-structures/matricies/jacobian-matrix

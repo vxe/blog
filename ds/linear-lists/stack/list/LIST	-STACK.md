@@ -1,7 +1,0 @@
-LIST	-STACK
-( n -- )
-Lists a disk block.
-
-#software-engineering/languages/forth/stack-operations/list #software-engineering/data-structures/linear-lists/STACK/list
-
-

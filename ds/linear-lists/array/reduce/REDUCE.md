@@ -1,9 +1,0 @@
-# REDUCE
-REDUCE(x, i, j)
-1 y = x[i] 
-2 for k = i + 1 to j 
-3    y = y ⨂ x[k] 
-4 return y
-
-
-#software-engineering/data-structures/linear-lists/array/REDUCE

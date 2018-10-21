@@ -1,6 +1,0 @@
-2DUP
-	( d -- d d )
-Duplicates the top pair of numbers.
-
-#software-engineering/languages/forth/stack-operations/2dup #software-engineering/data-structures/linear-lists/STACK/2dup
-

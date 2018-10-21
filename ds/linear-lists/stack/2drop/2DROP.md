@@ -1,6 +1,0 @@
-2DROP	
-( d -- )
-Discards the top pair of numbers.
-
-#software-engineering/languages/forth/stack-operations/2drop #software-engineering/data-structures/linear-lists/STACK/2drop
-

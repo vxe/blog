@@ -1,2 +1,0 @@
-# SORT
-#software-engineering/data-structures/linear-lists/SORT

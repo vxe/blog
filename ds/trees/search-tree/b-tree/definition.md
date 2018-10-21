@@ -1,5 +1,0 @@
-# definition
-#software-engineering/data-structures/trees/search-tree/b-TREE
-
-In  [computer science](https://en.wikipedia.org/wiki/Computer_science) , a B-tree is a self-balancing  [tree data structure](https://en.wikipedia.org/wiki/Tree_data_structure)  that keeps data sorted and allows searches, sequential access, insertions, and deletions in  [logarithmic time](https://en.wikipedia.org/wiki/Logarithmic_time) . The B-tree is a generalization of a  [binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)  in that a node can have more than two children.[1] Unlike  [self-balancing binary search trees](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree) , the B-tree is well suited for storage systems that read and write relatively large blocks of data, such as discs. It is commonly used in  [databases](https://en.wikipedia.org/wiki/Database)  and  [filesystems](https://en.wikipedia.org/wiki/Filesystem) .
-What, if anything, the **B** stands for has never been established.

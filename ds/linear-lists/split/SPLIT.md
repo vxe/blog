@@ -1,3 +1,0 @@
-# SPLIT
-#software-engineering/data-structures/linear-lists/SPLIT
-

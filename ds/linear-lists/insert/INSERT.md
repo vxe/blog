@@ -1,6 +1,0 @@
-# INSERT
-#software-engineering/data-structures/linear-lists/INSERT
-
-INSERT(L)
-
-

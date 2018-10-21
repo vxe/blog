@@ -1,6 +1,0 @@
-# div-mod
-
-/MOD	( n1 n2 -- rem quot )
-Divides. Returns the remainder and quotient.
-
-#software-engineering/languages/forth/stack-operations/div-mod #software-engineering/data-structures/linear-lists/STACK/div-mod

@@ -1,3 +1,0 @@
-# update-kth
-#software-engineering/data-structures/linear-lists/UPDATE-KTH
-

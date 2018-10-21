@@ -1,3 +1,0 @@
-# COUNT
-#software-engineering/data-structures/linear-lists/COUNT 
-

@@ -1,7 +1,0 @@
-LOAD
-	( n -- )
-Loads a disk block (compiles or executes).
-
-#software-engineering/languages/forth/stack-operations/load #software-engineering/data-structures/linear-lists/STACK/load
-
-

@@ -1,2 +1,0 @@
-# shap
-#software-engineering/data-structures/matricies/shape

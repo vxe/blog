@@ -1,9 +1,0 @@
-# RANDOMIZED-PARTITION
-RANDOMIZED-PARTITION(A, p, r)
-1 i = RANDOM(p, r)
-2 exchange A[r] with A[i] 
-3 return PARTITION(A, p, r)
-
-
-
-#software-engineering/data-structures/linear-lists/array/RANDOMIZED-PARTITION

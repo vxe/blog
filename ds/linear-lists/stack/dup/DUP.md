@@ -1,6 +1,0 @@
-DUP	
-( n -- n n )
-Duplicates the top stack item.
-
-#software-engineering/languages/forth/stack-operations/dup #software-engineering/data-structures/linear-lists/STACK/dup
-
