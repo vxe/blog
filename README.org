@@ -245,6 +245,9 @@ description
         - [[#uniformization-theorem][uniformization-theorem]]
         - [[#weil-conjecture][weil-conjecture]]
     - [[#pure][pure]]
+    - [[#software][software]]
+      - [[#gap][gap]]
+      - [[#maxima][maxima]]
   - [[#books][books]]
     - [[#linux-kernel-development][linux-kernel-development]]
     - [[#the-linux-programming-interface][the-linux-programming-interface]]
@@ -253,8 +256,7 @@ description
     - [[#routing-tcp][routing-tcp]]
     - [[#internet-routing-architectures][internet-routing-architectures]]
     - [[#tcp-illustrated-vol-1][tcp-illustrated-vol-1]]
-  - [[#data-science][data-science]]
-- [[#data-structures][data-structures]]
+  - [[#data-structures][data-structures]]
       - [[#linear-lists][linear-lists]]
         - [[#-append][-append]]
         - [[#-copy][-copy]]
@@ -382,14 +384,13 @@ description
     - [[#problem-solving][problem-solving]]
       - [[#constraint-satisfaction][constraint-satisfaction]]
     - [[#knowledge-representation][knowledge-representation]]
+      - [[#ontologies][ontologies]]
     - [[#planning][planning]]
     - [[#learning][learning]]
     - [[#nlp][nlp]]
     - [[#perception][perception]]
       - [[#computer-vision][computer-vision]]
       - [[#audio-analysis][audio-analysis]]
-    - [[#motion][motion]]
-    - [[#social-reasoning][social-reasoning]]
     - [[#tools][tools]]
       - [[#search][search]]
         - [[#killer-move][killer-move]]
@@ -399,6 +400,8 @@ description
       - [[#logic][logic]]
       - [[#classifiers][classifiers]]
       - [[#artificial-neural-network][artificial-neural-network]]
+    - [[#social-reasoning][social-reasoning]]
+    - [[#motion][motion]]
   - [[#repos][repos]]
     - [[#libvxe][libvxe]]
     - [[#home][home]]
@@ -696,6 +699,9 @@ description
 ***** uniformization-theorem
 ***** weil-conjecture
 *** pure
+*** software
+**** gap
+**** maxima
 ** books
 *** [[file:./linux-kernel-development.org][linux-kernel-development]]
 *** the-linux-programming-interface
@@ -704,8 +710,7 @@ description
 *** [[file:./routing-tcp.org][routing-tcp]]
 *** internet-routing-architectures
 *** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
-** data-science
-* [[file:./data-structures.org][data-structures]]
+** [[file:./data-structures.org][data-structures]]
 **** [[file:./linear-lists.org][linear-lists]] 
 ***** -append
 ***** -copy
@@ -833,18 +838,17 @@ description
 **** classification
 **** probability-redux-stochastic-processes
 **** simulation-methods
-** ai
+** [[file:./ai.org][ai]]
 *** [[file:./problem-solving.org][problem-solving]]
 **** [[file:./constraint-satisfaction.org][constraint-satisfaction]]
 *** knowledge-representation
-*** planning
+**** ontologies
+*** [[file:./planning.org][planning]]
 *** learning
 *** nlp
 *** perception
 **** computer-vision
 **** audio-analysis
-*** motion
-*** social-reasoning
 *** tools
 **** [[file:./search.org][search]]
 ***** [[file:./killer-move.org][killer-move]]
@@ -854,6 +858,8 @@ description
 **** logic
 **** [[file:./classifiers.org][classifiers]]
 **** [[file:./artificial-neural-network.org][artificial-neural-network]]
+*** social-reasoning
+*** motion
 ** repos
 *** libvxe
 *** home

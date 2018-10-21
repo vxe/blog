@@ -1,0 +1,40 @@
+# _*_ mode:org _*_
+#+TITLE: planning
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+so what is planning?  
+
+
+#+BEGIN_QUOTE
+We have defined AI as the study of rational action, which means that
+planning— devising a plan of action to achieve one’s goals— is a
+critical part of AI.
+
+Russell, Stuart; Peter Norvig. Artificial Intelligence: A Modern Approach, 3/e (Kindle Locations 8916-8917). Pearson HE, Inc.. Kindle Edition. 
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

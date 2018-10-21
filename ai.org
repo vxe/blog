@@ -1,0 +1,38 @@
+# _*_ mode:org _*_
+#+TITLE: ai
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+So what it is AI, for me?  As far as I can hope, my only hopes for AI
+are a codification of what it means to be an intelligent person, and
+the through this the development of systems which off load the effort
+required to induce this behavior to machines for the purposes of
+raising the probability of it occurring spontaneously in a greater
+percentage of the population than it normally would if human
+intelligence alone were at play.
+
+In short, AI for me is really IA, intelligence amplification.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
