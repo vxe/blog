@@ -4,51 +4,77 @@
 #+OPTIONS: toc:nil
 
 
-./matricies/matrix-chain-multiply
-./matricies/vector-space
-./matricies/square-matrix-multiply-recursive
-./matricies/add-row
-./matricies/jacobian-matrix
-./matricies/parallel
-./matricies/parallel/p-square-matrix-multiply
-./matricies/parallel/p-transpose
-./matricies/shape
-./matricies/recursive-matrix-chain
-./matricies/lu-decomposition
-./matricies/square-matrix-multiply
-./matricies/lookup-chain
-./matricies/memoized-matrix-chain
-./matricies/mat-vec-main-loop
-./matricies/dimensionality
-./matricies/mat-vec
-./matricies/matrix-multiply
-./matricies/lup-solve
-./matricies/column-count
-./matricies/lup-decomposition
-./matricies/diagonal
-./matricies/print-optimal-parens
-./matricies/matrix-chain-order
-./matricies/iterative-fft
+ ./matricies/matrix-chain-multiply
+ ./matricies/vector-space
+ ./matricies/square-matrix-multiply-recursive
+ ./matricies/add-row
+ ./matricies/jacobian-matrix
+ ./matricies/parallel
+ ./matricies/parallel/p-square-matrix-multiply
+ ./matricies/parallel/p-transpose
+ ./matricies/shape
+ ./matricies/recursive-matrix-chain
+ ./matricies/lu-decomposition
+ ./matricies/square-matrix-multiply
+ ./matricies/lookup-chain
+ ./matricies/memoized-matrix-chain
+ ./matricies/mat-vec-main-loop
+ ./matricies/dimensionality
+ ./matricies/mat-vec
+ ./matricies/matrix-multiply
+ ./matricies/lup-solve
+ ./matricies/column-count
+ ./matricies/lup-decomposition
+ ./matricies/diagonal
+ ./matricies/print-optimal-parens
+ ./matricies/matrix-chain-order
+ ./matricies/iterative-fft
 
 
+** overview                                                             :TOC:
+- [[#matrix-traversal][matrix traversal]]
+  - [[#array-coordinate-system][array coordinate system]]
+
+* matrix traversal
+
+So just like any data structure a matrix must traversed to extract its
+data, aka searching it.  I think the coordinate system analogy is a
+decent way to start framing traversal
 
 
+** array coordinate system
+
+ an image is a just a matrix, right, aka just a 2-d array.  The
+ confusing part is the coordinate system.  The standard cartesian
+ coordinates we all know and love (cough), start at an origin zero and
+ proceed right ward and then upward.  Upward might be questionable for
+ the y axis however the x orientation makes sense give we read from
+ left to right.
+
+ A 2-d array fixes this, kind of.  We still go right to left, but
+ instead of going upward we go downward , like a human being reading a
+ page.  Excellent, but we flip the order and go downward first, as if
+ we read the first letter of each word, and proceed one column over and
+ repeat.  why guys, why?  In either case, this how you need to look at rectangles.
 
 
+ +this naturally suggest a procedure+
+ #+BEGIN_SRC hy
+   (defn mat-index 
+   ([array row]
+           (nth array row))
+   ([array row column]
+         (nth (nth array row) column)))
 
 
+ #+END_SRC
 
+ +The argument list chosen such it can be threaded with ~->~ and be used+
+ +to select a row, or a point (row + column) depending on the number of+
+ +arguments given.  NOPE!  no muli-arity functions out of the box in.
+ However you can get them with contrib:+
 
+ #+BEGIN_SRC hy
+ (require [hy.contrib.multi [defn]])
+ #+END_SRC
 
-
-
-
-
-
-
-
-
-
-# Local Variables:
-# eval: (wiki-mode)
-# End:

@@ -390,6 +390,9 @@ description
       - [[#optimization][optimization]]
       - [[#sat-and-constraint-solving][SAT-and-constraint Solving]]
     - [[#learning][learning]]
+      - [[#unsupervised][unsupervised]]
+      - [[#supervised][supervised]]
+      - [[#reinforcement][reinforcement]]
     - [[#nlp][nlp]]
     - [[#perception][perception]]
       - [[#computer-vision][computer-vision]]
@@ -436,6 +439,11 @@ description
     - [[#javascript][javascript]]
       - [[#react-components][react-components]]
       - [[#vorpal][vorpal]]
+    - [[#hy][hy]]
+      - [[#flask][flask]]
+      - [[#opencv-1][opencv]]
+      - [[#turicreate][turicreate]]
+      - [[#nrepl][nrepl]]
     - [[#java][java]]
     - [[#elisp][elisp]]
     - [[#python][python]]
@@ -850,8 +858,10 @@ description
 **** [[file:./classical-planning.org][classical-planning]]
 **** optimization
 **** SAT-and-constraint Solving
-
 *** learning
+**** unsupervised
+**** supervised
+**** reinforcement
 *** nlp
 *** perception
 **** computer-vision
@@ -899,6 +909,11 @@ description
 *** javascript
 **** [[file:./react-components.org][react-components]]
 **** [[file:./vorpal.org][vorpal]]
+*** hy
+**** [[file:./flask.org][flask]]
+**** [[file:./opencv.org][opencv]]
+**** [[file:./turicreate.org][turicreate]]
+**** [[file:./nrepl.org][nrepl]]
 *** java
 *** elisp
 *** python
