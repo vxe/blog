@@ -304,6 +304,12 @@ description
 **** [[file:./the-linux-programming-interface.org][the-linux-programming-interface]]
 **** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
 **** [[file:./routing-tcp.org][routing-tcp]]
+*** algorithms
+**** binary-search
+**** quicksort
+**** breadth-first-search
+**** dijkstras-algorithm
+**** k-nearest-neighbors
 *** programming
 **** [[file:./the-art-of-computer-programming.org][the-art-of-computer-programming]] 
 **** [[file:./thinking-forth.org][thinking-forth]]
@@ -496,6 +502,7 @@ description
 **** [[file:./react-components.org][react-components]]
 **** [[file:./vorpal.org][vorpal]]
 *** [[file:./hy.org][hy]]
+**** [[file:./sklearn.org][sklearn]]
 **** essentia
 **** [[file:./flask.org][flask]]
 **** [[file:./opencv.org][opencv]]
@@ -503,8 +510,7 @@ description
 **** [[file:./nrepl.org][nrepl]]
 *** java
 *** elisp
-*** python
-**** [[file:./sklearn.org][sklearn]]
+
 ** techniques
 *** array/string manipulation
 *** stack/queue manipulation
