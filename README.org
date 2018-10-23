@@ -3,7 +3,7 @@
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
-
+- [ ] language interpretation patterns
 - [ ] move tcp illustrated topics into subfiles
 - [ ] move graph theory topics into subfiles
 
@@ -255,6 +255,7 @@ description
 **** gap
 **** maxima
 ** books
+*** [[file:./writing-compilers-and-interpreters.org][writing-compilers-and-interpreters]]
 *** [[file:./language-implementation-patterns.org][language-implementation-patterns]]
 *** [[file:./linux-kernel-development.org][linux-kernel-development]]
 *** [[file:./the-linux-programming-interface.org][the-linux-programming-interface]]

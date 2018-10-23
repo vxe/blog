@@ -1,0 +1,147 @@
+# _*_ mode:org _*_
+#+TITLE: writing-compilers-and-interpreters
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+#+BEGIN_QUOTE
+The syntax of a programming language is its set of grammar rules that
+determine whether a statement or an expression is correctly written in
+that language. The language’s semantics give meaning to a statement or
+an expression.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 484-486). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The scanner reads the characters of the source program sequentially
+and constructs tokens, which are the low-level elements of the source
+language.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 449-450). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The parser controls the translation process in the front end. It
+repeatedly asks the scanner for the next token, and it analyzes the
+sequences of tokens to determine what high-level language elements it
+is translating, such as arithmetic expressions, assignment statements,
+or procedure declarations.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 445-446). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The front end of a translator reads the source program and performs
+the initial translation stage. Its primary components are the parser,
+the scanner, the token, and the source.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 442-444). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+You can classify both compilers and interpreters as programming
+language translators.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 438-439). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+An interpreter can include an interactive source-level debugger, also
+known as a symbolic debugger. Symbolic means the debugger allows you
+to use symbols from the source program, such as variable names.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 384-386). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Assembly language is one step up from machine language; there is
+usually a one-to-one mapping between each assembly instruction and
+machine language instruction. Assembly language is human-readable if
+you know the short mnemonics (such as ADD or LOAD) and understand the
+machine architecture.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 344-347). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+A utility program called a linker combines the contents of the one or
+more object files along with any needed runtime library routines into
+a single object program that the computer can load and execute. The
+library routines are often kept in precompiled object files.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software
+Engineering Approach (Kindle Locations 341-343). Wiley. Kindle
+Edition.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+We’ll rely on an intuitive notion of what it means for two programs to
+“say” the same thing. During execution, the two programs have the same
+behavior – they read the same input and produce the same output in the
+same sequence.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 334-336). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+The main purpose of a compiler or an interpreter is to translate a
+source program written in a high-level source language.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 323-325). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+
+#+BEGIN_QUOTE
+While you may be able to develop a small program successfully with
+only technical skills, anything as ambitious as a compiler or an
+interpreter will also require software engineering principles and
+object-oriented design.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software
+Engineering Approach (Kindle Locations 320-321). Wiley. Kindle
+Edition.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+You’ll write an interpreter that can execute programs. 
+
+After you add the debugger, you’ll be able to interact with the
+interpreter as it executes a program by setting breakpoints,
+displaying the call stack, viewing and modifying values of variables,
+and single-stepping the program’s execution
+statement-by-statement.
+
+Add the IDE and you’ll do all that with mouse clicks as you watch a
+program’s execution animated on the screen.
+
+Mak, Ronald. Writing Compilers and Interpreters: A Software Engineering Approach (Kindle Locations 258-261). Wiley. Kindle Edition. 
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+This is your book if you want to learn how to write an interpreter, a
+compiler, an interactive source-level debugger, and an integrated
+development environment (IDE) with a graphical user interface
+(GUI). All the code is in Java, which I explain in detail.
+
+#+END_QUOTE
+* images
+[[./img/compiler-front-end.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
