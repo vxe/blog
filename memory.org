@@ -1,9 +1,12 @@
 # _*_ mode:org _*_
-#+TITLE: sicp
+#+TITLE: memory
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
-
+./memory
+./memory/free-object
+./memory/allocate-node
+./memory/allocate-object
 
 
 
@@ -26,4 +29,4 @@
 
 # Local Variables:
 # eval: (wiki-mode)
-# End:# -*- mode:org -*-
+# End:

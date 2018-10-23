@@ -1,0 +1,37 @@
+# _*_ mode:org _*_
+#+TITLE: minimum-spanning-tree
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+./graphs/mst
+./graphs/mst/generic-mst
+./graphs/mst/maybe-mst-c
+./graphs/mst/mst-kruskal
+./graphs/mst/maybe-mst-b
+./graphs/mst/maybe-mst-a
+./graphs/mst/mst-reduce
+./graphs/mst/mst-prim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

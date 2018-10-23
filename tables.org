@@ -1,0 +1,35 @@
+# _*_ mode:org _*_
+#+TITLE: tables
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+ok so this is another naming issue.  A table is distinct from a linear
+list in that they exist in at least 2 dimensions.  This encompasses a
+lot of different concepts, namely that of matricies, RAM, associative
+arrays and many others.  At the end of the day these can just be
+viewed as tables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

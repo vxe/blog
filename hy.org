@@ -1,0 +1,34 @@
+# _*_ mode:org _*_
+#+TITLE: hy
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+some things which are annoying about hy
+
+
+- [ ] tooling support non-existent
+- [ ] no let
+- [ ] syntax unstable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

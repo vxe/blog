@@ -1,0 +1,31 @@
+# _*_ mode:org _*_
+#+TITLE: lisp-in-small-pieces
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+Another monumental book, but in it contains the keys to interpreting
+and compiling lisp.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

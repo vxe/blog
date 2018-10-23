@@ -1,0 +1,23 @@
+3.1 introduction 79
+
+3.2 ethernet and the ieee 802 lan/man standards 80
+
+3.3 full duplex, power save, autonegotiation, and 802.1x flow control 94
+
+3.4 bridges and switches 98
+
+3.5 wireless lans—ieee 802.11(wi-fi) 111
+
+3.6 point-to-point protocol (ppp) 130
+
+3.7 loopback 145
+
+3.8 mtu and path mtu 148
+
+3.9 tunneling basics 149
+
+3.10 attacks on the link layer 154
+
+3.11 summary 156
+
+3.12 references 157

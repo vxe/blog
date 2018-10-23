@@ -6,14 +6,7 @@
 The graph is a precise mathematical specification of things and their
 connectivity to other things.
 
-./graphs/mst
-./graphs/mst/generic-mst
-./graphs/mst/maybe-mst-c
-./graphs/mst/mst-kruskal
-./graphs/mst/maybe-mst-b
-./graphs/mst/maybe-mst-a
-./graphs/mst/mst-reduce
-./graphs/mst/mst-prim
+
 ./graphs/travelling-salesman-problem
 ./graphs/travelling-salesman-problem/approx-tsp-tour
 ./graphs/vertex-cover

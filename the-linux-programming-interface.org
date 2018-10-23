@@ -1,0 +1,917 @@
+# _*_ mode:org _*_
+#+TITLE: the-linux-programming-interface
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+This is beast of a book.  But within it is everything you could
+possibly want to know about syscalls.
+
+
+** 1   unx-history-and-standards
+1.1   a brief history of unix and c
+1.2   a brief history of linux
+1.2.1   the gnu project
+1.2.2   the linux kernel
+1.3   standardization
+1.3.1   the c programming language
+1.3.2   the first posix standards
+1.3.3   x/open company and the open group
+1.3.4   susv3 and posix.1-2001
+1.3.5   susv4 and posix.1-2008
+1.3.6   unix standards timeline
+1.3.7   implementation standards
+1.3.8   linux, standards, and the linux standard base
+1.4   summary
+** 2   unix-fundamental-concepts
+2.1   the core operating system: the kernel
+2.2   the shell
+2.3   users and groups
+2.4   single directory hierarchy, directories, links, and files
+2.5   file i/o model
+2.6   programs
+2.7   processes
+2.8   memory mappings
+2.9   static and shared libraries
+2.10   interprocess communication and synchronization
+2.11   signals
+2.12   threads
+2.13   process groups and shell job control
+2.14   sessions, controlling terminals, and controlling processes
+2.15   pseudoterminals
+2.16   date and time
+2.17   client-server architecture
+2.18   realtime
+2.19   the /proc file system
+2.20   summary
+** 3   system-programming-concepts
+3.1   system calls
+3.2   library functions
+3.3   the standard c library; the gnu c library (glibc)
+3.4   handling errors from system calls and library functions
+3.5   notes on the example programs in this book
+3.5.1   command-line options and arguments
+3.5.2   common functions and header files
+3.6   portability issues
+3.6.1   feature test macros
+3.6.2   system data types
+3.6.3   miscellaneous portability issues
+3.7   summary
+3.8   exercise
+** 4   file-io-the universal-io-model
+4.1   overview
+4.2   universality of i/o
+4.3   opening a file: open()
+4.3.1   the open() flags argument
+4.3.2   errors from open()
+4.3.3   the creat() system call
+4.4   reading from a file: read()
+4.5   writing to a file: write()
+4.6   closing a file: close()
+4.7   changing the file offset: lseek()
+4.8   operations outside the universal i/o model: ioctl()
+4.9   summary
+4.10   exercises
+** 5   file-io-further-details
+5.1   atomicity and race conditions
+5.2   file control operations: fcntl()
+5.3   open file status flags
+5.4   relationship between file descriptors and open files
+5.5   duplicating file descriptors
+5.6   file i/o at a specified offset: pread() and pwrite()
+5.7   scatter-gather i/o: readv() and writev()
+5.8   truncating a file: truncate() and ftruncate()
+5.9   nonblocking i/o
+5.10   i/o on large files
+5.11   the /dev/fd directory
+5.12   creating temporary files
+5.13   summary
+5.14   exercises
+** 6   processes
+6.1   processes and programs
+6.2   process id and parent process id
+6.3   memory layout of a process
+6.4   virtual memory management
+6.5   the stack and stack frames
+6.6   command-line arguments (argc, argv)
+6.7   environment list
+6.8   performing a nonlocal goto: setjmp() and longjmp()
+6.9   summary
+6.10   exercises
+** 7   memory-allocation
+7.1   allocating memory on the heap
+7.1.1   adjusting the program break: brk() and sbrk()
+7.1.2   allocating memory on the heap: malloc() and free()
+7.1.3   implementation of malloc() and free()
+7.1.4   other methods of allocating memory on the heap
+7.2   allocating memory on the stack: alloca()
+7.3   summary
+7.4   exercises
+** 8   users-and-groups
+8.1   the password file: /etc/passwd
+8.2   the shadow password file: /etc/shadow
+8.3   the group file: /etc/group
+8.4   retrieving user and group information
+8.5   password encryption and user authentication
+8.6   summary
+8.7   exercises
+** 9   process-credentials
+9.1   real user id and real group id
+9.2   effective user id and effective group id
+9.3   set-user-id and set-group-id programs
+9.4   saved set-user-id and saved set-group-id
+9.5   file-system user id and file-system group id
+9.6   supplementary group ids
+9.7   retrieving and modifying process credentials
+9.7.1   retrieving and modifying real, effective, and saved set ids
+9.7.2   retrieving and modifying file-system ids
+9.7.3   retrieving and modifying supplementary group ids
+9.7.4   summary of calls for modifying process credentials
+9.7.5   example: displaying process credentials
+9.8   summary
+9.9   exercises
+** 10   time
+10.1   calendar time
+10.2   time-conversion functions
+10.2.1   converting time_t to printable form
+10.2.2   converting between time_t and broken-down time
+10.2.3   converting between broken-down time and printable form
+10.3   timezones
+10.4   locales
+10.5   updating the system clock
+10.6   the software clock (jiffies)
+10.7   process time
+10.8   summary
+10.9   exercise
+** 11   system-limits-and-options
+11.1   system limits
+11.2   retrieving system limits (and options) at run time
+11.3   retrieving file-related limits (and options) at run time
+11.4   indeterminate limits
+11.5   system options
+11.6   summary
+11.7   exercises
+** 12   system-and-process-information
+12.1   the /proc file system
+12.1.1   obtaining information about a process: /proc/pid
+12.1.2   system information under /proc
+12.1.3   accessing /proc files
+12.2   system identification: uname()
+12.3   summary
+12.4   exercises
+** 13   file-io-buffering
+13.1   kernel buffering of file i/o: the buffer cache
+13.2   buffering in the stdio library
+13.3   controlling kernel buffering of file i/o
+13.4   summary of i/o buffering
+13.5   giving the kernel hints about i/o patterns: posix_fadvise()
+13.6   bypassing the buffer cache: direct i/o
+13.7   mixing library functions and system calls for file i/o
+13.8   summary
+13.9   exercises
+** 14   file-systems
+14.1   device special files (devices)
+14.2   disks and partitions
+14.3   file systems
+14.4   i-nodes
+14.5   the virtual file system (vfs)
+14.6   journaling file systems
+14.7   single directory hierarchy and mount points
+14.8   mounting and unmounting file systems
+14.8.1   mounting a file system: mount()
+14.8.2   unmounting a file system: umount() and umount2()
+14.9   advanced mount features
+14.9.1   mounting a file system at multiple mount points
+14.9.2   stacking multiple mounts on the same mount point
+14.9.3   mount flags that are per-mount options
+14.9.4   bind mounts
+14.9.5   recursive bind mounts
+14.10   a virtual memory file system: tmpfs
+14.11   obtaining information about a file system: statvfs()
+14.12   summary
+14.13   exercise
+** 15   file-attributes
+15.1   retrieving file information: stat()
+15.2   file timestamps
+15.2.1   changing file timestamps with utime() and utimes()
+15.2.2   changing file timestamps with utimensat() and futimens()
+15.3   file ownership
+15.3.1   ownership of new files
+15.3.2   changing file ownership: chown(), fchown(), and lchown()
+15.4   file permissions
+15.4.1   permissions on regular files
+15.4.2   permissions on directories
+15.4.3   permission-checking algorithm
+15.4.4   checking file accessibility: access()
+15.4.5   set-user-id, set-group-id, and sticky bits
+15.4.6   the process file mode creation mask: umask()
+15.4.7   changing file permissions: chmod() and fchmod()
+15.5   i-node flags (ext2 extended file attributes)
+15.6   summary
+15.7   exercises
+** 16   extended-attributes
+16.1   overview
+16.2   extended attribute implementation details
+16.3   system calls for manipulating extended attributes
+16.4   summary
+16.5   exercise
+** 17   access-control-lists
+17.1   overview
+17.2   acl permission-checking algorithm
+17.3   long and short text forms for acls
+17.4   the acl_mask entry and the acl group class
+17.5   the getfacl and setfacl commands
+17.6   default acls and file creation
+17.7   acl implementation limits
+17.8   the acl api
+17.9   summary
+17.10   exercise
+** 18   directories-and-links
+18.1   directories and (hard) links
+18.2   symbolic (soft) links
+18.3   creating and removing (hard) links: link() and unlink()
+18.4   changing the name of a file: rename()
+18.5   working with symbolic links: symlink() and readlink()
+18.6   creating and removing directories: mkdir() and rmdir()
+18.7   removing a file or directory: remove()
+18.8   reading directories: opendir() and readdir()
+18.9   file tree walking: nftw()
+18.10   the current working directory of a process
+18.11   operating relative to a directory file descriptor
+18.12   changing the root directory of a process: chroot()
+18.13   resolving a pathname: realpath()
+18.14   parsing pathname strings: dirname() and basename()
+18.15   summary
+18.16   exercises
+** 19   monitoring-file-events
+19.1   overview
+19.2   the inotify api
+19.3   inotify events
+19.4   reading inotify events
+19.5   queue limits and /proc files
+19.6   an older system for monitoring file events: dnotify
+19.7   summary
+19.8   exercise
+** 20   signals-fundamental-concepts
+20.1   concepts and overview
+20.2   signal types and default actions
+20.3   changing signal dispositions: signal()
+20.4   introduction to signal handlers
+20.5   sending signals: kill()
+20.6   checking for the existence of a process
+20.7   other ways of sending signals: raise() and killpg()
+20.8   displaying signal descriptions
+20.9   signal sets
+20.10   the signal mask (blocking signal delivery)
+20.11   pending signals
+20.12   signals are not queued
+20.13   changing signal dispositions: sigaction()
+20.14   waiting for a signal: pause()
+20.15   summary
+20.16   exercises
+** 21   signals-signal-handlers
+21.1   designing signal handlers
+21.1.1   signals are not queued (revisited)
+21.1.2   reentrant and async-signal-safe functions
+21.1.3   global variables and the sig_atomic_t data type
+21.2   other methods of terminating a signal handler
+21.2.1   performing a nonlocal goto from a signal handler
+21.2.2   terminating a process abnormally: abort()
+21.3   handling a signal on an alternate stack: sigaltstack()
+21.4   the sa_siginfo flag
+21.5   interruption and restarting of system calls
+21.6   summary
+21.7   exercise
+** 22   signals-advanced-features
+22.1   core dump files
+22.2   special cases for signal delivery, disposition, and handling
+22.3   interruptible and uninterruptible process sleep states
+22.4   hardware-generated signals
+22.5   synchronous and asynchronous signal generation
+22.6   timing and order of signal delivery
+22.7   implementation and portability of signal()
+22.8   realtime signals
+22.8.1   sending realtime signals
+22.8.2   handling realtime signals
+22.9   waiting for a signal using a mask: sigsuspend()
+22.10   synchronously waiting for a signal
+22.11   fetching signals via a file descriptor
+22.12   interprocess communication with signals
+22.13   earlier signal apis (system v and bsd)
+22.14   summary
+22.15   exercises
+** 23   timers-and-sleeping
+23.1   interval timers
+23.2   scheduling and accuracy of timers
+23.3   setting timeouts on blocking operations
+23.4   suspending execution for a fixed interval (sleeping)
+23.4.1   low-resolution sleeping: sleep()
+23.4.2   high-resolution sleeping: nanosleep()
+23.5   posix clocks
+23.5.1   retrieving the value of a clock: clock_gettime()
+23.5.2   setting the value of a clock: clock_settime()
+23.5.3   obtaining the clock id of a specific process or thread
+23.5.4   improved high-resolution sleeping: clock_nanosleep()
+23.6   posix interval timers
+23.6.1   creating a timer: timer_create()
+23.6.2   arming and disarming a timer: timer_settime()
+23.6.3   retrieving the current value of a timer: timer_gettime()
+23.6.4   deleting a timer: timer_delete()
+23.6.5   notification via a signal
+23.6.6   timer overruns
+23.6.7   notification via a thread
+23.7   timers that notify via file descriptors: the timerfd api
+23.8   summary
+23.9   exercises
+** 24   process-creation
+24.1   overview of fork(), exit(), wait(), and execve()
+24.2   creating a new process: fork()
+24.2.1   file sharing between parent and child
+24.2.2   memory semantics of fork()
+24.3   the vfork() system call
+24.4   race conditions after fork()
+24.5   avoiding race conditions by synchronizing with signals
+24.6   summary
+** 25   process-termination
+25.1   terminating a process: _exit() and exit()
+25.2   details of process termination
+25.3   exit handlers
+25.4   interactions between fork(), stdio buffers, and _exit()
+25.5   summary
+25.6   exercise
+** 26   monitoring-child-processes
+26.1   waiting on a child process
+26.1.1   the wait() system call
+26.1.2   the waitpid() system call
+26.1.3   the wait status value
+26.1.4   process termination from a signal handler
+26.1.5   the waitid() system call
+26.1.6   the wait3() and wait4() system calls
+26.2   orphans and zombies
+26.3   the sigchld signal
+26.3.1   establishing a handler for sigchld
+26.3.2   delivery of sigchld for stopped children
+26.3.3   ignoring dead child processes
+26.4   summary
+26.5   exercises
+** 27   program-execution
+27.1   executing a new program: execve()
+27.2   the exec() library functions
+27.2.1   the path environment variable
+27.2.2   specifying program arguments as a list
+27.2.3   passing the caller's environment to the new program
+27.2.4   executing a file referred to by a descriptor: fexecve()
+27.3   interpreter scripts
+27.4   file descriptors and exec()
+27.5   signals and exec()
+27.6   executing a shell command: system()
+27.7   implementing system()
+27.8   summary
+27.9   exercises
+** 28   process-creation-and-program-execution-in-more-detail
+28.1   process accounting
+28.2   the clone() system call
+28.2.1   the clone() flags argument
+28.2.2   extensions to waitpid() for cloned children
+28.3   speed of process creation
+28.4   effect of exec() and fork() on process attributes
+28.5   summary
+28.6   exercise
+** 29   threads-introduction
+29.1   overview
+29.2   background details of the pthreads api
+29.3   thread creation
+29.4   thread termination
+29.5   thread ids
+29.6   joining with a terminated thread: pthread_join()
+29.7   detaching a thread: pthread_detach()
+29.8   thread attributes
+29.9   threads versus processes
+29.10   summary
+29.11   exercises
+** 30   threads-thread-synchronization
+30.1   protecting accesses to shared variables: mutexes
+30.1.1   statically allocated mutexes
+30.1.2   locking and unlocking a mutex
+30.1.3   performance of mutexes
+30.1.4   mutex deadlocks
+30.1.5   dynamically initializing a mutex
+30.1.6   mutex attributes
+30.1.7   mutex types
+30.2   signaling changes of state: condition variables
+30.2.1   statically allocated condition variables
+30.2.2   signaling and waiting on condition variables
+30.2.3   testing a condition variable's predicate
+30.2.4   example program: joining any terminated thread
+30.2.5   dynamically allocated condition variables
+30.3   summary
+30.4   exercises
+** 31   threads-thread-safety-and-per-thread-storage
+31.1   thread safety (and reentrancy revisited)
+31.2   one-time initialization
+31.3   thread-specific data
+31.3.1   thread-specific data from the library function's perspective
+31.3.2   overview of the thread-specific data api
+31.3.3   details of the thread-specific data api
+31.3.4   employing the thread-specific data api
+31.3.5   thread-specific data implementation limits
+31.4   thread-local storage
+31.5   summary
+31.6   exercises
+** 32   threads-thread-cancellation
+32.1   canceling a thread
+32.2   cancellation state and type
+32.3   cancellation points
+32.4   testing for thread cancellation
+32.5   cleanup handlers
+32.6   asynchronous cancelability
+32.7   summary
+32.8   exercises
+** 33   threads-further-details
+33.1   thread stacks
+33.2   threads and signals
+33.2.1   how the unix signal model maps to threads
+33.2.2   manipulating the thread signal mask
+33.2.3   sending a signal to a thread
+33.2.4   dealing with asynchronous signals sanely
+33.3   threads and process control
+33.4   thread implementation models
+33.5   linux implementations of posix threads
+33.5.1   linuxthreads
+33.5.2   nptl
+33.5.3   which threading implementation?
+33.6   advanced features of the pthreads api
+33.7   summary
+33.8   exercises
+** 34   process-groups-sessions-and-job-control
+34.1   overview
+34.2   process groups
+34.3   sessions
+34.4   controlling terminals and controlling processes
+34.5   foreground and background process groups
+34.6   the sighup signal
+34.6.1   handling of sighup by the shell
+34.6.2   sighup and termination of the controlling process
+34.7   job control
+34.7.1   using job control within the shell
+34.7.2   implementing job control
+34.7.3   handling job-control signals
+34.7.4   orphaned process groups (and sighup revisited)
+34.8   summary
+34.9   exercises
+** 35   process-priorities-and-scheduling
+35.1   process priorities (nice values)
+35.2   overview of realtime process scheduling
+35.2.1   the sched_rr policy
+35.2.2   the sched_fifo policy
+35.2.3   the sched_batch and sched_idle policies
+35.3   realtime process scheduling api
+35.3.1   realtime priority ranges
+35.3.2   modifying and retrieving policies and priorities
+35.3.3   relinquishing the cpu
+35.3.4   the sched_rr time slice
+35.4   cpu affinity
+35.5   summary
+35.6   exercises
+** 36   process-resources
+36.1   process resource usage: getrusage()
+36.2   process resource limits: getrlimit() and setrlimit()
+36.3   details of specific resource limits
+36.4   summary
+36.5   exercises
+** 37   daemons
+37.1   overview
+37.2   creating a daemon
+37.3   guidelines for writing daemons
+37.4   using sighup to reinitialize a daemon
+37.5   logging messages and errors using syslog
+37.5.1   overview
+37.5.2   the syslog api
+37.5.3   the /etc/syslog.conf file
+37.6   summary
+37.7   exercise
+** 38   writing-secure-privileged-programs
+38.1   is a set-user-id or set-group-id program required?
+38.2   operate with least privilege
+38.3   be careful when executing a program
+38.4   avoid exposing sensitive information
+38.5   confine the process
+38.6   beware of signals and race conditions
+38.7   pitfalls when performing file operations and file i/o
+38.8   don't trust inputs or the environment
+38.9   beware of buffer overruns
+38.10   beware of denial-of-service attacks
+38.11   check for failures; fail safely
+38.12   summary
+38.13   exercises
+** 39   capabilities
+39.1   rationale for capabilities
+39.2   the linux capabilities
+39.3   process and file capabilities
+39.3.1   process capabilities
+39.3.2   file capabilities
+39.3.3   purpose of the process permitted and effective capability sets
+39.3.4   purpose of the file permitted and effective capability sets
+39.3.5   purpose of the process and file inheritable sets
+39.3.6   assigning and viewing file capabilities from the shell
+39.4   the modern capabilities implementation
+39.5   transformation of process capabilities during exec()
+39.5.1   capability bounding set
+39.5.2   preserving root semantics
+39.6   effect on process capabilities of changing user ids
+39.7   changing process capabilities programmatically
+39.8   creating capabilities-only environments
+39.9   discovering the capabilities required by a program
+39.10   older kernels and systems without file capabilities
+39.11   summary
+39.12   exercise
+** 40   login-accounting
+40.1   overview of the utmp and wtmp files
+40.2   the utmpx api
+40.3   the utmpx structure
+40.4   retrieving information from the utmp and wtmp files
+40.5   retrieving the login name: getlogin()
+40.6   updating the utmp and wtmp files for a login session
+40.7   the lastlog file
+40.8   summary
+40.9   exercises
+** 41   fundamentals-of-shared-libraries
+41.1   object libraries
+41.2   static libraries
+41.3   overview of shared libraries
+41.4   creating and using shared libraries—a first pass
+41.4.1   creating a shared library
+41.4.2   position-independent code
+41.4.3   using a shared library
+41.4.4   the shared library soname
+41.5   useful tools for working with shared libraries
+41.6   shared library versions and naming conventions
+41.7   installing shared libraries
+41.8   compatible versus incompatible libraries
+41.9   upgrading shared libraries
+41.10   specifying library search directories in an object file
+41.11   finding shared libraries at run time
+41.12   run-time symbol resolution
+41.13   using a static library instead of a shared library
+41.14   summary
+41.15   exercise
+** 42   advanced-features-of-shared-libraries
+42.1   dynamically loaded libraries
+42.1.1   opening a shared library
+42.1.2   diagnosing errors from the dlopen api
+42.1.3   obtaining the address of a symbol: dlsym()
+42.1.4   closing a shared library: dlclose()
+42.1.5   obtaining information about loaded symbols: dladdr()
+42.1.6   accessing symbols in the main program
+42.2   controlling symbol visibility
+42.3   linker version scripts
+42.3.1   controlling symbol visibility with version scripts
+42.3.2   symbol versioning
+42.4   initialization and finalization functions
+42.5   preloading shared libraries
+42.6   monitoring the dynamic linker: ld_debug
+42.7   summary
+42.8   exercises
+** 43   interprocess-communication-overview
+43.1   a taxonomy of ipc facilities
+43.2   communication facilities
+43.3   synchronization facilities
+43.4   comparing ipc facilities
+43.5   summary
+43.6   exercises
+** 44   pipes-and-fifos
+44.1   overview
+44.2   creating and using pipes
+44.3   pipes as a method of process synchronization
+44.4   using pipes to connect filters
+44.5   talking to a shell command via a pipe: popen() and pclose()
+44.6   pipes and stdio buffering
+44.7   fifos
+44.8   a client-server application using fifos
+44.9   nonblocking i/o
+44.10   semantics of read() and write() on pipes and fifos
+44.11   summary
+44.12   exercises
+** 45   introduction-to-system-v-ipc
+45.1   api overview
+45.2   ipc keys
+45.3   associated data structure and object permissions
+45.4   ipc identifiers and client-server applications
+45.5   algorithm employed by system v ipc get calls
+45.6   the ipcs and ipcrm commands
+45.7   obtaining a list of all ipc objects
+45.8   ipc limits
+45.9   summary
+45.10   exercises
+** 46   system-v-message-queues
+46.1   creating or opening a message queue: msgget()
+46.2   exchanging messages
+46.2.1   sending messages: msgsnd()
+46.2.2   receiving messages: msgrcv()
+46.3   message queue control operations: msgctl()
+46.4   message queue associated data structure
+46.5   message queue limits
+46.6   displaying all message queues on the system
+46.7   client-server programming with message queues
+46.8   a file-server application using message queues
+46.9   disadvantages of system v message queues
+46.10   summary
+46.11   exercises
+** 47   system-v-semaphores
+47.1   overview
+47.2   creating or opening a semaphore set: semget()
+47.3   semaphore control operations: semctl()
+47.4   semaphore associated data structure
+47.5   semaphore initialization
+47.6   semaphore operations: semop()
+47.7   handling of multiple blocked semaphore operations
+47.8   semaphore undo values
+47.9   implementing a binary semaphores protocol
+47.10   semaphore limits
+47.11   disadvantages of system v semaphores
+47.12   summary
+47.13   exercises
+** 48   system-v-shared-memory
+48.1   overview
+48.2   creating or opening a shared memory segment: shmget()
+48.3   using shared memory: shmat() and shmdt()
+48.4   example: transferring data via shared memory
+48.5   location of shared memory segments in virtual memory
+48.6   storing pointers in shared memory
+48.7   shared memory control operations: shmctl()
+48.8   shared memory associated data structure
+48.9   shared memory limits
+48.10   summary
+48.11   exercises
+** 49   memory-mappings
+49.1   overview
+49.2   creating a mapping: mmap()
+49.3   unmapping a mapped region: munmap()
+49.4   file mappings
+49.4.1   private file mappings
+49.4.2   shared file mappings
+49.4.3   boundary cases
+49.4.4   memory protection and file access mode interactions
+49.5   synchronizing a mapped region: msync()
+49.6   additional mmap() flags
+49.7   anonymous mappings
+49.8   remapping a mapped region: mremap()
+49.9   the map_noreserve flag and swap space overcommitting
+49.10   the map_fixed flag
+49.11   nonlinear mappings: remap_file_pages()
+49.12   summary
+49.13   exercises
+** 50   virtual-memory-operations
+50.1   changing memory protection: mprotect()
+50.2   memory locking: mlock() and mlockall()
+50.3   determining memory residence: mincore()
+50.4   advising future memory usage patterns: madvise()
+50.5   summary
+50.6   exercises
+** 51   introduction-to-posix-ipc
+51.1   api overview
+51.2   comparison of system v ipc and posix ipc
+51.3   summary
+** 52   posix-message-queues
+52.1   overview
+52.2   opening, closing, and unlinking a message queue
+52.3   relationship between descriptors and message queues
+52.4   message queue attributes
+52.5   exchanging messages
+52.5.1   sending messages: mq_send()
+52.5.2   receiving messages: mq_receive()
+52.5.3   sending and receiving messages with a timeout
+52.6   message notification
+52.6.1   receiving notification via a signal
+52.6.2   receiving notification via a thread
+52.7   linux-specific features
+52.8   message queue limits
+52.9   comparison of posix and system v message queues
+52.10   summary
+52.11   exercises
+** 53   posix-semaphores
+53.1   overview
+53.2   named semaphores
+53.2.1   opening a named semaphore
+53.2.2   closing a semaphore
+53.2.3   removing a named semaphore
+53.3   semaphore operations
+53.3.1   waiting on a semaphore
+53.3.2   posting a semaphore
+53.3.3   retrieving the current value of a semaphore
+53.4   unnamed semaphores
+53.4.1   initializing an unnamed semaphore
+53.4.2   destroying an unnamed semaphore
+53.5   comparisons with other synchronization techniques
+53.6   semaphore limits
+53.7   summary
+53.8   exercises
+** 54   posix-shared-memory
+54.1   overview
+54.2   creating shared memory objects: shm_open()
+54.3   using shared memory objects
+54.4   removing shared memory objects: shm_unlink()
+54.5   comparisons between shared memory apis
+54.6   summary
+54.7   exercise
+** 55   file-locking
+55.1   overview
+55.2   file locking with flock()
+55.2.1   semantics of lock inheritance and release
+55.2.2   limitations of flock()
+55.3   record locking with fcntl()
+55.3.1   deadlock
+55.3.2   example: an interactive locking program
+55.3.3   example: a library of locking functions
+55.3.4   lock limits and performance
+55.3.5   semantics of lock inheritance and release
+55.3.6   lock starvation and priority of queued lock requests
+55.4   mandatory locking
+55.5   the /proc/locks file
+55.6   running just one instance of a program
+55.7   older locking techniques
+55.8   summary
+55.9   exercises
+** 56   sockets-introduction
+56.1   overview
+56.2   creating a socket: socket()
+56.3   binding a socket to an address: bind()
+56.4   generic socket address structures: struct sockaddr
+56.5   stream sockets
+56.5.1   listening for incoming connections: listen()
+56.5.2   accepting a connection: accept()
+56.5.3   connecting to a peer socket: connect()
+56.5.4   i/o on stream sockets
+56.5.5   connection termination: close()
+56.6   datagram sockets
+56.6.1   exchanging datagrams: recvfrom() and sendto()
+56.6.2   using connect() with datagram sockets
+56.7   summary
+** 57   sockets-unix-domain
+57.1   unix domain socket addresses: struct sockaddr_un
+57.2   stream sockets in the unix domain
+57.3   datagram sockets in the unix domain
+57.4   unix domain socket permissions
+57.5   creating a connected socket pair: socketpair()
+57.6   the linux abstract socket namespace
+57.7   summary
+57.8   exercises
+** 58   sockets-fundamentals-of-tcp-ip-networks
+58.1   internets
+58.2   networking protocols and layers
+58.3   the data-link layer
+58.4   the network layer: ip
+58.5   ip addresses
+58.6   the transport layer
+58.6.1   port numbers
+58.6.2   user datagram protocol (udp)
+58.6.3   transmission control protocol (tcp)
+58.7   requests for comments (rfcs)
+58.8   summary
+** 59   sockets-internet-domains
+59.1   internet domain sockets
+59.2   network byte order
+59.3   data representation
+59.4   internet socket addresses
+59.5   overview of host and service conversion functions
+59.6   ipv6 and ipv4 address conversion: inet_pton() and inet_ntop()
+59.7   client-server example (datagram sockets)
+59.8   domain name system (dns)
+59.9   the /etc/services file
+59.10   protocol-independent host and service conversion
+59.10.1   the getaddrinfo() function
+59.10.2   freeing addrinfo lists: freeaddrinfo()
+59.10.3   diagnosing errors: gai_strerror()
+59.10.4   the getnameinfo() function
+59.11   client-server example (stream sockets)
+59.12   an internet domain sockets library
+59.13   obsolete apis for host, service, and address conversion
+59.13.1   the inet_aton() and inet_ntoa() functions
+59.13.2   the gethostbyname() and gethostbyaddr() functions
+59.13.3   the getservbyname() and getservbyport() functions
+59.14   unix versus internet domain sockets
+59.15   further information
+59.16   summary
+59.17   exercises
+** 60   sockets-server-design
+60.1   iterative and concurrent servers
+60.2   an iterative udp echo server
+60.3   a concurrent tcp echo server
+60.4   other concurrent server designs
+60.5   the inetd (internet superserver) daemon
+60.6   summary
+60.7   exercises
+** 61   sockets-advanced-topics
+61.1   partial reads and writes on stream sockets
+61.2   the shutdown() system call
+61.3   socket-specific i/o system calls: recv() and send()
+61.4   the sendfile() system call
+61.5   retrieving socket addresses: getsockname() and getpeername()
+61.6   a closer look at tcp
+61.6.1   format of a tcp segment
+61.6.2   tcp sequence numbers and acknowledgements
+61.6.3   tcp state machine and state transition diagram
+61.6.4   tcp connection establishment
+61.6.5   tcp connection termination
+61.6.6   calling shutdown() on a tcp socket
+61.6.7   the time_wait state
+61.7   monitoring sockets: netstat
+61.8   using tcpdump to monitor tcp traffic
+61.9   socket options: setsockopt() and getsockopt()
+61.10   the so_reuseaddr socket option
+61.11   inheritance of file flags and socket options across accept()
+61.12   tcp versus udp
+61.13   advanced features
+61.13.1   out-of-band data
+61.13.2   the sendmsg() and recvmsg() system calls
+61.13.3   passing file descriptors
+61.13.4   receiving sender credentials
+61.13.5   sequenced-packet sockets
+61.13.6   sctp and dccp transport-layer protocols
+61.14   summary
+61.15   exercises
+** 62   terminals
+62.1   overview
+62.2   retrieving and modifying terminal attributes
+62.3   the stty command
+62.4   terminal special characters
+62.5   terminal flags
+62.6   terminal i/o modes
+62.6.1   canonical mode
+62.6.2   noncanonical mode
+62.6.3   cooked, cbreak, and raw modes
+62.7   terminal line speed (bit rate)
+62.8   terminal line control
+62.9   terminal window size
+62.10   terminal identification
+62.11   summary
+62.12   exercises
+** 63   alternative-i-o-models
+63.1   overview
+63.1.1   level-triggered and edge-triggered notification
+63.1.2   employing nonblocking i/o with alternative i/o models
+63.2   i/o multiplexing
+63.2.1   the select() system call
+63.2.2   the poll() system call
+63.2.3   when is a file descriptor ready?
+63.2.4   comparison of select() and poll()
+63.2.5   problems with select() and poll()
+63.3   signal-driven i/o
+63.3.1   when is "i/o possible" signaled?
+63.3.2   refining the use of signal-driven i/o
+63.4   the epoll api
+63.4.1   creating an epoll instance: epoll_create()
+63.4.2   modifying the epoll interest list: epoll_ctl()
+63.4.3   waiting for events: epoll_wait()
+63.4.4   a closer look at epoll semantics
+63.4.5   performance of epoll versus i/o multiplexing
+63.4.6   edge-triggered notification
+63.5   waiting on signals and file descriptors
+63.5.1   the pselect() system call
+63.5.2   the self-pipe trick
+63.6   summary
+63.7   exercises
+** 64   pseudoterminals
+64.1   overview
+64.2   unix 98 pseudoterminals
+64.2.1   opening an unused master: posix_openpt()
+64.2.2   changing slave ownership and permissions: grantpt()
+64.2.3   unlocking the slave: unlockpt()
+64.2.4   obtaining the name of the slave: ptsname()
+64.3   opening a pseudoterminal master: ptymasteropen()
+64.4   connecting two processes with a pseudoterminal: ptyfork()
+64.5   pseudoterminal i/o
+64.6   implementing script(1)
+64.7   terminal attributes and window size
+64.8   bsd pseudoterminals
+64.9   summary
+64.10   exercises
+** a   tracing-system-calls
+** b   parsing-command-line-options
+** c   casting-the-null-pointer
+** d   kernel-configuration
+** e   further-sources-of-information
+** f   solutions-to-selected-exercises
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

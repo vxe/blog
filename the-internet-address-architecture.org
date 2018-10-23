@@ -1,0 +1,19 @@
+2.1 introduction 31
+
+2.2 expressing ip addresses 32
+
+2.3 basic ip address structure 34
+
+2.4 cidr and aggregation 46
+
+2.5 special-use addresses 50
+
+2.6 allocation 62
+
+2.7 unicast address assignment 65
+
+2.8 attacks involving ip addresses 70
+
+2.9 summary 71
+
+2.10 references 72

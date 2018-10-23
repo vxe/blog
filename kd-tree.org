@@ -1,0 +1,51 @@
+# _*_ mode:org _*_
+#+TITLE: kd-tree
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+#+BEGIN_QUOTE
+Input description: 
+
+A set S of n points or more complicated geometric objects in k
+dimensions.
+
+Problem description: 
+
+Construct a tree that partitions space by half-planes such that each
+object is contained in its own box-shaped region.
+
+Discussion: 
+
+Kd-tree and related spatial data structures hierarchically decompose
+space into a small number of cells, each containing a few
+representatives from an input set of points. This provides a fast way
+to access any object by position. We traverse down the hierarchy until
+we find the smallest cell containing it, and then scan through the
+objects in this cell to identify the right one.
+
+Steven S Skiena. The Algorithm Design Manual (Kindle Locations 4827-4830). Kindle Edition. 
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
