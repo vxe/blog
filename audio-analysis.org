@@ -1,0 +1,30 @@
+# _*_ mode:org _*_
+#+TITLE: audio-analysis
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+I'm tackling the audio-analysis problem by mastering essentia and also
+using it practically for music production and sound design.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

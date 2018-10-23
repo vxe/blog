@@ -1,0 +1,30 @@
+# _*_ mode:org _*_
+#+TITLE: thinking-forth
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+probably the best forth book, good low level language a step up from
+TAOCP. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

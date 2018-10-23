@@ -1,0 +1,28 @@
+# _*_ mode:org _*_
+#+TITLE: fast-fourier-transform
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

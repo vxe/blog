@@ -1,0 +1,28 @@
+# _*_ mode:org _*_
+#+TITLE: markov-chains
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

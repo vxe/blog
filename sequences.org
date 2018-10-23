@@ -1,0 +1,38 @@
+# _*_ mode:org _*_
+#+TITLE: sequences
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+All of the statistical type computing that is so popular now can be
+thought of as operating on collection of sequences, and grouping them
+together as compound data and making statements about their properties.
+
+
+a sequence is one of those structures that is so general, it may be
+completely undetectable at all.  Integers are an example of an element
+of a sequence.  However what is an integer but a sequence of bits?
+Similarly a sequence is nothing but a sequence of characters which
+underneath the covers are a sequence of bits.  Very recursive you know.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
