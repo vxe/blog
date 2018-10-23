@@ -255,6 +255,7 @@ description
 **** gap
 **** maxima
 ** books
+*** [[file:./language-implementation-patterns.org][language-implementation-patterns]]
 *** [[file:./linux-kernel-development.org][linux-kernel-development]]
 *** [[file:./the-linux-programming-interface.org][the-linux-programming-interface]]
 *** [[file:./the-art-of-computer-programming.org][the-art-of-computer-programming]]
@@ -369,24 +370,24 @@ description
 ****** -rabin-karp-match
 ****** -repitition-matcher
 ***** [[file:./bits.org][bits]]
-*** [[file:./statistics.org][statistics]]
-**** random-variables
-**** expectation
-**** inequalities
-**** convergence-of-random-variables
-**** +[[file:./inference.org][inference]]
-**** linear-and-logistic-regression
-**** [[file:./multivariate-models.org][multivariate-models]]
-**** inference-about-independence
-**** [[file:./causal-inference.org][causal-inference]]
-**** directed-graphs-and-conditional-independence
-**** undirected-graphs
-**** log-linear-models
-**** nonparametric-curve-estimation
-**** smoothing-using-orthogonal-functions
-**** classification
-**** probability-redux-stochastic-processes
-**** simulation-methods
+** [[file:./statistics.org][statistics]]
+*** random-variables
+*** expectation
+*** inequalities
+*** convergence-of-random-variables
+*** +[[file:./inference.org][inference]]
+*** linear-and-logistic-regression
+*** [[file:./multivariate-models.org][multivariate-models]]
+*** inference-about-independence
+*** [[file:./causal-inference.org][causal-inference]]
+*** directed-graphs-and-conditional-independence
+*** undirected-graphs
+*** log-linear-models
+*** nonparametric-curve-estimation
+*** smoothing-using-orthogonal-functions
+*** classification
+*** probability-redux-stochastic-processes
+*** simulation-methods
 ** [[file:./ai.org][ai]]
 *** [[file:./problem-solving.org][problem-solving]]
 **** [[file:./constraint-satisfaction.org][constraint-satisfaction]]
@@ -400,10 +401,12 @@ description
 **** unsupervised
 **** supervised
 **** reinforcement
-*** nlp
+*** language
+**** data-language-processing
+**** nlp
 *** perception
 **** computer-vision
-**** audio-analysis
+**** [[file:./audio-analysis.org][audio-analysis]]
 *** tools
 **** [[file:./search.org][search]]
 ***** [[file:./killer-move.org][killer-move]]
@@ -473,7 +476,7 @@ description
 *** acoustics
 **** [[file:./pitch.org][pitch]]
 **** rhythym
-* local vars
+
 # Local Variables:
 # eval: (wiki-mode)
 # End:

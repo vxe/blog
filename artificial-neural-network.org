@@ -3,8 +3,40 @@
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
-or lovingly known as ANN's
+or lovingly known as ANN's.  This is the class of techniques that
+falls under the umbrella term of deep learning.
 
+** ltsm
+long short term memory
+
+** convolutional neural networks 
+
+*** convolution
+#+BEGIN_QUOTE
+-->convolution
+
+convolution
+     n 1: the shape of something rotating rapidly [syn: {whirl}, {swirl},
+           {vortex}]
+     2: a convex fold or elevation in the surface of the brain [syn:
+         {gyrus}]
+     3: the action of coiling or twisting or winding together
+
+#+END_QUOTE
+
+sweet so I have a rapidly swirling neural network.  Sounds useful.
+
+to wikipedia:
+
+#+BEGIN_QUOTE
+A convolutional neural network (CNN) is a class of deep, feed-forward
+networks, composed of one or more convolutional layers with fully
+connected layers (matching those in typical Artificial neural
+networks) on top. It uses tied weights and pooling layers. In
+particular, max-pooling[19] is often structured via Fukushima's
+convolutional architecture.[97] This architecture allows CNNs to take
+advantage of the 2D structure of input data.
+#+END_QUOTE
 
 
 

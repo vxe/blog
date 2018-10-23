@@ -1,0 +1,182 @@
+# _*_ mode:org _*_
+#+TITLE: language-implementation-patterns
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+#+BEGIN_QUOTE
+The key to understanding ANTLR’s behavior, though, lies in these
+parser design patterns.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+You can think of grammars as functional specifications or design
+documents for parsers. To build a parser, we need a guiding
+specification that precisely defines the language we want to parse.
+
+Grammars are more than designs, though. They are actually executable
+“programs” written in a domain-specific language (DSL) specifically
+designed for expressing language structures.
+#+END_QUOTE
+
+#+BEGIN_SRC 
+The act of recognizing a phrase by computer is called parsing.
+#+END_SRC
+* chapter 1 
+#+BEGIN_QUOTE
+The most basic architecture combines lexer and parser patterns. It’s
+the heart of Pattern 24, ​Syntax-Directed Interpreter​ and Pattern 29,
+​Syntax-Directed Translator​. Once we recognize input sentences, all we
+have to do is call a method that executes or translates them.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Symbol table management, for example, is the bedrock of most language
+applications you’ll build. Just as a parser is the key to analyzing
+the syntax, a symbol table is the key to understanding the semantics
+(meaning) of the input. In a nutshell, syntax tells us what to do, and
+semantics tells us what to do it to.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+All the scary voodoo within a compiler happens inside the semantic
+analyzer and optimizer. From the IR, it has to build all sorts of
+extra data structures in order to produce an efficient version of the
+input C program in assembly code. Lots of set and graph theory
+algorithms are at work. Implementing these complicated algorithms is
+challenging. If you’d like to dig into compilers, I recommend the
+famous “Dragon” book: Compilers: Principles, Techniques, and Tools
+[ALSU06] (Second Edition).
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Before we can get to actual compilation, we have to preprocess C files
+to handle includes and macros. The preprocessor spits out pure C code
+with some line number directives understood by the compiler. The
+compiler munches on that for a while and then spits out assembly code
+(text-based human-readable machine code). A separate assembler
+translates the assembly code to binary machine code. With a few
+command-line options, we can expose this pipeline.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The Java compiler has already resolved all symbols and generated
+bytecode that refers to unique program entities. To find
+self-assignment bugs, all we have to do is look for a particular
+bytecode sequence.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The Java compiler generates class files that contain serialized
+versions of a symbol table and AST. We can use Byte Code Engineering
+Library (BCEL)[5] or another class file reader to load .class files
+instead of building a source code reader (the fine tool FindBugs[6]
+uses this approach).
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The best way to design a language application is to start with the end
+in mind. First, figure out what information you need in order to
+generate the output. That tells you what the final stage before the
+generator computes. Then figure out what that stage needs and so on
+all the way back to the reader
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+ An interpreter’s instruction set is typically pretty low level but
+ higher level than raw machine code. We call the instructions
+ bytecodes because we can represent each instruction with a unique
+ integer code from 0..255 (a byte’s range).
+#+END_QUOTE
+
+* 4 applications types
+
+** interpreter
+ #+BEGIN_QUOTE
+ Interpreter: An interpreter reads, decodes, and executes
+ instructions. Interpreters range from simple calculators and POP
+ protocol servers all the way up to programming language
+ implementations such as those for Java, Ruby, and Python.
+ #+END_QUOTE
+
+** translator
+ #+BEGIN_QUOTE
+ Translator or Rewriter: A translator reads text or binary input and
+ emits output conforming to the same or a different language. It is
+ essentially a combined reader and generator. Examples include
+ translators from extinct programming languages to modern languages,
+ wiki to HTML translators, refactorers, profilers that instrument code,
+ log file report generators, pretty printers, and macro
+ preprocessors. Some translators, such as assemblers and compilers, are
+ so common that they warrant their own subcategories.
+ #+END_QUOTE
+
+** generator
+ #+BEGIN_QUOTE
+ Generator: A generator walks an internal data structure and emits
+ output. Examples include object-to-relational database mapping tools,
+ object serializers, source code generators, and web page generators.
+ #+END_QUOTE
+
+** reader
+
+ #+BEGIN_QUOTE
+ The basic idea is that a reader recognizes input and builds an
+ intermediate representation (IR) that feeds the rest of the
+ application. At the opposite end, a generator emits output based upon
+ the IR and what the application learned in the intermediate
+ stages. The intermediate stages form the semantic analyzer
+ component. Loosely speaking, semantic analysis figures out what the
+ input means (anything beyond syntax is called the semantics).
+ #+END_QUOTE
+
+
+* language application defined
+
+ #+BEGIN_QUOTE
+ When we talk about language applications, we’re *not* just talking about
+ implementing languages with a compiler or interpreter.
+
+ We’re talking about any program that 
+ - processes,
+ - analyzes
+ - translates an input file. 
+
+ Implementing a language means building an application that executes or
+ performs tasks according to sentences in that language
+ #+END_QUOTE
+
+#+BEGIN_QUOTE
+As you can see, language applications are all pretty similar. Well, at
+least they all use the same basic architecture and share many of the
+same components. To implement the components, they use a lot of the
+same patterns.
+#+END_QUOTE
+
+
+
+
+* images 
+** language pipeline
+
+ [[./img/language-pipeline.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Local Variables:
+ # eval: (wiki-mode)
+ # End:
