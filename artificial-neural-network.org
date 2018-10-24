@@ -6,6 +6,13 @@
 or lovingly known as ANN's.  This is the class of techniques that
 falls under the umbrella term of deep learning.
 
+
+** layers
+#+BEGIN_QUOTE
+The basic building block of a neural network is the layer. Layers
+extract representations from the data fed into them. And, hopefully,
+these representations are more meaningful for the problem at hand.
+#+END_QUOTE
 ** ltsm
 long short term memory
 

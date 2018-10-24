@@ -4,6 +4,21 @@
 #+OPTIONS: toc:nil
 
 
+
+* implementations
+
+** J48
+** NaiveBayes
+** LinearRegression
+** LogisticRegression
+** Support Vector Machine
+** Instance Based Learners
+*** K*
+*** K-nearest neighbors
+** RIPPER
+
+* concept
+
 Anytime you are doing pattern recognition of any type you are writing
 a classifier.  Regex are classifiers and therefore and application
 which takes in strings and arrives at a conclusion from that data is

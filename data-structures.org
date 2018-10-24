@@ -3,12 +3,17 @@
 #+STARTUP: indent
 #+OPTIONS: toc:nil
 
+* data-structures are just knowledge representation
+Big jump here.
+
+
+* +uhhhh+
 [[file:math.org::*further%20benefits][The relevance of this topic can be seen here]] .  I'd say more but one
 of the purported benefits of this new system is that there is less
 duplication which I think is a fine goal.
 
 
-* The fundamental distinctions
+* +The fundamental distinctions+
 
 - fundamental structures
 - mathematical structures

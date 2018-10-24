@@ -1,0 +1,33 @@
+# _*_ mode:org _*_
+#+TITLE: classification-rules
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+#+BEGIN_QUOTE
+Given a set of training data points along with associated training
+labels, determine the class label for an unlabeled test instance.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

@@ -1,0 +1,33 @@
+# _*_ mode:org _*_
+#+TITLE: knowledge-representation
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+#+BEGIN_QUOTE
+Once you understand how the output is represented, you have come a
+long way toward understanding how it can be generated.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
