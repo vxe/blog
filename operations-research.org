@@ -1,0 +1,53 @@
+# _*_ mode:org _*_
+#+TITLE: operations-research
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+* reliability-engineering
+
+** reliability defined
+   #+BEGIN_EXAMPLE
+   reliability = (1 - probability_of_failure)
+   #+END_EXAMPLE
+   so in this case failure would really mean the upstream load
+   balancer has no backends to make requests to.
+
+** important questions
+   - [ ] what problems should be fixed first?
+   - [ ] what are the early indicators of system failure
+
+
+
+
+
+
+* defined
+
+Basically this is the application of mathematical, software and AI
+methods to problems involved in the operations of a task or series of
+tasks.
+
+More rigorously its the specific application of these methods to make
+better decisions within the specific field of application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Local Variables:
+ # eval: (wiki-mode)
+ # End:

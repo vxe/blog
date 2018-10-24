@@ -1,0 +1,50 @@
+# _*_ mode:org _*_
+#+TITLE: linear-models
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+ok once and for all, linear or linear regressive models are mechanisms
+which assign wights to contribution of individual factors to the
+response/classification variable we seek, or rather
+
+A key requirement is numerical observations only.
+
+#+BEGIN_QUOTE
+The classic way of dealing with continuous prediction is to write the
+outcome as a linear sum of the attribute values with appropriate
+weights, e.g., 
+PRP = –55.9 + 0.0489MYCT + 0.0153MMIN + 0.0056MMAX + 0.6410CACH – 0.2700CHMIN + 1.480CHMAX
+
+(The abbreviated variable names
+are given in the second row of the table.) This is called a linear
+regression equation, and the process of determining the weights is
+called linear regression, a well-known procedure in statistics
+
+Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data
+Mining: Practical Machine Learning Tools and Techniques (Morgan
+Kaufmann Series in Data Management Systems) (p. 16). Elsevier
+Science. Kindle Edition.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

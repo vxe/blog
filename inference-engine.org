@@ -1,0 +1,44 @@
+# _*_ mode:org _*_
+#+TITLE: inference-engine
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+* existence-vs-classification
+classification is more suited for rule generation procedures.
+
+
+* handcrafted-vs-generated-rulesets
+
+#+BEGIN_QUOTE
+Although the hand-crafted rules used in expert systems often perform
+well, machine learning can be useful in situations in which producing
+rules manually is too labor intensive.
+
+Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data
+Mining: Practical Machine Learning Tools and Techniques (Morgan
+Kaufmann Series in Data Management Systems) (p. 25). Elsevier
+Science. Kindle Edition.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

@@ -1,0 +1,52 @@
+# _*_ mode:org _*_
+#+TITLE: computer-vision
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+**  ML image classification in a nutshell
+
+spoiler alert, its still involves a lot of image processing to extract
+the relevant features.  These are then tabulated as examples upon
+which the classification algorithm operates, or rather:
+
+#+BEGIN_QUOTE
+The input is a set of raw pixel images from a radar satellite, and the
+output is a much smaller set of images with putative oil slicks marked
+by a colored border. First, standard image-processing operations are
+applied to normalize the image. Then, suspicious dark regions are
+identified. Several dozen attributes are extracted from each region,
+characterizing its size, shape, area, intensity, sharpness, and
+jaggedness of the boundaries, proximity to other regions, and
+information about the background in the vicinity of the
+region. Finally, standard learning techniques are applied to the
+resulting attribute vectors. (An alternative, omitting explicit
+feature extraction steps, would be to use the deep learning approach
+discussed in Chapter 10, Deep learning).
+
+Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data
+Mining: Practical Machine Learning Tools and Techniques (Morgan
+Kaufmann Series in Data Management Systems) (pp. 23-24). Elsevier
+Science. Kindle Edition.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Local Variables:
+ # eval: (wiki-mode)
+ # End:

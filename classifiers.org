@@ -5,7 +5,7 @@
 
 
 
-* implementations
+* weka implementations
 
 ** J48
 ** NaiveBayes
@@ -16,6 +16,23 @@
 *** K*
 *** K-nearest neighbors
 ** RIPPER
+* example classification problems
+** best-embryo-selection
+#+BEGIN_QUOTE
+The problem is to select the “best” embryos to use— the ones that are
+most likely to survive. Selection is based on around 60 recorded
+features of the embryos— characterizing their morphology, oocyte,
+follicle, and sperm sample. The number of features is sufficiently
+large that it is difficult for an embryologist to assess them all
+simultaneously and correlate historical data with the crucial outcome
+of whether
+
+Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data
+Mining: Practical Machine Learning Tools and Techniques (Morgan
+Kaufmann Series in Data Management Systems) (p. 4). Elsevier
+Science. Kindle Edition.
+#+END_QUOTE
+
 
 * concept
 

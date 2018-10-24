@@ -288,7 +288,7 @@ description
 ***** uniformization-theorem
 ***** weil-conjecture
 *** applied
-**** 
+**** [[file:./operations-research.org][operations-research]]
 **** 
 *** software
 **** gap
@@ -443,17 +443,17 @@ description
 *** [[file:./problem-solving.org][problem-solving]]
 **** [[file:./constraint-satisfaction.org][constraint-satisfaction]]
 *** [[file:./knowledge-representation.org][knowledge-representation]]
-**** linear-models
+**** [[file:./linear-models.org][linear-models]]
 **** [[file:./classification-rules.org][classification-rules]]
 **** decision-trees
-**** inference-engine
+**** [[file:./inference-engine.org][inference-engine]]
 **** semantic-nets
 **** ontologies
 *** [[file:./planning.org][planning]]
 **** [[file:./classical-planning.org][classical-planning]]
 **** optimization
 **** SAT-and-constraint Solving
-*** learning
+*** [[file:./learning.org][learning]]
 **** unsupervised
 **** supervised
 **** reinforcement
@@ -461,7 +461,7 @@ description
 **** data-language-processing
 **** nlp
 *** perception
-**** computer-vision
+**** [[file:./computer-vision.org][computer-vision]]
 **** [[file:./audio-analysis.org][audio-analysis]]
 *** tools
 **** [[file:./search.org][search]]
@@ -493,13 +493,13 @@ description
 *** c++
 **** opencv
 *** forth
-*** clojure
+*** clojure/java
+**** [[file:./commons-math.org][commons-math]]
+**** [[file:./weka.org][weka]]
 **** [[file:./rolling-stones.org][rolling-stones]]
 **** [[file:./loco.org][loco]]
 **** [[file:./graalvm][graalvm]]
 ***** [[file:./truffle.org][truffle]]
-**** commons-math
-
 *** common-lisp
 *** [[file:./racket.org][racket]]
 *** asm
@@ -515,7 +515,7 @@ description
 **** [[file:./turicreate.org][turicreate]]
 **** [[file:./nrepl.org][nrepl]]
 *** java
-**** [[file:./weka.org][weka]]
+
 *** elisp
 
 ** techniques
