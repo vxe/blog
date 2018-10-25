@@ -1,0 +1,69 @@
+# _*_ mode:org _*_
+#+TITLE: learning
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+
+* rule-set (decision-list ) 
+** minimization
+** defined
+ the output rules from the classification task which account for the
+ outcomes given the input data features, or rather
+
+ #+BEGIN_QUOTE
+ A set of rules that are intended to be interpreted in sequence is
+ called a decision list. Interpreted as a decision list, the rules
+ correctly classify all of the examples in the table, whereas taken
+ individually, out of context, some of the rules are incorrect.
+
+ Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data Mining: Practical Machine Learning Tools and Techniques (Morgan Kaufmann Series in Data Management Systems) (p. 11). Elsevier Science. Kindle Edition. 
+ #+END_QUOTE
+
+* learning vs trainig
+#+BEGIN_QUOTE
+Learning without purpose is merely training. Or, more to the point, in
+learning the purpose is the learner’s, whereas in training it is the
+teacher’s.
+
+
+#+END_QUOTE
+*  definitons
+the weka definition of learning
+
+#+BEGIN_QUOTE
+
+- to get knowledge of by study, experience, or being taught; 
+- to become aware by information or from observation; 
+- to commit to memory; 
+- to be informed of, ascertain; 
+- to receive instruction.
+
+Witten, Ian H.; Frank, Eibe; Hall, Mark A.; Pal, Christopher J.. Data
+Mining: Practical Machine Learning Tools and Techniques (Morgan
+Kaufmann Series in Data Management Systems) (p. 8). Elsevier
+Science. Kindle Edition.
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
