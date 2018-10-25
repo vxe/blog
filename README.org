@@ -11,6 +11,11 @@
 - [ ] move graph theory topics into subfiles
 
 description
+
+* social-media
+** twitter
+** hacker-news
+** irc
 * table of contents
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
@@ -24,6 +29,7 @@ description
 ***** axiom-of-determinacy
 ***** bayesian-analysis
 ***** boundary-layer
+fwefwef
 ***** braid-groups
 ***** c-star-algebras
 ***** calabi-yau-manifolds
@@ -483,6 +489,7 @@ description
 *** ipmi
 *** kubernetes
 ** tools
+*** [[file:./maxima.org][maxima]]
 *** [[file:./pandoc.org][pandoc]]
 *** [[file:./emacs.org][emacs]]
 **** [[file:./window-geometry.org][window-geometry]]
