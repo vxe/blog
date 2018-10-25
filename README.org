@@ -12,10 +12,6 @@
 
 description
 
-* social-media
-** twitter
-** hacker-news
-** irc
 * table of contents
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
