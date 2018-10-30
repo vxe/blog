@@ -1,0 +1,32 @@
+# _*_ mode:org _*_
+#+TITLE: calc
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+interesting primarily because its a stack system and thus the relation
+to forth is obviously interesting 
+** calling calc from lisp
+   - [ ] https://www.gnu.org/software/emacs/manual/html_mono/calc.html#Lisp-Definitions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Local Variables:
+ # eval: (wiki-mode)
+ # End:

@@ -1,0 +1,31 @@
+# _*_ mode:org _*_
+#+TITLE: applied
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+[[https://www.safaribooksonline.com/library/view/the-princeton-companion/9781400874477/chapter-02.html][princeton companion to applied mathematics, boom!]] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

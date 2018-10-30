@@ -1,0 +1,35 @@
+# _*_ mode:org _*_
+#+TITLE: swig
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+* How to glue JAVA and C++ together - using SWIG and type maps | Anyline
+
+swig opencv tutorial @parallel(true) @autodone(false)
+	https://anyline.com/news/how-to-glue-java-and-c-together-using-swig-and-type-maps-part-i/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

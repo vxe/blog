@@ -1,0 +1,33 @@
+# _*_ mode:org _*_
+#+TITLE: rpc
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+This is just a catch all for anything that involves doing stuff on a
+computer other than the one you are currently sitting at.  This
+consumes a lot of things like micro-services, web programming,
+classical RPC from the kernel perspective, its all the same thing from
+now on.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

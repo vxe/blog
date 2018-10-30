@@ -1,0 +1,37 @@
+# _*_ mode:org _*_
+#+TITLE: procfs
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+- [ ] https://ops.tips/blog/what-is-slash-proc/
+
+
+#+BEGIN_QUOTE
+Procfs is a special virtual filesystem that can be mounted in your
+directory tree, allowing processes in userspace to read kernel
+information conveniently - using regular file I/O operations (like
+read(2) and write(2)).
+#+END_QUOTE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:

@@ -1,0 +1,30 @@
+# _*_ mode:org _*_
+#+TITLE: discrete-mathematics
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+non of this continuous bullshit, real concrete things only pls.x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:
