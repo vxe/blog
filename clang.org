@@ -1,0 +1,84 @@
+# _*_ mode:org _*_
+#+TITLE: clang
+#+STARTUP: indent
+#+OPTIONS: toc:nil
+
+
+* building and using shared libraries
+** Step 1: Compiling with Position Independent Code
+
+ We need to compile our library source code into position-independent code (PIC):1
+ #+BEGIN_SRC shell
+ $ gcc -c -Wall -Werror -fpic foo.c
+ #+END_SRC
+
+** Step 2: Creating a shared library from an object file
+
+ Now we need to actually turn this object file into a shared library. Weâ€™ll call it libfoo.so:
+
+ #+BEGIN_SRC shell
+ gcc -shared -o libfoo.so foo.o
+ #+END_SRC
+
+** Step 3: Linking with a shared library
+
+ As you can see, that was actually pretty easy. We have a shared library. Letâ€™s compile our main.c and link it with libfoo. Weâ€™ll call our final program â€œtest.â€ Note that the -lfoo option is not looking for foo.o, but libfoo.so. GCC assumes that all libraries start with â€˜libâ€™ and end with .so or .a (.so is for shared object or shared libraries, and .a is for archive, or statically linked libraries).
+
+ #+BEGIN_SRC shell
+ $ gcc -Wall -o test main.c -lfoo
+ #+END_SRC
+
+** linker load flag -L
+ $ gcc -Wall -o test main.c -lfoo
+ /usr/bin/ld: cannot find -lfoo
+ collect2: ld returned 1 exit status
+ Telling GCC where to find the shared library
+
+ Uh-oh! The linker doesnâ€™t know where to find libfoo. GCC has a list of places it looks by default, but our directory is not in that list.2 We need to tell GCC where to find libfoo.so. We will do that with the -L option. In this example, we will use the current directory, /home/username/foo:
+
+ $ gcc -L/home/username/foo -Wall -o test main.c -lfoo
+ Step 4: Making the library available at runtime
+
+ Good, no errors. Now letâ€™s run our program:
+** LD_LIBRARY_PATH
+ $ ./test
+ ./test: error while loading shared libraries: libfoo.so: cannot open shared object file: No such file or directory
+ Oh no! The loader canâ€™t find the shared library.3 We didnâ€™t install it in a standard location, so we need to give the loader a little help. We have a couple of options: we can use the environment variable LD_LIBRARY_PATH for this, or rpath. Letâ€™s take a look first at LD_LIBRARY_PATH:
+
+ Using LD_LIBRARY_PATH
+
+ $ echo $LD_LIBRARY_PATH
+ Thereâ€™s nothing in there. Letâ€™s fix that by prepending our working directory to the existing LD_LIBRARY_PATH:
+
+ $ LD_LIBRARY_PATH=/home/username/foo:$LD_LIBRARY_PATH
+ $ ./test
+ ./test: error while loading shared libraries: libfoo.so: cannot open shared object file: No such file or directory
+ What happened? Our directory is in LD_LIBRARY_PATH, but we didnâ€™t export it. In Linux, if you donâ€™t export the changes to an environment variable, they wonâ€™t be inherited by the child processes. The loader and our test program didnâ€™t inherit the changes we made. Thankfully, the fix is easy:
+
+ $ export LD_LIBRARY_PATH=/home/username/foo:$LD_LIBRARY_PATH
+ $ ./test
+ This is a shared library test...
+ Hello, I'm a shared library
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ # Local Variables:
+ # eval: (wiki-mode)
+ # End:

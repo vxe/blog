@@ -2,50 +2,10 @@
 #+TITLE: wiki
 #+STARTUP: indent
 #+OPTIONS: toc:nil
+Theoretical type things, no source code or
+implementation type things, see libvxe 
 
-
-
-- [X] import applied math
-- [X] language interpretation patterns
-- [ ] move tcp illustrated topics into subfiles
-- [ ] move graph theory topics into subfiles
-
-description
-
-
-* source-code
-** [[file:./hy.org][hy/python]]
-*** [[file:./AutoWig.org][AutoWig]]
-*** [[file:./caffe.org][caffe]]
-*** [[file:./sklearn.org][sklearn]]
-*** essentia
-*** [[file:./flask.org][flask]]
-*** [[file:./opencv.org][opencv]]
-*** [[file:./turicreate.org][turicreate]]
-*** [[file:./nrepl.org][nrepl]]
-** clojure/java
-*** [[file:./commons-math.org][commons-math]]
-*** [[file:./weka.org][weka]]
-*** [[file:./rolling-stones.org][rolling-stones]]
-*** [[file:./loco.org][loco]]
-
-** javascript
-*** [[file:./react-components.org][react-components]]
-*** [[file:./vorpal.org][vorpal]]
-** c++
-*** [[file:./swig.org][swig]]
-*** opencv
-** forth
-** common-lisp
-** [[file:./racket.org][racket]]
-** asm
-** clojurescript
-** java
-
-** elisp
-
-
-* referecne
+* reference
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
   :EXPORT_HUGO_TYPE: post
@@ -357,6 +317,7 @@ fwefwef
 *** [[file:./discrete-mathematics.org][discrete-mathematics]]
 **** [[file:./operations-research.org][operations-research]]
 *** computational
+**** [[file:./problems.org][problems]]
 ** [[file:./data-structures.org][data-structures]]
 **** [[file:./linear-lists.org][linear-lists]] 
 ***** -append
@@ -517,9 +478,6 @@ fwefwef
 **** [[file:./artificial-neural-network.org][artificial-neural-network]]
 *** social-reasoning
 *** motion
-** repos
-*** libvxe
-*** home
 ** systems
 *** [[file:./graalvm][geraalvm]]
 **** [[file:./truffle.org][truffle]]
@@ -527,6 +485,7 @@ fwefwef
 **** [[file:./calc.org][calc]]
 **** [[file:./window-geometry.org][window-geometry]]
 *** llvm
+**** [[file:./clang.org][clang]]
 *** linux-kernel
 **** [[file:./procfs.org][procfs]]
 ** tools
@@ -559,3 +518,4 @@ fwefwef
 # Local Variables:
 # eval: (wiki-mode)
 # End:
+peasants 
