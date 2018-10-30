@@ -2,6 +2,36 @@
 #+TITLE: statistics
 #+STARTUP: indent
 #+OPTIONS: toc:nil
+
+
+so I' not going to acknowledge statistics as even being a thing.  I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Local Variables:
+# eval: (wiki-mode)
+# End:# _*_ mode:org _*_
+#+TITLE: statistics
+#+STARTUP: indent
+#+OPTIONS: toc:nil
 so what are the major topics of statistics you may ask?  Well who the
 fuck knows, I'm using this from a book called all of statistics or
 something, seems like a good place to begin 

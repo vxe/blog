@@ -2,6 +2,14 @@
 #+TITLE: computer-vision
 #+STARTUP: indent
 #+OPTIONS: toc:nil
+
+** algorithms
+
+*** net-dissect
+- [ ] install caffe http://caffe.berkeleyvision.org/installation.html
+https://github.com/CSAILVision/NetDissect
+
+
 **  ML image classification in a nutshell
 
 spoiler alert, its still involves a lot of image processing to extract

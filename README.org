@@ -12,12 +12,73 @@
 
 description
 
-* table of contents
+
+* source-code
+** [[file:./hy.org][hy/python]]
+*** [[file:./AutoWig.org][AutoWig]]
+*** [[file:./caffe.org][caffe]]
+*** [[file:./sklearn.org][sklearn]]
+*** essentia
+*** [[file:./flask.org][flask]]
+*** [[file:./opencv.org][opencv]]
+*** [[file:./turicreate.org][turicreate]]
+*** [[file:./nrepl.org][nrepl]]
+** clojure/java
+*** [[file:./commons-math.org][commons-math]]
+*** [[file:./weka.org][weka]]
+*** [[file:./rolling-stones.org][rolling-stones]]
+*** [[file:./loco.org][loco]]
+
+** javascript
+*** [[file:./react-components.org][react-components]]
+*** [[file:./vorpal.org][vorpal]]
+** c++
+*** [[file:./swig.org][swig]]
+*** opencv
+** forth
+** common-lisp
+** [[file:./racket.org][racket]]
+** asm
+** clojurescript
+** java
+
+** elisp
+
+
+* referecne
   :PROPERTIES:
   :EXPORT_HUGO_SECTION: posts
   :EXPORT_HUGO_TYPE: post
   :END:
-** [[file:./math.org][math]]
+** computer-science
+*** compilers
+**** [[file:./writing-compilers-and-interpreters.org][writing-compilers-and-interpreters]]
+**** [[file:./language-implementation-patterns.org][language-implementation-patterns]]
+**** [[file:./lisp-in-small-pieces.org][lisp-in-small-pieces]]
+**** [[file:sicp.org][sicp]]
+*** operating-systems
+**** [[file:./linux-kernel-development.org][linux-kernel-development]]
+**** [[file:./the-linux-programming-interface.org][the-linux-programming-interface]]
+**** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
+**** [[file:./routing-tcp.org][routing-tcp]]
+*** algorithms
+**** binary-search
+**** quicksort
+**** breadth-first-search
+**** dijkstras-algorithm
+**** k-nearest-neighbors
+*** programming
+**** [[file:./the-art-of-computer-programming.org][the-art-of-computer-programming]] 
+**** [[file:./thinking-forth.org][thinking-forth]]
+**** 
+**** 
+*** software-design
+**** [[file:./rpc.org][rpc]]
+**** unix-philosophy
+**** object-orientation
+**** functional-style
+**** layered-architecture
+** [[file:./math.org][math]] 
 *** pure
 **** concepts
 ***** [[file:./asymptotics.org][asymptotics]]
@@ -289,34 +350,13 @@ fwefwef
 ***** three-body-problem
 ***** uniformization-theorem
 ***** weil-conjecture
-*** applied
+*** [[file:./applied.org][applied]]
+**** [[file:./statistics.org][statistics]]
+***** [[file:./machine-learning.org][machine-learning]]
+
+*** [[file:./discrete-mathematics.org][discrete-mathematics]]
 **** [[file:./operations-research.org][operations-research]]
-**** 
-*** software
-**** gap
-**** maxima
-** computer-science
-*** compilers
-**** [[file:./writing-compilers-and-interpreters.org][writing-compilers-and-interpreters]]
-**** [[file:./language-implementation-patterns.org][language-implementation-patterns]]
-**** [[file:./lisp-in-small-pieces.org][lisp-in-small-pieces]]
-**** [[file:sicp.org][sicp]]
-*** operating-systems
-**** [[file:./linux-kernel-development.org][linux-kernel-development]]
-**** [[file:./the-linux-programming-interface.org][the-linux-programming-interface]]
-**** [[file:./tcp-illustrated-vol-1.org][tcp-illustrated-vol-1]]
-**** [[file:./routing-tcp.org][routing-tcp]]
-*** algorithms
-**** binary-search
-**** quicksort
-**** breadth-first-search
-**** dijkstras-algorithm
-**** k-nearest-neighbors
-*** programming
-**** [[file:./the-art-of-computer-programming.org][the-art-of-computer-programming]] 
-**** [[file:./thinking-forth.org][thinking-forth]]
-**** 
-**** 
+*** computational
 ** [[file:./data-structures.org][data-structures]]
 **** [[file:./linear-lists.org][linear-lists]] 
 ***** -append
@@ -464,6 +504,7 @@ fwefwef
 **** nlp
 *** perception
 **** [[file:./computer-vision.org][computer-vision]]
+
 **** [[file:./audio-analysis.org][audio-analysis]]
 *** tools
 **** [[file:./search.org][search]]
@@ -480,60 +521,36 @@ fwefwef
 *** libvxe
 *** home
 ** systems
+*** [[file:./graalvm][geraalvm]]
+**** [[file:./truffle.org][truffle]]
+*** [[file:./emacs.org][emacs]]
+**** [[file:./calc.org][calc]]
+**** [[file:./window-geometry.org][window-geometry]]
 *** llvm
 *** linux-kernel
-*** ipmi
-*** kubernetes
+**** [[file:./procfs.org][procfs]]
 ** tools
 *** [[file:./maxima.org][maxima]]
 *** [[file:./pandoc.org][pandoc]]
-*** [[file:./emacs.org][emacs]]
-**** [[file:./window-geometry.org][window-geometry]]
 *** swig
 *** ansible
 *** antlr
-** languages
-*** c++
-**** opencv
-*** forth
-*** clojure/java
-**** [[file:./commons-math.org][commons-math]]
-**** [[file:./weka.org][weka]]
-**** [[file:./rolling-stones.org][rolling-stones]]
-**** [[file:./loco.org][loco]]
-**** [[file:./graalvm][graalvm]]
-***** [[file:./truffle.org][truffle]]
-*** common-lisp
-*** [[file:./racket.org][racket]]
-*** asm
-*** clojurescript
-*** javascript
-**** [[file:./react-components.org][react-components]]
-**** [[file:./vorpal.org][vorpal]]
-*** [[file:./hy.org][hy]] 
-**** [[file:./sklearn.org][sklearn]]
-**** essentia
-**** [[file:./flask.org][flask]]
-**** [[file:./opencv.org][opencv]]
-**** [[file:./turicreate.org][turicreate]]
-**** [[file:./nrepl.org][nrepl]]
-*** java
 
-*** elisp
-
-** techniques
-*** array/string manipulation
-*** stack/queue manipulation
-*** big-analysis
-*** linked-list manipulation
-*** mathematical concepts
-*** recursive/dynamic programming
-*** object-oriented design
-*** sorting and searching
-*** threading and locking
-*** tree/graph search
-*** bit manipulation
-*** scalability optimization
+** competitive-programming
+*** get one of the free books
+*** ctci
+**** array/string manipulation
+**** stack/queue manipulation
+**** big-analysis
+**** linked-list manipulation
+**** mathematical concepts
+**** recursive/dynamic programming
+**** object-oriented design
+**** sorting and searching
+**** threading and locking
+**** tree/graph search
+**** bit manipulation
+**** scalability optimization
 ** music-production
 *** acoustics
 **** [[file:./pitch.org][pitch]]

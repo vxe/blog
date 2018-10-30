@@ -2,6 +2,15 @@
 #+TITLE: math
 #+STARTUP: indent
 #+OPTIONS: toc:nil
+so the primary distinction here is between four divisions as divided
+by wikipedia:
+
+1. pure
+2. applied
+3. discrete
+4. computational
+
+
 
 So if your going to have a distinction, it should probably pure and
 applied, eh?  But what then do you do about statistics which seem to
